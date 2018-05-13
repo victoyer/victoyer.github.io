@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Python Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="实例方法，类方法，静态方法的调用1234567891011121314151617181920212223242526272829class Test(object):    def SelfPrint(self):        print(&apos;实例方法&apos;)    @classmethod    def ClassPrint(cls):        print(&apos;类方法&apos;)    @static">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Blog">
+<meta property="og:url" content="http://yoursite.com/2018/05/13/AtarteFunctionAndObjectFunction/index.html">
+<meta property="og:site_name" content="Python Blog">
+<meta property="og:description" content="实例方法，类方法，静态方法的调用1234567891011121314151617181920212223242526272829class Test(object):    def SelfPrint(self):        print(&apos;实例方法&apos;)    @classmethod    def ClassPrint(cls):        print(&apos;类方法&apos;)    @static">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-13T01:44:59.690Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Blog">
+<meta name="twitter:description" content="实例方法，类方法，静态方法的调用1234567891011121314151617181920212223242526272829class Test(object):    def SelfPrint(self):        print(&apos;实例方法&apos;)    @classmethod    def ClassPrint(cls):        print(&apos;类方法&apos;)    @static">
+  
+    <link rel="alternate" href="/atom.xml" title="Python Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Python Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">victor的个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-AtarteFunctionAndObjectFunction" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/13/AtarteFunctionAndObjectFunction/" class="article-date">
+  <time datetime="2018-05-13T01:44:59.690Z" itemprop="datePublished">2018-05-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="实例方法，类方法，静态方法的调用"><a href="#实例方法，类方法，静态方法的调用" class="headerlink" title="实例方法，类方法，静态方法的调用"></a>实例方法，类方法，静态方法的调用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">SelfPrint</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'实例方法'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">ClassPrint</span><span class="params">(cls)</span>:</span></span><br><span class="line">        print(<span class="string">'类方法'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">StartPrint</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">'静态方法'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">test = Test()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例调用三种方法</span></span><br><span class="line">test.SelfPrint()</span><br><span class="line">test.ClassPrint()</span><br><span class="line">test.StartPrint()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分割线</span></span><br><span class="line">print(<span class="string">'-------------------我是分割线-----------------------'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 类调用三种方法</span></span><br><span class="line">Test.ClassPrint()</span><br><span class="line">Test.StartPrint()</span><br><span class="line">Test.SelfPrint(test)</span><br></pre></td></tr></table></figure>
+<h3 id="类属性和实例属性的访问"><a href="#类属性和实例属性的访问" class="headerlink" title="类属性和实例属性的访问"></a>类属性和实例属性的访问</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># 类属性</span></span><br><span class="line">    ClassName = <span class="string">'victor'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 实例属性</span></span><br><span class="line">        self.Selfname = <span class="string">'维克托'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">SelfPrint</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 实例方法中访问类方法</span></span><br><span class="line">        print(self.ClassName)  <span class="comment"># Get</span></span><br><span class="line">        print(Test.ClassName)  <span class="comment"># Get</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">ClassPrint</span><span class="params">(cls)</span>:</span></span><br><span class="line">        <span class="comment"># print(cls.Selfname) # 报错</span></span><br><span class="line">        print(test.Selfname)  <span class="comment"># Get</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 实例对象可以看做是保存了类在内存中引用的变量</span></span><br><span class="line">        <span class="comment"># 但是实例化之后的变量之所以被称为对象</span></span><br><span class="line">        <span class="comment"># 是因为在实例化之后会对这个变量绑定添加了类中不存在的属性和方法</span></span><br><span class="line">        <span class="comment"># 因此对象的功能比类更强大（类似于父类和子类）</span></span><br><span class="line">        <span class="comment"># 所以实例可以用对象引用访问类属性以及方法</span></span><br><span class="line">        <span class="comment"># 但是类却不能用类的引用去调用实例方法和属性</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">StartPrint</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 至于静态方法</span></span><br><span class="line">    <span class="comment"># 它本身并不传递类和实例的引用</span></span><br><span class="line">    <span class="comment"># 所以也无法通过类引用以及实例引用去调用类和实例的方法，属性</span></span><br><span class="line">    <span class="comment"># 但是通过类名和实例名可以</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化对象</span></span><br><span class="line">test = Test()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例调用三种方法</span></span><br><span class="line">test.SelfPrint()</span><br><span class="line">test.ClassPrint()</span><br><span class="line">test.StartPrint()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分割线</span></span><br><span class="line">print(<span class="string">'-------------------我是分割线-----------------------'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 类调用三种方法</span></span><br><span class="line">Test.ClassPrint()</span><br><span class="line">Test.StartPrint()</span><br><span class="line">Test.SelfPrint(test)</span><br></pre></td></tr></table></figure>
+<h3 id="类方法，实例对象方法和静态方法的访问权限"><a href="#类方法，实例对象方法和静态方法的访问权限" class="headerlink" title="类方法，实例对象方法和静态方法的访问权限"></a>类方法，实例对象方法和静态方法的访问权限</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">SelfPrint</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'实例方法'</span>)</span><br><span class="line">        self.ClassPrint()</span><br><span class="line">        self.StartPrint()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 方法和属性一样，实例的访问权限高于类，可以通过实例引用调用类内的所有属性和方法</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">ClassPrint</span><span class="params">(cls)</span>:</span></span><br><span class="line">        print(<span class="string">'类方法'</span>)</span><br><span class="line">        <span class="comment"># cls.SelfPrint(Test)</span></span><br><span class="line">        cls.StartPrint()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 类通过类引用只能访问静态方法</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">StartPrint</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">'静态方法'</span>)</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 静态方法不传递类和实例的引用，所以无法访问类和实例的属性和方法</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化对象</span></span><br><span class="line">test = Test()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例访问互调的方法</span></span><br><span class="line">test.SelfPrint()</span><br><span class="line">test.ClassPrint()</span><br><span class="line">test.StartPrint()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分割线</span></span><br><span class="line">print(<span class="string">'--------------我是分割线---------------'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 类访问互调的方法</span></span><br><span class="line">Test.ClassPrint()</span><br><span class="line">Test.SelfPrint(test)</span><br><span class="line">Test.StartPrint()</span><br></pre></td></tr></table></figure>
+<h4 id="综上所述，实例对象就像继承中的子类；而类就像继承中的父类。子类比父类功能更强大，所以可以随时替换父类-——-里氏替换原则"><a href="#综上所述，实例对象就像继承中的子类；而类就像继承中的父类。子类比父类功能更强大，所以可以随时替换父类-——-里氏替换原则" class="headerlink" title="综上所述，实例对象就像继承中的子类；而类就像继承中的父类。子类比父类功能更强大，所以可以随时替换父类 —— 里氏替换原则"></a>综上所述，实例对象就像继承中的子类；而类就像继承中的父类。子类比父类功能更强大，所以可以随时替换父类 —— 里氏替换原则</h4><h4 id="换成类中的关系可以理解为："><a href="#换成类中的关系可以理解为：" class="headerlink" title="换成类中的关系可以理解为："></a>换成类中的关系可以理解为：</h4><h4 id="实例对象就是老婆，权限最高，但是依赖类的存在才存在"><a href="#实例对象就是老婆，权限最高，但是依赖类的存在才存在" class="headerlink" title="实例对象就是老婆，权限最高，但是依赖类的存在才存在"></a>实例对象就是老婆，权限最高，但是依赖类的存在才存在</h4><h4 id="类就是老公，低于老婆但却是实例化对象的依据"><a href="#类就是老公，低于老婆但却是实例化对象的依据" class="headerlink" title="类就是老公，低于老婆但却是实例化对象的依据"></a>类就是老公，低于老婆但却是实例化对象的依据</h4><h4 id="至于静态方法就像我，谁都可以管我，我却连拒绝都没权限"><a href="#至于静态方法就像我，谁都可以管我，我却连拒绝都没权限" class="headerlink" title="至于静态方法就像我，谁都可以管我，我却连拒绝都没权限"></a>至于静态方法就像我，谁都可以管我，我却连拒绝都没权限</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/13/AtarteFunctionAndObjectFunction/" data-id="cjh45qgvn0000jdjlv4yl9rxz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/13/regularAndInter/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/13/regular/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/13/udpandtcp/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/SeriorFunctionAndObject/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/regularAndInter/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/AtarteFunctionAndObjectFunction/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/regular/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 victor<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Python Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="高级函数和面向对象三大特性递归函数1递归函数是函数式编程的一种高级函数用法（据说），递归函数需要用自己调用自己来实现 12345678910111213141516#求5的阶乘def foo(n):              #定义一个函数    if n == 1 or n == 0:    #指定迭代结束条件（如果没有的话，三星note7就是前车之鉴 (￣^￣)        return 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Blog">
+<meta property="og:url" content="http://yoursite.com/2018/05/13/SeriorFunctionAndObject/index.html">
+<meta property="og:site_name" content="Python Blog">
+<meta property="og:description" content="高级函数和面向对象三大特性递归函数1递归函数是函数式编程的一种高级函数用法（据说），递归函数需要用自己调用自己来实现 12345678910111213141516#求5的阶乘def foo(n):              #定义一个函数    if n == 1 or n == 0:    #指定迭代结束条件（如果没有的话，三星note7就是前车之鉴 (￣^￣)        return 1">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-13T01:45:00.174Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Blog">
+<meta name="twitter:description" content="高级函数和面向对象三大特性递归函数1递归函数是函数式编程的一种高级函数用法（据说），递归函数需要用自己调用自己来实现 12345678910111213141516#求5的阶乘def foo(n):              #定义一个函数    if n == 1 or n == 0:    #指定迭代结束条件（如果没有的话，三星note7就是前车之鉴 (￣^￣)        return 1">
+  
+    <link rel="alternate" href="/atom.xml" title="Python Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Python Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">victor的个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-SeriorFunctionAndObject" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/13/SeriorFunctionAndObject/" class="article-date">
+  <time datetime="2018-05-13T01:45:00.174Z" itemprop="datePublished">2018-05-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="高级函数和面向对象三大特性"><a href="#高级函数和面向对象三大特性" class="headerlink" title="高级函数和面向对象三大特性"></a>高级函数和面向对象三大特性</h3><h4 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">递归函数是函数式编程的一种高级函数用法（据说），递归函数需要用自己调用自己来实现</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#求5的阶乘</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(n)</span>:</span>              <span class="comment">#定义一个函数</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span> <span class="keyword">or</span> n == <span class="number">0</span>:    <span class="comment">#指定迭代结束条件（如果没有的话，三星note7就是前车之鉴 (￣^￣)</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> n * foo(n - <span class="number">1</span>)  <span class="comment">#这里既是你的递归条件了</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    print(foo(<span class="number">5</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>这里需要说明的是，递归的迭代会占用大量的内存和耗费时间，虽然用循环感觉low，但是实用啊。能用循环解决的事情就不要用递归吧</p>
+<h4 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">匿名函数，见名知意。这是一种没有函数名的特殊函数，因为匿名函数没有函数名，自然也没有def定义的语句而是直接使用关键字定义，并且是用于传参。函数实参的定义本就不局限于常量和变量。</span><br><span class="line"></span><br><span class="line">匿名函数求两数之加减乘除</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#匿名函数求两数之加减乘除</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(x,y,func)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> func(x,y)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    print(foo(<span class="number">3</span>, <span class="number">5</span>, <span class="keyword">lambda</span> x, y: x + y))</span><br><span class="line">    print(foo(<span class="number">3</span>, <span class="number">5</span>, <span class="keyword">lambda</span> x, y: x - y))</span><br><span class="line">    print(foo(<span class="number">3</span>, <span class="number">5</span>, <span class="keyword">lambda</span> x, y: x * y))</span><br><span class="line">    print(foo(<span class="number">3</span>, <span class="number">5</span>, <span class="keyword">lambda</span> x, y: x / y))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h3 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">除开上面两种，函数还有更高级的用法：</span><br><span class="line">1、默认参数</span><br></pre></td></tr></table></figure>
+<p>所谓默认参数又可以叫缺省参数，就是在函数的形参赋予默认值，当实参没有传递参数就使用默认参数，如果有多个参数的话，默认参数放在最后。像这样：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(a,b,c=<span class="number">3</span>)</span>:</span>  <span class="comment">#函数形参</span></span><br><span class="line">    <span class="keyword">return</span> a + b +c  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    print(main(<span class="number">1</span>,<span class="number">2</span>))  <span class="comment">#函数实参</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2、不定长参数</span><br></pre></td></tr></table></figure>
+<p>所谓不定长就是实参的数量不确定的情况下，使用一个形参接受所有实参数据的参数类型，其实也没啥特别，就是形参前面加个 * ，不过这个形参通常名为args。在形参中其实就是储存了一个元组，for循环取出来即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(*args)</span>:</span>    <span class="comment">#不定长参数</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> args:</span><br><span class="line">        index += index</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> index</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    print(main(<span class="number">1</span>,<span class="number">2</span>))  <span class="comment">#实参</span></span><br></pre></td></tr></table></figure>
+<p>然后还有一种命名不定长参数，它也是形参，不过前面要加 *<em> （俩 </em>号），这个和上面那个类似，不过那个是元组，这个是字典，正好是命名参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(**kwargs)</span>:</span>     <span class="comment">#不定长命名参数</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> key,value <span class="keyword">in</span> kwargs.items():  <span class="comment">#取值（字典是键值对存值，所以要取就取一对）</span></span><br><span class="line">        print(<span class="string">'%s : %s'</span>%(key,value))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    mydict = &#123;<span class="string">'name'</span>:<span class="string">'victor'</span>,<span class="string">'age'</span>:<span class="number">23</span>,<span class="string">'sex'</span>:<span class="string">'男'</span>&#125;</span><br><span class="line"></span><br><span class="line">    main(**mydict)          <span class="comment">#这个骚操作叫做解包，把一个字典拆成一个一个的键值对传参</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3、命名参数</span><br></pre></td></tr></table></figure>
+<p>命名参数又叫指定参数，就是在调用函数传递实参的时候接收参数的形参名在 * 号后面就要在传递实参的时候指定接收参数的形参名，因为是指定传参，所以实参和形参的位置不用太在意（据说读完这句话还知道自己是谁的人颜值不低于80）。</p>
+<p>具体的可以看下面代码，都有注释的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(*,b,a,c)</span>:</span> <span class="comment"># * 号后面的形参</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> a + b + c</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    print(main(c=<span class="number">3</span>，a=<span class="number">1</span>,b=<span class="number">2</span>))  <span class="comment"># 指定传参的实参</span></span><br></pre></td></tr></table></figure>
+<h4 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">其实我真正想写的是面向对象，毕竟没对象，总会想着有对象。</span><br><span class="line">面向对象编程(Object Oriented Programming-OOP) 是一种解决软件复用的设计和编程方法。 这种方法把软件系统中相近相似的操作逻辑和操作 应用数据、状态,以类的型式描述出来,以对象实例的形式在软件系统中复用,以达到提高软件开发效率的作用。</span><br><span class="line"></span><br><span class="line">在面向对象中有两个非常重要的概念:类和对象</span><br></pre></td></tr></table></figure>
+<p>类是一种抽象的概念。就像飞机的蓝图和我的女友，都只是一种概念 对象是类的实例化，就像有飞机图纸就可以制造出飞机，而飞机图纸是类，飞机实体则是飞机图纸的对象（连张纸都有对象 &gt;_&lt; ）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">面向对象有三大特征（也有人说是四大），分别是封装、继承、多态（说四大的多了个抽象，其实前三大特征已经包含了抽象）</span><br></pre></td></tr></table></figure>
+<h5 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h5><h6 id="类的抽象分两种："><a href="#类的抽象分两种：" class="headerlink" title="类的抽象分两种："></a>类的抽象分两种：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">一种是数据抽象，这个就是类的属性</span><br><span class="line">一种是行为抽象，这个就是类的方法</span><br><span class="line"></span><br><span class="line">    然后类的方法分三种:</span><br><span class="line">                一种是类方法：</span><br><span class="line">                        类方法，由@classmethod装饰的方法，第一个参数必须要默认传类，一般用cls</span><br><span class="line"></span><br><span class="line">                一种是实例方法:</span><br><span class="line">                         实例方法，第一个参数是类的实例化，一般默认为self</span><br><span class="line"></span><br><span class="line">                一种是静态方法：</span><br><span class="line">                         静态方法，由@staticmethod装饰的方法，参数传递类似函数，但是区别于函数的是静态方法需要类名或者实例名 . 才能调用</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""类三种方法语法形式"""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">instance_method</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"是类&#123;&#125;的实例方法，只能被实例对象调用"</span>.format(Foo))</span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">static_method</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">"是静态方法"</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">class_method</span><span class="params">(cls)</span>:</span></span><br><span class="line">        print(<span class="string">"是类方法"</span>)</span><br><span class="line"></span><br><span class="line">foo = Foo()</span><br><span class="line">foo.instance_method()</span><br><span class="line">foo.static_method()</span><br><span class="line">foo.class_method()</span><br><span class="line">print(<span class="string">'----------------'</span>)</span><br><span class="line">Foo.static_method()</span><br><span class="line">Foo.class_method()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ps:最好不要在函数内部打印或者获取数据，最好return返回或者当做参数传入</span><br></pre></td></tr></table></figure>
+<h5 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h5><h6 id="封装是指在类中，把一切可以隐藏的隐藏起来，只想外界调用提供简单的接口（迪米特法则）"><a href="#封装是指在类中，把一切可以隐藏的隐藏起来，只想外界调用提供简单的接口（迪米特法则）" class="headerlink" title="封装是指在类中，把一切可以隐藏的隐藏起来，只想外界调用提供简单的接口（迪米特法则）"></a>封装是指在类中，把一切可以隐藏的隐藏起来，只想外界调用提供简单的接口（迪米特法则）</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,age)</span>:</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">#属性封装</span></span><br><span class="line">        self._name = name</span><br><span class="line">        self._age = age</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">#对外访问接口</span></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._name</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">age</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._age</span><br><span class="line"></span><br><span class="line">    <span class="comment">#对外修改接口</span></span><br><span class="line"><span class="meta">    @name.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self,name)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> name != self._name:</span><br><span class="line">            self._name = name</span><br><span class="line">        <span class="keyword">return</span> self._name</span><br><span class="line"></span><br><span class="line"><span class="meta">    @age.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">age</span><span class="params">(self,age)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self._age != age:</span><br><span class="line">            self._age = age</span><br><span class="line">        <span class="keyword">return</span> self._age</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    foo = Foo(<span class="string">'victor'</span>,<span class="number">23</span>)</span><br><span class="line">    print(foo.name)</span><br><span class="line">    print(foo.age)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h5 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h5><h6 id="继承是指一个类获得另一个类的所有方法、属性。提供继承信息的是父类，得到继承信息的是子类。一般情况下，子类比父类功能强大。任何时候子类都可以替换父类（里氏替换原则）"><a href="#继承是指一个类获得另一个类的所有方法、属性。提供继承信息的是父类，得到继承信息的是子类。一般情况下，子类比父类功能强大。任何时候子类都可以替换父类（里氏替换原则）" class="headerlink" title="继承是指一个类获得另一个类的所有方法、属性。提供继承信息的是父类，得到继承信息的是子类。一般情况下，子类比父类功能强大。任何时候子类都可以替换父类（里氏替换原则）"></a>继承是指一个类获得另一个类的所有方法、属性。提供继承信息的是父类，得到继承信息的是子类。一般情况下，子类比父类功能强大。任何时候子类都可以替换父类（里氏替换原则）</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,age)</span>:</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">#属性封装</span></span><br><span class="line">        self._name = name</span><br><span class="line">        self._age = age</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">#对外访问接口</span></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._name</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">age</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._age</span><br><span class="line"></span><br><span class="line">    <span class="comment">#对外修改接口</span></span><br><span class="line"><span class="meta">    @name.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self,name)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> name != self._name:</span><br><span class="line">            self._name = name</span><br><span class="line">        <span class="keyword">return</span> self._name</span><br><span class="line"></span><br><span class="line"><span class="meta">    @age.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">age</span><span class="params">(self,age)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self._age != age:</span><br><span class="line">            self._age = age</span><br><span class="line">        <span class="keyword">return</span> self._age</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Temp</span><span class="params">(Foo)</span>:</span> <span class="comment">#继承Foo类</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#使用父类的属性</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">prnt_age</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'%s今年%s岁'</span>%(self._name,self._age))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    foo = Foo(<span class="string">'victor'</span>,<span class="number">23</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#默认调用父类__init__方法</span></span><br><span class="line">    temp = Temp(<span class="string">'moil'</span>,<span class="number">23</span>)</span><br><span class="line">    temp.prnt_age()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h5 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h5><h6 id="多态是指子类继承父类的方法，方法名相同，但是实现方式或者得到的结果并不一样。"><a href="#多态是指子类继承父类的方法，方法名相同，但是实现方式或者得到的结果并不一样。" class="headerlink" title="多态是指子类继承父类的方法，方法名相同，但是实现方式或者得到的结果并不一样。"></a>多态是指子类继承父类的方法，方法名相同，但是实现方式或者得到的结果并不一样。</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,age)</span>:</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">#属性封装</span></span><br><span class="line">        self._name = name</span><br><span class="line">        self._age = age</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">#对外访问接口</span></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._name</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">age</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._age</span><br><span class="line"></span><br><span class="line">    <span class="comment">#对外修改接口</span></span><br><span class="line"><span class="meta">    @name.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self,name)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> name != self._name:</span><br><span class="line">            self._name = name</span><br><span class="line">        <span class="keyword">return</span> self._name</span><br><span class="line"></span><br><span class="line"><span class="meta">    @age.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">age</span><span class="params">(self,age)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self._age != age:</span><br><span class="line">            self._age = age</span><br><span class="line">        <span class="keyword">return</span> self._age</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Temp</span><span class="params">(Foo)</span>:</span> <span class="comment">#继承Foo类</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#使用父类的属性</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">prnt_age</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'%s今年%s岁'</span>%(self._name,self._age))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    foo = Foo(<span class="string">'victor'</span>,<span class="number">23</span>)</span><br><span class="line">    temp = Temp(<span class="string">'moil'</span>,<span class="number">23</span>)</span><br><span class="line">    temp.prnt_age()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h4 id="文件的读写"><a href="#文件的读写" class="headerlink" title="文件的读写"></a>文件的读写</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Python中文件的操作比较简单,open是打开一个文件的关键字，第一个参数是文件名和后缀，第二个是读写的操作：</span><br><span class="line">                                                                   r :打开一个文件只用于读出，没有会创建一个文件</span><br><span class="line">                                                                   w:打开一个文件用于读写，没有会创建一个文件用于读写，但是写入会清空文件内的数据重新写入</span><br><span class="line">                                                                   a:打开一个文件用于读写，没有会创建一个文件用于读写，写入是在末尾追加，不会清空数据</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    file_data = open(<span class="string">'文件和后缀名'</span>,<span class="string">'操作参数'</span>,encoding=<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line">    file_data.write(<span class="string">'要写入的数据'</span>)</span><br><span class="line"></span><br><span class="line">    file_data.read() <span class="comment">#读出文件数据</span></span><br><span class="line"></span><br><span class="line">    file_data.close() <span class="comment">#读写完毕关闭文件释放资源</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>但是操作文件会或者说执行代码会出现许多无法预料的状况导致程序崩溃，我们可以用 try except 来处理：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:  <span class="comment">#测试执行以下代码，</span></span><br><span class="line">        file_data = open(<span class="string">'文件和后缀名'</span>,<span class="string">'操作参数'</span>,encoding=<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line">        file_data.write(<span class="string">'要写入的数据'</span>)</span><br><span class="line"></span><br><span class="line">        file_data.read() <span class="comment">#读出文件数据</span></span><br><span class="line"></span><br><span class="line">        file_data.close() <span class="comment">#读写完毕关闭文件释放资源</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">except</span> IOError <span class="keyword">as</span> e: <span class="comment">#捕获IOError异常                #如果以上代码出现IOErorr异常（文件读写错误），就会执行这里的代码</span></span><br><span class="line">        print(e)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>然后文件的操作可能涉及到路径 相对路径：从当前文件位置开始的路径 - ./文件名 绝对路径：从根目录开始的文件路径 - /home/victor/Desktop/文件名</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/13/SeriorFunctionAndObject/" data-id="cjh45qgwo0005jdjlf908uatg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/13/udpandtcp/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/13/regularAndInter/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/13/udpandtcp/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/SeriorFunctionAndObject/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/regularAndInter/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/AtarteFunctionAndObjectFunction/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/regular/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 victor<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
