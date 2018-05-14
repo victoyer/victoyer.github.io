@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>String与BytesIO | Python Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="StringIO与BytesIO原文链接StringIO可与c++的string流比较在内存中读写str先创建一个StringIO，然后像文件一样写入 12345678910&amp;gt;&amp;gt;&amp;gt; from io import StringIO&amp;gt;&amp;gt;&amp;gt; f = StringIO()&amp;gt;&amp;gt;&amp;gt; f.write(&apos;hello&apos;)5&amp;gt;&amp;gt;&amp;gt; f.write">
+<meta property="og:type" content="article">
+<meta property="og:title" content="String与BytesIO">
+<meta property="og:url" content="http://yoursite.com/2018/05/14/StringIOandBytesIO/index.html">
+<meta property="og:site_name" content="Python Blog">
+<meta property="og:description" content="StringIO与BytesIO原文链接StringIO可与c++的string流比较在内存中读写str先创建一个StringIO，然后像文件一样写入 12345678910&amp;gt;&amp;gt;&amp;gt; from io import StringIO&amp;gt;&amp;gt;&amp;gt; f = StringIO()&amp;gt;&amp;gt;&amp;gt; f.write(&apos;hello&apos;)5&amp;gt;&amp;gt;&amp;gt; f.write">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-14T03:27:27.145Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="String与BytesIO">
+<meta name="twitter:description" content="StringIO与BytesIO原文链接StringIO可与c++的string流比较在内存中读写str先创建一个StringIO，然后像文件一样写入 12345678910&amp;gt;&amp;gt;&amp;gt; from io import StringIO&amp;gt;&amp;gt;&amp;gt; f = StringIO()&amp;gt;&amp;gt;&amp;gt; f.write(&apos;hello&apos;)5&amp;gt;&amp;gt;&amp;gt; f.write">
+  
+    <link rel="alternate" href="/atom.xml" title="Python Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Python Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">victor的个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-StringIOandBytesIO" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/14/StringIOandBytesIO/" class="article-date">
+  <time datetime="2018-05-13T16:00:00.000Z" itemprop="datePublished">2018-05-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      String与BytesIO
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="StringIO与BytesIO"><a href="#StringIO与BytesIO" class="headerlink" title="StringIO与BytesIO"></a>StringIO与BytesIO</h3><h3 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a><a href="https://blog.csdn.net/zgqxiexie/article/details/51176215" target="_blank" rel="noopener">原文链接</a></h3><h1 id="StringIO"><a href="#StringIO" class="headerlink" title="StringIO"></a>StringIO</h1><p>可与c++的string流比较<br>在内存中读写str<br>先创建一个StringIO，然后像文件一样写入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = StringIO()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">'hello'</span>)</span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">' '</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">'world!'</span>)</span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(f.getvalue())</span><br><span class="line">hello world!</span><br></pre></td></tr></table></figure>
+<p><code>getvalue()</code>方法用于获得写入后的str。<br>可以看出<code>write</code>方法是追加的，而不会把原来的<code>str</code>覆盖<br><code>f.write(str)</code>会返回长度</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>n=(f.write(<span class="string">'haha'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n</span><br></pre></td></tr></table></figure>
+<p>要读取<code>StringIO</code>，可以用一个<code>str</code>初始化<code>StringIO</code>，然后，像读文件一样读取：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = StringIO(<span class="string">'Hello!\nHi!\nGoodbye!'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line"><span class="meta">... </span>    s = f.readline()</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">if</span> s == <span class="string">''</span>:</span><br><span class="line"><span class="meta">... </span>        <span class="keyword">break</span></span><br><span class="line"><span class="meta">... </span>    print(s.strip())</span><br><span class="line">...</span><br><span class="line">Hello!</span><br><span class="line">Hi!</span><br><span class="line">Goodbye!</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="getvalue-与read-方法的不同"><a href="#getvalue-与read-方法的不同" class="headerlink" title="getvalue()与read()方法的不同"></a><code>getvalue()</code>与<code>read()</code>方法的不同</h2><p>getvalue会一次性给出str的所有值，而read是从当前位置以后读取 </p>
+<ul>
+<li><code>f.seek(0)</code>可以重置位置到开头，f.seek(x)位置会到第x个字节 </li>
+<li><code>f.tell()</code>可以告诉你当前指针所在位置</li>
+</ul>
+<h1 id="BytesIO"><a href="#BytesIO" class="headerlink" title="BytesIO"></a>BytesIO</h1><p><code>StringIO</code>操作的只能是<code>str</code>，如果要操作二进制数据，就需要使用<code>BytesIO</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = BytesIO()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">'中文'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(f.getvalue())</span><br><span class="line"><span class="string">b'\xe4\xb8\xad\xe6\x96\x87'</span></span><br></pre></td></tr></table></figure>
+<p>请注意，写入的不是<code>str</code>，而是经过UTF-8编码的bytes。<br>和StringIO类似，可以用一个bytes初始化BytesIO，然后，像读文件一样读取：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = BytesIO(<span class="string">b'\xe4\xb8\xad\xe6\x96\x87'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.read()</span><br><span class="line"><span class="string">b'\xe4\xb8\xad\xe6\x96\x87'</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/14/StringIOandBytesIO/" data-id="cjh5rh1ry00016rjl4ojbi2m3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/14/CentOSNoteBook01/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          linux笔记-基础命令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/14/SeriorFunctionAndObject/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">高级函数和面向对象的三大特性</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/24/regular/">正则表达式 --- 编程元素中的深闺怨妇</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/14/AtarteFunctionAndObjectFunction/">实例方法静态方法和类方法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/14/victor/">victor</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/14/CentOSNoteBook01/">linux笔记-基础命令</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/14/StringIOandBytesIO/">String与BytesIO</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 victor<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
