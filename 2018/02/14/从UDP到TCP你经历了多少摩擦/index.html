@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="​    我本来想先写一下TCP/IP协议，但奈何形容词汇实在匮乏，所以我决定还是就从UDP开始写到TCP吧，若是对网络协议陌生可自行Google（host文件添加Google以及IP即可访问，或者用vpn）。 ​    首先说下UDP： UDP介绍UDP — 用户数据报协议，是一个无连接的简单的面向数据报的运输层协议。UDP不提供可靠性，它只是把应用程序传给IP层的数据报发送出去，但是并不能保证">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/05/18/hello-world/index.html">
+<meta property="og:title" content="从UDP到TCP你经历了多少摩擦">
+<meta property="og:url" content="http://yoursite.com/2018/02/14/从UDP到TCP你经历了多少摩擦/index.html">
 <meta property="og:site_name" content="Python Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="​    我本来想先写一下TCP/IP协议，但奈何形容词汇实在匮乏，所以我决定还是就从UDP开始写到TCP吧，若是对网络协议陌生可自行Google（host文件添加Google以及IP即可访问，或者用vpn）。 ​    首先说下UDP： UDP介绍UDP — 用户数据报协议，是一个无连接的简单的面向数据报的运输层协议。UDP不提供可靠性，它只是把应用程序传给IP层的数据报发送出去，但是并不能保证">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-18T09:08:50.147Z">
+<meta property="og:updated_time" content="2018-05-18T09:08:50.117Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="从UDP到TCP你经历了多少摩擦">
+<meta name="twitter:description" content="​    我本来想先写一下TCP/IP协议，但奈何形容词汇实在匮乏，所以我决定还是就从UDP开始写到TCP吧，若是对网络协议陌生可自行Google（host文件添加Google以及IP即可访问，或者用vpn）。 ​    首先说下UDP： UDP介绍UDP — 用户数据报协议，是一个无连接的简单的面向数据报的运输层协议。UDP不提供可靠性，它只是把应用程序传给IP层的数据报发送出去，但是并不能保证">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/18/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/14/从UDP到TCP你经历了多少摩擦/"/>
 
 
 
 
 
-  <title>Hello World | Python Blog</title>
+  <title>从UDP到TCP你经历了多少摩擦 | Python Blog</title>
   
 
 
@@ -266,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/14/从UDP到TCP你经历了多少摩擦/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="victor">
@@ -283,7 +283,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Hello World</h2>
+          <h2 class="post-title" itemprop="name headline">从UDP到TCP你经历了多少摩擦</h2>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-18T17:08:49+08:00">
-                2018-05-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-14T00:00:00+08:00">
+                2018-02-14
               </time>
             
 
@@ -333,16 +333,43 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <p>​    我本来想先写一下TCP/IP协议，但奈何形容词汇实在匮乏，所以我决定还是就从UDP开始写到TCP吧，若是对网络协议陌生可自行Google（host文件添加Google以及IP即可访问，或者用vpn）。</p>
+<p>​    首先说下UDP：</p>
+<h3 id="UDP介绍"><a href="#UDP介绍" class="headerlink" title="UDP介绍"></a>UDP介绍</h3><p>UDP — 用户数据报协议，是一个无连接的简单的面向数据报的运输层协议。UDP不提供可靠性，它只是把应用程序传给IP层的数据报发送出去，但是并不能保证它们能到达目的地。由于UDP在传输数据报前不用在客户和服务器之间建立一个连接，且没有超时重发等机制，故而传输速度很快。</p>
+<p>UDP是一种面向无连接的协议，每个数据报都是一个独立的信息，包括完整的源地址或目的地址，它在网络上以任何可能的路径传往目的地，因此能否到达目的地，到达目的地的时间以及内容的正确性都是不能被保证的。</p>
+<h3 id="UDP特点："><a href="#UDP特点：" class="headerlink" title="UDP特点："></a>UDP特点：</h3><p>UDP是面向无连接的通讯协议，UDP数据包括目的端口号和源端口号信息，由于通讯不需要连接，所以可以实现广播发送。 UDP传输数据时有大小限制，每个被传输的数据报必须限定在64KB之内。 UDP是一个不可靠的协议，发送方所发送的数据报并不一定以相同的次序到达接收方。</p>
+<p>【适用情况】</p>
+<p>UDP是面向消息的协议，通信时不需要建立连接，数据的传输自然是不可靠的，UDP一般用于多点通信和实时的数据业务，比如</p>
+<ul>
+<li>语音广播</li>
+<li>视频</li>
+<li>QQ</li>
+<li>TFTP(简单文件传送）</li>
+<li>SNMP（简单网络管理协议）</li>
+<li>RIP（路由信息协议，如报告股票市场，航空信息）</li>
+<li>DNS(域名解释）</li>
+</ul>
+<p><code>注重速度流畅</code></p>
+<p>UDP操作简单，而且仅需要较少的监护，因此通常用于局域网高可靠性的分散系统中client/server应用程序。例如视频会议系统，并不要求音频视频数据绝对的正确，只要保证连贯性就可以了，这种情况下显然使用UDP会更合理一些。</p>
+<p>下面是使用UDP的收发数据的代码：</p>
+<p>发送方：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 创建UDP套接字</span></span><br><span class="line">    udpServer = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 接收方IP和PORT</span></span><br><span class="line">    sendAddr = (<span class="string">'10.7.152.139'</span>, <span class="number">8080</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 获取要发送的数据</span></span><br><span class="line">    sendData = input(<span class="string">'Input:'</span>).encode(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 发送数据到指定IP</span></span><br><span class="line">    udpServer.sendto(sendData, sendAddr)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 关闭套接字</span></span><br><span class="line">    udpServer.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>接收方：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 创建udp套接字</span></span><br><span class="line">    udpclient = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 绑定接收PORT</span></span><br><span class="line">    udpclient.bind((<span class="string">''</span>, <span class="number">8080</span>))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 接收对方发送信息</span></span><br><span class="line">    recvData, addr = udpclient.recvfrom(<span class="number">1024</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 显示接收到的信息</span></span><br><span class="line">    print(recvData.decode(<span class="string">'utf-8'</span>))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 关闭套接字</span></span><br><span class="line">    udpclient.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h3 id="TCP优点"><a href="#TCP优点" class="headerlink" title="TCP优点"></a>TCP优点</h3><p>TCP—传输控制协议。UDP能够通信并且数据传输较快，但是它并不能保证数据的可靠通信，若是通信双方答非所问想必亦是极为无奈的。所以TCP有三个UDP都不曾具备的特点：</p>
+<p>1、数据不丢：TCP传输数据有三次握手机制可以保证传输数据的完整性</p>
+<p>2、数据不传错：TCP的冗余校验机制可以保证数据的准确性</p>
+<p>3、缓解网络拥堵：除开以上两方面外，TCP还有一个滑动窗口机制可以控制传输所占带宽，有效缓解网络拥堵</p>
+<p>所以TCP基于这三个机制之上的数据传输完全可靠。但是任何存在都不会只有优点没有缺点，TCP亦是如此。</p>
+<h3 id="TCP缺点"><a href="#TCP缺点" class="headerlink" title="TCP缺点"></a>TCP缺点</h3><p>TCP的三次握手机制可以保证数据传输的完整性，但是正应为有三次确定的流程所以数据传输的速度比不上UDP。</p>
+<p>TCP的冗余校验机制可以保证数据传输的准确性，但也是正应为如此所以数据传输的体积要大于实际数据体积。</p>
+<p>TCP的滑动窗口机制可以保证对拥堵的网络带宽有效缓解，但是在网络状况不好的情况下，数据传输速度也会相应缓慢。</p>
+<h5 id="所以选择通信协议的时候可以根据需求来使用UDP和TCP。像传输视频可以用UDP，毕竟视频卡个一帧两帧没人会太过计较。但是账号密码就需要TCP，如果账号密码不对是因为通信的原因，想必用户体验也是极差。"><a href="#所以选择通信协议的时候可以根据需求来使用UDP和TCP。像传输视频可以用UDP，毕竟视频卡个一帧两帧没人会太过计较。但是账号密码就需要TCP，如果账号密码不对是因为通信的原因，想必用户体验也是极差。" class="headerlink" title="所以选择通信协议的时候可以根据需求来使用UDP和TCP。像传输视频可以用UDP，毕竟视频卡个一帧两帧没人会太过计较。但是账号密码就需要TCP，如果账号密码不对是因为通信的原因，想必用户体验也是极差。"></a>所以选择通信协议的时候可以根据需求来使用UDP和TCP。像传输视频可以用UDP，毕竟视频卡个一帧两帧没人会太过计较。但是账号密码就需要TCP，如果账号密码不对是因为通信的原因，想必用户体验也是极差。</h5><p>TCP收发数据代码：</p>
+<p>发送方：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> socket, AF_INET, SOCK_STREAM</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    server = socket(AF_INET, SOCK_STREAM)  <span class="comment"># socket默认是使用TCP传输协议，所以（）里面可以不写</span></span><br><span class="line">    server.bind((<span class="string">'10.7.152.139'</span>, <span class="number">8080</span>))  <span class="comment"># 绑定IP和PORT</span></span><br><span class="line">    server.listen(<span class="number">512</span>)  <span class="comment"># 开启监听</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        client, addr = server.accept()  <span class="comment"># 接收请求</span></span><br><span class="line">        print(str(addr) + <span class="string">'已连接'</span>)</span><br><span class="line">        data = input(<span class="string">'Input:'</span>)</span><br><span class="line">        client.send(data.encode(<span class="string">'utf-8'</span>)) <span class="comment"># 编码发送</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>接收方：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> socket, AF_INET, SOCK_STREAM</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    client = socket(AF_INET, SOCK_STREAM)</span><br><span class="line">    client.connect((<span class="string">'10.7.152.139'</span>, <span class="number">8080</span>))  <span class="comment"># 接收IP和端口</span></span><br><span class="line">    data = client.recv(<span class="number">1024</span>)  <span class="comment"># 接收信息</span></span><br><span class="line">    print(data.decode(<span class="string">'utf-8'</span>))  <span class="comment"># 解码显示</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h5 id="总结一下就是：TCP传输可以保证数据的可靠传输，但是这些都建立在诸多验证机制上。"><a href="#总结一下就是：TCP传输可以保证数据的可靠传输，但是这些都建立在诸多验证机制上。" class="headerlink" title="总结一下就是：TCP传输可以保证数据的可靠传输，但是这些都建立在诸多验证机制上。"></a>总结一下就是：TCP传输可以保证数据的可靠传输，但是这些都建立在诸多验证机制上。</h5><h5 id="UDP不能保证数据的可靠传输，但是对不要求数据完整性的数据传输速度快一点点。"><a href="#UDP不能保证数据的可靠传输，但是对不要求数据完整性的数据传输速度快一点点。" class="headerlink" title="UDP不能保证数据的可靠传输，但是对不要求数据完整性的数据传输速度快一点点。"></a>UDP不能保证数据的可靠传输，但是对不要求数据完整性的数据传输速度快一点点。</h5><h5 id="所以建议使用TCP"><a href="#所以建议使用TCP" class="headerlink" title="所以建议使用TCP"></a>所以建议使用TCP</h5>
       
     </div>
     
@@ -390,18 +417,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/14/AtarteFunctionAndObjectFunction/" rel="next" title="实例方法静态方法和类方法">
-                <i class="fa fa-chevron-left"></i> 实例方法静态方法和类方法
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/24/regular/" rel="prev" title="正则表达式 --- 编程元素中的深闺怨妇">
-                正则表达式 --- 编程元素中的深闺怨妇 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/14/正则表达式和网络编程的爱恨情仇/" rel="prev" title="正则表达式和网络编程的爱恨情仇">
+                正则表达式和网络编程的爱恨情仇 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -479,7 +502,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -554,7 +577,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP介绍"><span class="nav-number">1.</span> <span class="nav-text">UDP介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP特点："><span class="nav-number">2.</span> <span class="nav-text">UDP特点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP优点"><span class="nav-number">3.</span> <span class="nav-text">TCP优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP缺点"><span class="nav-number">4.</span> <span class="nav-text">TCP缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#所以选择通信协议的时候可以根据需求来使用UDP和TCP。像传输视频可以用UDP，毕竟视频卡个一帧两帧没人会太过计较。但是账号密码就需要TCP，如果账号密码不对是因为通信的原因，想必用户体验也是极差。"><span class="nav-number">4.0.1.</span> <span class="nav-text">所以选择通信协议的时候可以根据需求来使用UDP和TCP。像传输视频可以用UDP，毕竟视频卡个一帧两帧没人会太过计较。但是账号密码就需要TCP，如果账号密码不对是因为通信的原因，想必用户体验也是极差。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#总结一下就是：TCP传输可以保证数据的可靠传输，但是这些都建立在诸多验证机制上。"><span class="nav-number">4.0.2.</span> <span class="nav-text">总结一下就是：TCP传输可以保证数据的可靠传输，但是这些都建立在诸多验证机制上。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#UDP不能保证数据的可靠传输，但是对不要求数据完整性的数据传输速度快一点点。"><span class="nav-number">4.0.3.</span> <span class="nav-text">UDP不能保证数据的可靠传输，但是对不要求数据完整性的数据传输速度快一点点。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#所以建议使用TCP"><span class="nav-number">4.0.4.</span> <span class="nav-text">所以建议使用TCP</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
