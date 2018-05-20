@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="StringIO与BytesIO原文链接StringIO可与c++的string流比较在内存中读写str先创建一个StringIO，然后像文件一样写入 12345678910&amp;gt;&amp;gt;&amp;gt; from io import StringIO&amp;gt;&amp;gt;&amp;gt; f = StringIO()&amp;gt;&amp;gt;&amp;gt; f.write(&apos;hello&apos;)5&amp;gt;&amp;gt;&amp;gt; f.write">
+<meta name="description" content="if判断语句if判断语句介绍 if语句是用来进行判断的，其使用格式如下：  12if 要判断的条件:    条件成立时，要做的事情  demo1:  12345678age = 30print &amp;quot;------if判断开始------&amp;quot;if age&amp;gt;=18:    print &amp;quot;我已经成年了&amp;quot;print &amp;quot;------if判断结束------&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&#39;String与BytesIO&#39;">
-<meta property="og:url" content="http://yoursite.com/2018/05/19/String与BytesIO/index.html">
+<meta property="og:title" content="if判断语句和运算符">
+<meta property="og:url" content="http://yoursite.com/2018/05/20/if判断语句和运算符/index.html">
 <meta property="og:site_name" content="Python Blog">
-<meta property="og:description" content="StringIO与BytesIO原文链接StringIO可与c++的string流比较在内存中读写str先创建一个StringIO，然后像文件一样写入 12345678910&amp;gt;&amp;gt;&amp;gt; from io import StringIO&amp;gt;&amp;gt;&amp;gt; f = StringIO()&amp;gt;&amp;gt;&amp;gt; f.write(&apos;hello&apos;)5&amp;gt;&amp;gt;&amp;gt; f.write">
+<meta property="og:description" content="if判断语句if判断语句介绍 if语句是用来进行判断的，其使用格式如下：  12if 要判断的条件:    条件成立时，要做的事情  demo1:  12345678age = 30print &amp;quot;------if判断开始------&amp;quot;if age&amp;gt;=18:    print &amp;quot;我已经成年了&amp;quot;print &amp;quot;------if判断结束------&amp;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-19T05:50:15.039Z">
+<meta property="og:updated_time" content="2018-05-20T03:11:12.151Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;String与BytesIO&#39;">
-<meta name="twitter:description" content="StringIO与BytesIO原文链接StringIO可与c++的string流比较在内存中读写str先创建一个StringIO，然后像文件一样写入 12345678910&amp;gt;&amp;gt;&amp;gt; from io import StringIO&amp;gt;&amp;gt;&amp;gt; f = StringIO()&amp;gt;&amp;gt;&amp;gt; f.write(&apos;hello&apos;)5&amp;gt;&amp;gt;&amp;gt; f.write">
+<meta name="twitter:title" content="if判断语句和运算符">
+<meta name="twitter:description" content="if判断语句if判断语句介绍 if语句是用来进行判断的，其使用格式如下：  12if 要判断的条件:    条件成立时，要做的事情  demo1:  12345678age = 30print &amp;quot;------if判断开始------&amp;quot;if age&amp;gt;=18:    print &amp;quot;我已经成年了&amp;quot;print &amp;quot;------if判断结束------&amp;">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/19/String与BytesIO/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/20/if判断语句和运算符/"/>
 
 
 
 
 
-  <title>'String与BytesIO' | Python Blog</title>
+  <title>if判断语句和运算符 | Python Blog</title>
   
 
 
@@ -266,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/String与BytesIO/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/if判断语句和运算符/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="victor">
@@ -283,7 +283,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">'String与BytesIO'</h2>
+          <h2 class="post-title" itemprop="name headline">if判断语句和运算符</h2>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-19T13:48:06+08:00">
-                2018-05-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-20T11:12:47+08:00">
+                2018-05-20
               </time>
             
 
@@ -333,22 +333,111 @@
       
 
       
-        <h3 id="StringIO与BytesIO"><a href="#StringIO与BytesIO" class="headerlink" title="StringIO与BytesIO"></a>StringIO与BytesIO</h3><h3 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a><a href="https://blog.csdn.net/zgqxiexie/article/details/51176215" target="_blank" rel="noopener">原文链接</a></h3><h1 id="StringIO"><a href="#StringIO" class="headerlink" title="StringIO"></a>StringIO</h1><p>可与c++的string流比较<br>在内存中读写str<br>先创建一个StringIO，然后像文件一样写入</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = StringIO()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">'hello'</span>)</span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">' '</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">'world!'</span>)</span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(f.getvalue())</span><br><span class="line">hello world!</span><br></pre></td></tr></table></figure>
-<p><code>getvalue()</code>方法用于获得写入后的str。<br>可以看出<code>write</code>方法是追加的，而不会把原来的<code>str</code>覆盖<br><code>f.write(str)</code>会返回长度</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>n=(f.write(<span class="string">'haha'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n</span><br></pre></td></tr></table></figure>
-<p>要读取<code>StringIO</code>，可以用一个<code>str</code>初始化<code>StringIO</code>，然后，像读文件一样读取：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = StringIO(<span class="string">'Hello!\nHi!\nGoodbye!'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line"><span class="meta">... </span>    s = f.readline()</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">if</span> s == <span class="string">''</span>:</span><br><span class="line"><span class="meta">... </span>        <span class="keyword">break</span></span><br><span class="line"><span class="meta">... </span>    print(s.strip())</span><br><span class="line">...</span><br><span class="line">Hello!</span><br><span class="line">Hi!</span><br><span class="line">Goodbye!</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="getvalue-与read-方法的不同"><a href="#getvalue-与read-方法的不同" class="headerlink" title="getvalue()与read()方法的不同"></a><code>getvalue()</code>与<code>read()</code>方法的不同</h2><p>getvalue会一次性给出str的所有值，而read是从当前位置以后读取 </p>
-<ul>
-<li><code>f.seek(0)</code>可以重置位置到开头，f.seek(x)位置会到第x个字节 </li>
-<li><code>f.tell()</code>可以告诉你当前指针所在位置</li>
+        <h1 id="if判断语句"><a href="#if判断语句" class="headerlink" title="if判断语句"></a>if判断语句</h1><h2 id="if判断语句介绍"><a href="#if判断语句介绍" class="headerlink" title="if判断语句介绍"></a><1>if判断语句介绍</1></h2><ul>
+<li>if语句是用来进行判断的，其使用格式如下：</li>
 </ul>
-<h1 id="BytesIO"><a href="#BytesIO" class="headerlink" title="BytesIO"></a>BytesIO</h1><p><code>StringIO</code>操作的只能是<code>str</code>，如果要操作二进制数据，就需要使用<code>BytesIO</code>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = BytesIO()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">'中文'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(f.getvalue())</span><br><span class="line"><span class="string">b'\xe4\xb8\xad\xe6\x96\x87'</span></span><br></pre></td></tr></table></figure>
-<p>请注意，写入的不是<code>str</code>，而是经过UTF-8编码的bytes。<br>和StringIO类似，可以用一个bytes初始化BytesIO，然后，像读文件一样读取：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = BytesIO(<span class="string">b'\xe4\xb8\xad\xe6\x96\x87'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.read()</span><br><span class="line"><span class="string">b'\xe4\xb8\xad\xe6\x96\x87'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if 要判断的条件:</span><br><span class="line">    条件成立时，要做的事情</span><br></pre></td></tr></table></figure>
+<ul>
+<li>demo1:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">age = 30</span><br><span class="line"></span><br><span class="line">print &quot;------if判断开始------&quot;</span><br><span class="line"></span><br><span class="line">if age&gt;=18:</span><br><span class="line">    print &quot;我已经成年了&quot;</span><br><span class="line"></span><br><span class="line">print &quot;------if判断结束------&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>运行结果:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">------if判断开始------</span><br><span class="line">我已经成年了</span><br><span class="line">------if判断结束------</span><br></pre></td></tr></table></figure>
+<ul>
+<li>demo2:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">age = 16</span><br><span class="line"></span><br><span class="line">print &quot;------if判断开始------&quot;</span><br><span class="line"></span><br><span class="line">if age&gt;=18:</span><br><span class="line">    print &quot;我已经成年了&quot;</span><br><span class="line"></span><br><span class="line">print &quot;------if判断结束------&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>运行结果:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">------if判断开始------</span><br><span class="line">------if判断结束------</span><br></pre></td></tr></table></figure>
+<p>小总结：</p>
+<ul>
+<li>以上2个demo仅仅是age变量的值不一样，结果却不同；能够看得出if判断语句的作用：就是当满足一定条件时才会执行那块代码，否则就不执行那块代码</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>代码的缩进为一个tab键，或者4个空格</li>
+</ul>
+<h1 id="比较-即关系-运算符"><a href="#比较-即关系-运算符" class="headerlink" title=" 比较(即关系)运算符"></a><1> 比较(即关系)运算符</1></h1><p>python中的比较运算符如下表</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>==</td>
+<td>检查两个操作数的值是否相等，如果是则条件变为真。</td>
+<td>如a=3,b=3则（a == b) 为 true.</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>检查两个操作数的值是否相等，如果值不相等，则条件变为真。</td>
+<td>如a=1,b=3则(a != b) 为 true.</td>
+</tr>
+<tr>
+<td>&lt;&gt;</td>
+<td>检查两个操作数的值是否相等，如果值不相等，则条件变为真。</td>
+<td>如a=1,b=3则(a &lt;&gt; b) 为 true。这个类似于 != 运算符</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>检查左操作数的值是否大于右操作数的值，如果是，则条件成立。</td>
+<td>如a=7,b=3则(a &gt; b) 为 true.</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>检查左操作数的值是否小于右操作数的值，如果是，则条件成立。</td>
+<td>如a=7,b=3则(a &lt; b) 为 false.</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>检查左操作数的值是否大于或等于右操作数的值，如果是，则条件成立。</td>
+<td>如a=3,b=3则(a &gt;= b) 为 true.</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>检查左操作数的值是否小于或等于右操作数的值，如果是，则条件成立。</td>
+<td>如a=3,b=3则(a &lt;= b) 为 true.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title=" 逻辑运算符"></a><2> 逻辑运算符</2></h1><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>逻辑表达式</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>and</td>
+<td>x and y</td>
+<td>布尔”与” - 如果 x 为 False，x and y 返回 False，否则它返回 y 的计算值。</td>
+<td>(a and b) 返回 20。</td>
+</tr>
+<tr>
+<td>or</td>
+<td>x or y</td>
+<td>布尔”或” - 如果 x 是 True，它返回 True，否则它返回 y 的计算值。</td>
+<td>(a or b) 返回 10。</td>
+</tr>
+<tr>
+<td>not</td>
+<td>not x</td>
+<td>布尔”非” - 如果 x 为 True，返回 False 。如果 x 为 False，它返回 True。</td>
+<td>not(a and b) 返回 False</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -397,8 +486,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/19/linux笔记-基础命令/" rel="next" title="'linux笔记-基础命令'">
-                <i class="fa fa-chevron-left"></i> 'linux笔记-基础命令'
+              <a href="/2018/05/20/Python判断语句应用/" rel="next" title="Python判断语句应用">
+                <i class="fa fa-chevron-left"></i> Python判断语句应用
               </a>
             
           </div>
@@ -406,10 +495,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/19/Python输入/" rel="prev" title="'Python输入'">
-                'Python输入' <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -561,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#StringIO与BytesIO"><span class="nav-number">1.</span> <span class="nav-text">StringIO与BytesIO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原文链接"><span class="nav-number">2.</span> <span class="nav-text">原文链接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StringIO"><span class="nav-number"></span> <span class="nav-text">StringIO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#getvalue-与read-方法的不同"><span class="nav-number"></span> <span class="nav-text">getvalue()与read()方法的不同</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BytesIO"><span class="nav-number"></span> <span class="nav-text">BytesIO</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#if判断语句"><span class="nav-number">1.</span> <span class="nav-text">if判断语句</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#if判断语句介绍"><span class="nav-number">1.1.</span> <span class="nav-text">if判断语句介绍</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比较-即关系-运算符"><span class="nav-number">2.</span> <span class="nav-text"> 比较(即关系)运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">3.</span> <span class="nav-text"> 逻辑运算符</span></a></li></ol></div>
             
 
           </div>

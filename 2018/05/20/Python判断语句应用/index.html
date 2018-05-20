@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="StringIO与BytesIO原文链接StringIO可与c++的string流比较在内存中读写str先创建一个StringIO，然后像文件一样写入 12345678910&amp;gt;&amp;gt;&amp;gt; from io import StringIO&amp;gt;&amp;gt;&amp;gt; f = StringIO()&amp;gt;&amp;gt;&amp;gt; f.write(&apos;hello&apos;)5&amp;gt;&amp;gt;&amp;gt; f.write">
+<meta name="description" content="if-else 想一想：在使用if的时候，它只能做到满足条件时要做的事情。那万一需要在不满足条件的时候，做某些事，该怎么办呢？ 答：else  if-else的使用格式12345678910if 条件:    满足条件时要做的事情1    满足条件时要做的事情2    满足条件时要做的事情3    ...(省略)...else:    不满足条件时要做的事情1    不满足条件时要做的事情2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&#39;String与BytesIO&#39;">
-<meta property="og:url" content="http://yoursite.com/2018/05/19/String与BytesIO/index.html">
+<meta property="og:title" content="Python判断语句应用">
+<meta property="og:url" content="http://yoursite.com/2018/05/20/Python判断语句应用/index.html">
 <meta property="og:site_name" content="Python Blog">
-<meta property="og:description" content="StringIO与BytesIO原文链接StringIO可与c++的string流比较在内存中读写str先创建一个StringIO，然后像文件一样写入 12345678910&amp;gt;&amp;gt;&amp;gt; from io import StringIO&amp;gt;&amp;gt;&amp;gt; f = StringIO()&amp;gt;&amp;gt;&amp;gt; f.write(&apos;hello&apos;)5&amp;gt;&amp;gt;&amp;gt; f.write">
+<meta property="og:description" content="if-else 想一想：在使用if的时候，它只能做到满足条件时要做的事情。那万一需要在不满足条件的时候，做某些事，该怎么办呢？ 答：else  if-else的使用格式12345678910if 条件:    满足条件时要做的事情1    满足条件时要做的事情2    满足条件时要做的事情3    ...(省略)...else:    不满足条件时要做的事情1    不满足条件时要做的事情2">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-19T05:50:15.039Z">
+<meta property="og:updated_time" content="2018-05-20T03:12:16.155Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;String与BytesIO&#39;">
-<meta name="twitter:description" content="StringIO与BytesIO原文链接StringIO可与c++的string流比较在内存中读写str先创建一个StringIO，然后像文件一样写入 12345678910&amp;gt;&amp;gt;&amp;gt; from io import StringIO&amp;gt;&amp;gt;&amp;gt; f = StringIO()&amp;gt;&amp;gt;&amp;gt; f.write(&apos;hello&apos;)5&amp;gt;&amp;gt;&amp;gt; f.write">
+<meta name="twitter:title" content="Python判断语句应用">
+<meta name="twitter:description" content="if-else 想一想：在使用if的时候，它只能做到满足条件时要做的事情。那万一需要在不满足条件的时候，做某些事，该怎么办呢？ 答：else  if-else的使用格式12345678910if 条件:    满足条件时要做的事情1    满足条件时要做的事情2    满足条件时要做的事情3    ...(省略)...else:    不满足条件时要做的事情1    不满足条件时要做的事情2">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/19/String与BytesIO/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/20/Python判断语句应用/"/>
 
 
 
 
 
-  <title>'String与BytesIO' | Python Blog</title>
+  <title>Python判断语句应用 | Python Blog</title>
   
 
 
@@ -266,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/String与BytesIO/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/Python判断语句应用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="victor">
@@ -283,7 +283,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">'String与BytesIO'</h2>
+          <h2 class="post-title" itemprop="name headline">Python判断语句应用</h2>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-19T13:48:06+08:00">
-                2018-05-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-20T11:12:47+08:00">
+                2018-05-20
               </time>
             
 
@@ -333,23 +333,88 @@
       
 
       
-        <h3 id="StringIO与BytesIO"><a href="#StringIO与BytesIO" class="headerlink" title="StringIO与BytesIO"></a>StringIO与BytesIO</h3><h3 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a><a href="https://blog.csdn.net/zgqxiexie/article/details/51176215" target="_blank" rel="noopener">原文链接</a></h3><h1 id="StringIO"><a href="#StringIO" class="headerlink" title="StringIO"></a>StringIO</h1><p>可与c++的string流比较<br>在内存中读写str<br>先创建一个StringIO，然后像文件一样写入</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = StringIO()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">'hello'</span>)</span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">' '</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">'world!'</span>)</span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(f.getvalue())</span><br><span class="line">hello world!</span><br></pre></td></tr></table></figure>
-<p><code>getvalue()</code>方法用于获得写入后的str。<br>可以看出<code>write</code>方法是追加的，而不会把原来的<code>str</code>覆盖<br><code>f.write(str)</code>会返回长度</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>n=(f.write(<span class="string">'haha'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n</span><br></pre></td></tr></table></figure>
-<p>要读取<code>StringIO</code>，可以用一个<code>str</code>初始化<code>StringIO</code>，然后，像读文件一样读取：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = StringIO(<span class="string">'Hello!\nHi!\nGoodbye!'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line"><span class="meta">... </span>    s = f.readline()</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">if</span> s == <span class="string">''</span>:</span><br><span class="line"><span class="meta">... </span>        <span class="keyword">break</span></span><br><span class="line"><span class="meta">... </span>    print(s.strip())</span><br><span class="line">...</span><br><span class="line">Hello!</span><br><span class="line">Hi!</span><br><span class="line">Goodbye!</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="getvalue-与read-方法的不同"><a href="#getvalue-与read-方法的不同" class="headerlink" title="getvalue()与read()方法的不同"></a><code>getvalue()</code>与<code>read()</code>方法的不同</h2><p>getvalue会一次性给出str的所有值，而read是从当前位置以后读取 </p>
-<ul>
-<li><code>f.seek(0)</code>可以重置位置到开头，f.seek(x)位置会到第x个字节 </li>
-<li><code>f.tell()</code>可以告诉你当前指针所在位置</li>
+        <h1 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h1><blockquote>
+<p>想一想：在使用if的时候，它只能做到满足条件时要做的事情。那万一需要在不满足条件的时候，做某些事，该怎么办呢？</p>
+<p>答：else</p>
+</blockquote>
+<h2 id="if-else的使用格式"><a href="#if-else的使用格式" class="headerlink" title="if-else的使用格式"></a><1>if-else的使用格式</1></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if 条件:</span><br><span class="line">    满足条件时要做的事情1</span><br><span class="line">    满足条件时要做的事情2</span><br><span class="line">    满足条件时要做的事情3</span><br><span class="line">    ...(省略)...</span><br><span class="line">else:</span><br><span class="line">    不满足条件时要做的事情1</span><br><span class="line">    不满足条件时要做的事情2</span><br><span class="line">    不满足条件时要做的事情3</span><br><span class="line">    ...(省略)...</span><br></pre></td></tr></table></figure>
+<p>demo1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">chePiao = 1 # 用1代表有车票，0代表没有车票</span><br><span class="line">if chePiao == 1:</span><br><span class="line">    print(&quot;有车票，可以上火车&quot;)</span><br><span class="line">    print(&quot;终于可以见到Ta了，美滋滋~~~&quot;)</span><br><span class="line">else:</span><br><span class="line">    print(&quot;没有车票，不能上车&quot;)</span><br><span class="line">    print(&quot;亲爱的，那就下次见了，一票难求啊~~~~(&gt;_&lt;)~~~~&quot;)</span><br></pre></td></tr></table></figure>
+<p>结果1：有车票的情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">有车票，可以上火车</span><br><span class="line">终于可以见到Ta了，美滋滋~~~</span><br></pre></td></tr></table></figure>
+<p>结果2：没有车票的情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">没有车票，不能上课</span><br><span class="line">亲爱的，那就下次见了，一票难求啊~~~~(&gt;_&lt;)~~~~</span><br></pre></td></tr></table></figure>
+<h1 id="elif"><a href="#elif" class="headerlink" title="elif"></a>elif</h1><ul>
+<li><p>想一想:</p>
+<blockquote>
+<p>if能完成当xxx时做事情</p>
+<p>if-else能完成当xxx时做事情1，否则做事情2</p>
+<p>如果有这样一种情况：当xxx1时做事情1，当xxx2时做事情2，当xxx3时做事情3，那该怎么实现呢？</p>
+</blockquote>
+</li>
+<li><p>答:</p>
+<blockquote>
+<p>elif</p>
+</blockquote>
+</li>
 </ul>
-<h1 id="BytesIO"><a href="#BytesIO" class="headerlink" title="BytesIO"></a>BytesIO</h1><p><code>StringIO</code>操作的只能是<code>str</code>，如果要操作二进制数据，就需要使用<code>BytesIO</code>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = BytesIO()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">'中文'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(f.getvalue())</span><br><span class="line"><span class="string">b'\xe4\xb8\xad\xe6\x96\x87'</span></span><br></pre></td></tr></table></figure>
-<p>请注意，写入的不是<code>str</code>，而是经过UTF-8编码的bytes。<br>和StringIO类似，可以用一个bytes初始化BytesIO，然后，像读文件一样读取：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = BytesIO(<span class="string">b'\xe4\xb8\xad\xe6\x96\x87'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.read()</span><br><span class="line"><span class="string">b'\xe4\xb8\xad\xe6\x96\x87'</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="elif的功能"><a href="#elif的功能" class="headerlink" title=" elif的功能"></a><1> elif的功能</1></h2><p>elif的使用格式如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if xxx1:</span><br><span class="line">    事情1</span><br><span class="line">elif xxx2:</span><br><span class="line">    事情2</span><br><span class="line">elif xxx3:</span><br><span class="line">    事情3</span><br></pre></td></tr></table></figure>
+<p>说明:</p>
+<ul>
+<li>当xxx1满足时，执行事情1，然后整个if结束</li>
+<li>当xxx1不满足时，那么判断xxx2，如果xxx2满足，则执行事情2，然后整个if结束</li>
+<li>当xxx1不满足时，xxx2也不满足，如果xxx3满足，则执行事情3，然后整个if结束</li>
+</ul>
+<p>demo:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">score = 77</span><br><span class="line"></span><br><span class="line">if score&gt;=90 and score&lt;=100:</span><br><span class="line">    print(&apos;本次考试，等级为A&apos;)</span><br><span class="line">elif score&gt;=80 and score&lt;90:</span><br><span class="line">    print(&apos;本次考试，等级为B&apos;)</span><br><span class="line">elif score&gt;=70 and score&lt;80:</span><br><span class="line">    print(&apos;本次考试，等级为C&apos;)</span><br><span class="line">elif score&gt;=60 and score&lt;70:</span><br><span class="line">    print(&apos;本次考试，等级为D&apos;)</span><br><span class="line">elif score&gt;=0 and score&lt;60:</span><br><span class="line">    print(&apos;本次考试，等级为E&apos;)</span><br></pre></td></tr></table></figure>
+<h2 id="注意点"><a href="#注意点" class="headerlink" title=" 注意点"></a><2> 注意点</2></h2><ul>
+<li><p>可以和else一起使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if 性别为男性:</span><br><span class="line">    输出男性的特征</span><br><span class="line">    ...</span><br><span class="line">elif 性别为女性:</span><br><span class="line">    输出女性的特征</span><br><span class="line">    ...</span><br><span class="line">else:</span><br><span class="line">    第三种性别的特征</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<p>说明:</p>
+<ul>
+<li>当 “性别为男性” 满足时，执行 “输出男性的特征”的相关代码</li>
+<li>当 “性别为男性” 不满足时，如果 “性别为女性”满足，则执行 “输出女性的特征”的相关代码</li>
+<li>当 “性别为男性” 不满足，“性别为女性”也不满足，那么久默认执行else后面的代码，即 “第三种性别的特征”相关代码</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>elif必须和if一起使用，否则出错</li>
+</ul>
+<h1 id="if嵌套"><a href="#if嵌套" class="headerlink" title="if嵌套"></a>if嵌套</h1><p>通过学习if的基本用法，已经知道了</p>
+<ul>
+<li>当需要满足条件去做事情的这种情况需要使用if</li>
+<li>当满足条件时做事情A，不满足条件做事情B的这种情况使用if-else</li>
+</ul>
+<p>想一想：</p>
+<blockquote>
+<p>坐火车或者地铁的实际情况是：先进行安检如果安检通过才会判断是否有车票，或者是先检查是否有车票之后才会进行安检，即实际的情况某个判断是再另外一个判断成立的基础上进行的，这样的情况该怎样解决呢？</p>
+</blockquote>
+<p>答：</p>
+<blockquote>
+<p>if嵌套</p>
+</blockquote>
+<h2 id="if嵌套的格式"><a href="#if嵌套的格式" class="headerlink" title="if嵌套的格式"></a><1>if嵌套的格式</1></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if 条件1:</span><br><span class="line"></span><br><span class="line">    满足条件1 做的事情1</span><br><span class="line">    满足条件1 做的事情2</span><br><span class="line">    ...(省略)...</span><br><span class="line"></span><br><span class="line">    if 条件2:</span><br><span class="line">        满足条件2 做的事情1</span><br><span class="line">        满足条件2 做的事情2</span><br><span class="line">        ...(省略)...</span><br></pre></td></tr></table></figure>
+<ul>
+<li>说明<ul>
+<li>外层的if判断，也可以是if-else</li>
+<li>内层的if判断，也可以是if-else</li>
+<li>根据实际开发的情况，进行选择</li>
+</ul>
+</li>
+</ul>
+<h2 id="if嵌套的应用"><a href="#if嵌套的应用" class="headerlink" title="if嵌套的应用"></a><2>if嵌套的应用</2></h2><p>demo：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">chePiao = 1     # 用1代表有车票，0代表没有车票</span><br><span class="line">daoLenght = 9     # 刀子的长度，单位为cm</span><br><span class="line"></span><br><span class="line">if chePiao == 1:</span><br><span class="line">    print(&quot;有车票，可以进站&quot;)</span><br><span class="line">    if daoLenght &lt; 10:</span><br><span class="line">        print(&quot;通过安检&quot;)</span><br><span class="line">        print(&quot;终于可以见到Ta了，美滋滋~~~&quot;)</span><br><span class="line">    else:</span><br><span class="line">        print(&quot;没有通过安检&quot;)</span><br><span class="line">        print(&quot;刀子的长度超过规定，等待警察处理...&quot;)</span><br><span class="line">else:</span><br><span class="line">    print(&quot;没有车票，不能进站&quot;)</span><br><span class="line">    print(&quot;亲爱的，那就下次见了，一票难求啊~~~~(&gt;_&lt;)~~~~&quot;)</span><br></pre></td></tr></table></figure>
+<p>结果1：chePiao = 1;daoLenght = 9</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">有车票，可以进站</span><br><span class="line">通过安检</span><br><span class="line">终于可以见到Ta了，美滋滋~~~</span><br></pre></td></tr></table></figure>
+<p>结果2：chePiao = 1;daoLenght = 20</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">有车票，可以进站</span><br><span class="line">没有通过安检</span><br><span class="line">刀子的长度超过规定，等待警察处理...</span><br></pre></td></tr></table></figure>
+<p>结果3：chePiao = 0;daoLenght = 9</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">没有车票，不能进站</span><br><span class="line">亲爱的，那就下次见了，一票难求啊~~~~(&gt;_&lt;)~~~~</span><br></pre></td></tr></table></figure>
+<p>结果4：chePiao = 0;daoLenght = 20</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">没有车票，不能进站</span><br><span class="line">亲爱的，那就下次见了，一票难求啊~~~~(&gt;_&lt;)~~~~</span><br></pre></td></tr></table></figure>
+<h1 id="应用-猜拳游戏"><a href="#应用-猜拳游戏" class="headerlink" title="应用:猜拳游戏"></a>应用:猜拳游戏</h1><h2 id=""><a href="#" class="headerlink" title=":"></a><1 参考代码="">:</1></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import random</span><br><span class="line"></span><br><span class="line">player = input(&apos;请输入：剪刀(0)  石头(1)  布(2):&apos;)</span><br><span class="line"></span><br><span class="line">player = int(player)</span><br><span class="line"></span><br><span class="line">computer = random.randint(0,2)</span><br><span class="line"></span><br><span class="line"># 用来进行测试</span><br><span class="line">#print(&apos;player=%d,computer=%d&apos;,(player,computer))</span><br><span class="line"></span><br><span class="line">if ((player == 0) and (computer == 2)) or ((player ==1) and (computer == 0)) or ((player == 2) and (computer == 1)):</span><br><span class="line">    print(&apos;获胜，哈哈，你太厉害了&apos;)</span><br><span class="line">elif player == computer:</span><br><span class="line">    print(&apos;平局，要不再来一局&apos;)</span><br><span class="line">else:</span><br><span class="line">    print(&apos;输了，不要走，洗洗手接着来，决战到天亮&apos;)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -397,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/19/linux笔记-基础命令/" rel="next" title="'linux笔记-基础命令'">
-                <i class="fa fa-chevron-left"></i> 'linux笔记-基础命令'
+              <a href="/2018/05/19/Python输入/" rel="next" title="'Python输入'">
+                <i class="fa fa-chevron-left"></i> 'Python输入'
               </a>
             
           </div>
@@ -407,8 +472,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/19/Python输入/" rel="prev" title="'Python输入'">
-                'Python输入' <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/20/if判断语句和运算符/" rel="prev" title="if判断语句和运算符">
+                if判断语句和运算符 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -561,7 +626,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#StringIO与BytesIO"><span class="nav-number">1.</span> <span class="nav-text">StringIO与BytesIO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原文链接"><span class="nav-number">2.</span> <span class="nav-text">原文链接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StringIO"><span class="nav-number"></span> <span class="nav-text">StringIO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#getvalue-与read-方法的不同"><span class="nav-number"></span> <span class="nav-text">getvalue()与read()方法的不同</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BytesIO"><span class="nav-number"></span> <span class="nav-text">BytesIO</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#if-else"><span class="nav-number">1.</span> <span class="nav-text">if-else</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#if-else的使用格式"><span class="nav-number">1.1.</span> <span class="nav-text">if-else的使用格式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#elif"><span class="nav-number">2.</span> <span class="nav-text">elif</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#elif的功能"><span class="nav-number">2.1.</span> <span class="nav-text"> elif的功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意点"><span class="nav-number">2.2.</span> <span class="nav-text"> 注意点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#if嵌套"><span class="nav-number">3.</span> <span class="nav-text">if嵌套</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#if嵌套的格式"><span class="nav-number">3.1.</span> <span class="nav-text">if嵌套的格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if嵌套的应用"><span class="nav-number">3.2.</span> <span class="nav-text">if嵌套的应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用-猜拳游戏"><span class="nav-number">4.</span> <span class="nav-text">应用:猜拳游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">4.1.</span> <span class="nav-text">:</span></a></li></ol></li></ol></div>
             
 
           </div>

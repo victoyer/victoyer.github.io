@@ -79,17 +79,13 @@
 
 
 
-<meta name="description" content="StringIO与BytesIO原文链接StringIO可与c++的string流比较在内存中读写str先创建一个StringIO，然后像文件一样写入 12345678910&amp;gt;&amp;gt;&amp;gt; from io import StringIO&amp;gt;&amp;gt;&amp;gt; f = StringIO()&amp;gt;&amp;gt;&amp;gt; f.write(&apos;hello&apos;)5&amp;gt;&amp;gt;&amp;gt; f.write">
-<meta property="og:type" content="article">
-<meta property="og:title" content="&#39;String与BytesIO&#39;">
-<meta property="og:url" content="http://yoursite.com/2018/05/19/String与BytesIO/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Python Blog">
+<meta property="og:url" content="http://yoursite.com/archives/2018/page/2/index.html">
 <meta property="og:site_name" content="Python Blog">
-<meta property="og:description" content="StringIO与BytesIO原文链接StringIO可与c++的string流比较在内存中读写str先创建一个StringIO，然后像文件一样写入 12345678910&amp;gt;&amp;gt;&amp;gt; from io import StringIO&amp;gt;&amp;gt;&amp;gt; f = StringIO()&amp;gt;&amp;gt;&amp;gt; f.write(&apos;hello&apos;)5&amp;gt;&amp;gt;&amp;gt; f.write">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-19T05:50:15.039Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;String与BytesIO&#39;">
-<meta name="twitter:description" content="StringIO与BytesIO原文链接StringIO可与c++的string流比较在内存中读写str先创建一个StringIO，然后像文件一样写入 12345678910&amp;gt;&amp;gt;&amp;gt; from io import StringIO&amp;gt;&amp;gt;&amp;gt; f = StringIO()&amp;gt;&amp;gt;&amp;gt; f.write(&apos;hello&apos;)5&amp;gt;&amp;gt;&amp;gt; f.write">
+<meta name="twitter:title" content="Python Blog">
 
 
 
@@ -119,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/19/String与BytesIO/"/>
+  <link rel="canonical" href="http://yoursite.com/archives/2018/page/2/"/>
 
 
 
 
 
-  <title>'String与BytesIO' | Python Blog</title>
+  <title>Archive | Python Blog</title>
   
 
 
@@ -144,7 +140,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-archive">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -252,184 +248,115 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
 
-  
+      <span class="archive-page-counter">
+        
+        
+        
+          
+        
+        Um..! 12 posts in total. Keep on posting.
+      </span>
 
-  
-  
-  
+      
+
+        
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h2 class="archive-year" id="archive-year-2018">2018</h2>
+          </div>
+        
+        
+
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/String与BytesIO/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="victor">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Python Blog">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h3 class="post-title">
         
-        
-          <h2 class="post-title" itemprop="name headline">'String与BytesIO'</h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <a class="post-title-link" href="/2018/05/19/高级函数和面向对象的三大特性/" itemprop="url">
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span itemprop="name">'高级函数和面向对象的三大特性'</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-19T13:48:06+08:00">
-                2018-05-19
-              </time>
-            
+            </a>
+        
+      </h3>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h3 id="StringIO与BytesIO"><a href="#StringIO与BytesIO" class="headerlink" title="StringIO与BytesIO"></a>StringIO与BytesIO</h3><h3 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a><a href="https://blog.csdn.net/zgqxiexie/article/details/51176215" target="_blank" rel="noopener">原文链接</a></h3><h1 id="StringIO"><a href="#StringIO" class="headerlink" title="StringIO"></a>StringIO</h1><p>可与c++的string流比较<br>在内存中读写str<br>先创建一个StringIO，然后像文件一样写入</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = StringIO()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">'hello'</span>)</span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">' '</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">'world!'</span>)</span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(f.getvalue())</span><br><span class="line">hello world!</span><br></pre></td></tr></table></figure>
-<p><code>getvalue()</code>方法用于获得写入后的str。<br>可以看出<code>write</code>方法是追加的，而不会把原来的<code>str</code>覆盖<br><code>f.write(str)</code>会返回长度</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>n=(f.write(<span class="string">'haha'</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n</span><br></pre></td></tr></table></figure>
-<p>要读取<code>StringIO</code>，可以用一个<code>str</code>初始化<code>StringIO</code>，然后，像读文件一样读取：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = StringIO(<span class="string">'Hello!\nHi!\nGoodbye!'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line"><span class="meta">... </span>    s = f.readline()</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">if</span> s == <span class="string">''</span>:</span><br><span class="line"><span class="meta">... </span>        <span class="keyword">break</span></span><br><span class="line"><span class="meta">... </span>    print(s.strip())</span><br><span class="line">...</span><br><span class="line">Hello!</span><br><span class="line">Hi!</span><br><span class="line">Goodbye!</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="getvalue-与read-方法的不同"><a href="#getvalue-与read-方法的不同" class="headerlink" title="getvalue()与read()方法的不同"></a><code>getvalue()</code>与<code>read()</code>方法的不同</h2><p>getvalue会一次性给出str的所有值，而read是从当前位置以后读取 </p>
-<ul>
-<li><code>f.seek(0)</code>可以重置位置到开头，f.seek(x)位置会到第x个字节 </li>
-<li><code>f.tell()</code>可以告诉你当前指针所在位置</li>
-</ul>
-<h1 id="BytesIO"><a href="#BytesIO" class="headerlink" title="BytesIO"></a>BytesIO</h1><p><code>StringIO</code>操作的只能是<code>str</code>，如果要操作二进制数据，就需要使用<code>BytesIO</code>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = BytesIO()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">'中文'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(f.getvalue())</span><br><span class="line"><span class="string">b'\xe4\xb8\xad\xe6\x96\x87'</span></span><br></pre></td></tr></table></figure>
-<p>请注意，写入的不是<code>str</code>，而是经过UTF-8编码的bytes。<br>和StringIO类似，可以用一个bytes初始化BytesIO，然后，像读文件一样读取：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = BytesIO(<span class="string">b'\xe4\xb8\xad\xe6\x96\x87'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.read()</span><br><span class="line"><span class="string">b'\xe4\xb8\xad\xe6\x96\x87'</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div></div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>Donate</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/WechatIMG.png" alt="victor WeChat Pay"/>
-        <p>WeChat Pay</p>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-05-19T13:48:06+08:00"
+              content="2018-05-19" >
+          05-19
+        </time>
       </div>
-    
 
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/05/19/linux笔记-基础命令/" rel="next" title="'linux笔记-基础命令'">
-                <i class="fa fa-chevron-left"></i> 'linux笔记-基础命令'
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/19/Python输入/" rel="prev" title="'Python输入'">
-                'Python输入' <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
       
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2018/05/19/正则表达式和网络编程的爱恨情仇/" itemprop="url">
+              
+                <span itemprop="name">'正则表达式和网络编程的爱恨情仇'</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-05-19T13:48:06+08:00"
+              content="2018-05-19" >
+          05-19
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
     </div>
   </div>
+  
+  
+  
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/archives/2018/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span>
+  </nav>
+
+
 
 
           </div>
@@ -437,10 +364,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -461,17 +384,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -551,22 +465,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#StringIO与BytesIO"><span class="nav-number">1.</span> <span class="nav-text">StringIO与BytesIO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原文链接"><span class="nav-number">2.</span> <span class="nav-text">原文链接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StringIO"><span class="nav-number"></span> <span class="nav-text">StringIO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#getvalue-与read-方法的不同"><span class="nav-number"></span> <span class="nav-text">getvalue()与read()方法的不同</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BytesIO"><span class="nav-number"></span> <span class="nav-text">BytesIO</span></a></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -714,10 +612,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
