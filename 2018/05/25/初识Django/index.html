@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="if判断语句if判断语句介绍 if语句是用来进行判断的，其使用格式如下：  12if 要判断的条件:    条件成立时，要做的事情  demo1:  12345678age = 30print &amp;quot;------if判断开始------&amp;quot;if age&amp;gt;=18:    print &amp;quot;我已经成年了&amp;quot;print &amp;quot;------if判断结束------&amp;">
+<meta name="description" content="Web框架 常见的框架有1Flask		Django		Tornado		Pyramid		Bottle		Web2py		web.py mvc架构1234567-- model-- controller-- view数据和数据的解耦合MVC：模型-视图-控制器目标：模型（数据）和视图（显示）解耦合  通过控制器，将数据和显示分离，好处是同一个视图可以加载不同的模型，同一个模型也可以显示成不同的视">
 <meta property="og:type" content="article">
-<meta property="og:title" content="if判断语句和运算符">
-<meta property="og:url" content="http://yoursite.com/2018/05/20/if判断语句和运算符/index.html">
+<meta property="og:title" content="初识Django">
+<meta property="og:url" content="http://yoursite.com/2018/05/25/初识Django/index.html">
 <meta property="og:site_name" content="Python Blog">
-<meta property="og:description" content="if判断语句if判断语句介绍 if语句是用来进行判断的，其使用格式如下：  12if 要判断的条件:    条件成立时，要做的事情  demo1:  12345678age = 30print &amp;quot;------if判断开始------&amp;quot;if age&amp;gt;=18:    print &amp;quot;我已经成年了&amp;quot;print &amp;quot;------if判断结束------&amp;">
+<meta property="og:description" content="Web框架 常见的框架有1Flask		Django		Tornado		Pyramid		Bottle		Web2py		web.py mvc架构1234567-- model-- controller-- view数据和数据的解耦合MVC：模型-视图-控制器目标：模型（数据）和视图（显示）解耦合  通过控制器，将数据和显示分离，好处是同一个视图可以加载不同的模型，同一个模型也可以显示成不同的视">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-20T03:11:12.151Z">
+<meta property="og:image" content="f:/blog/MVC.jpg">
+<meta property="og:image" content="file:///F:/blog/MTV.jpg?lastModify=1526907562">
+<meta property="og:updated_time" content="2018-05-25T12:11:53.426Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="if判断语句和运算符">
-<meta name="twitter:description" content="if判断语句if判断语句介绍 if语句是用来进行判断的，其使用格式如下：  12if 要判断的条件:    条件成立时，要做的事情  demo1:  12345678age = 30print &amp;quot;------if判断开始------&amp;quot;if age&amp;gt;=18:    print &amp;quot;我已经成年了&amp;quot;print &amp;quot;------if判断结束------&amp;">
+<meta name="twitter:title" content="初识Django">
+<meta name="twitter:description" content="Web框架 常见的框架有1Flask		Django		Tornado		Pyramid		Bottle		Web2py		web.py mvc架构1234567-- model-- controller-- view数据和数据的解耦合MVC：模型-视图-控制器目标：模型（数据）和视图（显示）解耦合  通过控制器，将数据和显示分离，好处是同一个视图可以加载不同的模型，同一个模型也可以显示成不同的视">
+<meta name="twitter:image" content="f:/blog/MVC.jpg">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/20/if判断语句和运算符/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/25/初识Django/"/>
 
 
 
 
 
-  <title>if判断语句和运算符 | Python Blog</title>
+  <title>初识Django | Python Blog</title>
   
 
 
@@ -266,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/if判断语句和运算符/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/25/初识Django/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="victor">
@@ -283,7 +286,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">if判断语句和运算符</h2>
+          <h2 class="post-title" itemprop="name headline">初识Django</h2>
         
 
         <div class="post-meta">
@@ -295,8 +298,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-20T11:12:47+08:00">
-                2018-05-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-25T20:13:08+08:00">
+                2018-05-25
               </time>
             
 
@@ -333,111 +336,24 @@
       
 
       
-        <h1 id="if判断语句"><a href="#if判断语句" class="headerlink" title="if判断语句"></a>if判断语句</h1><h2 id="if判断语句介绍"><a href="#if判断语句介绍" class="headerlink" title="if判断语句介绍"></a><1>if判断语句介绍</1></h2><ul>
-<li>if语句是用来进行判断的，其使用格式如下：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if 要判断的条件:</span><br><span class="line">    条件成立时，要做的事情</span><br></pre></td></tr></table></figure>
-<ul>
-<li>demo1:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">age = 30</span><br><span class="line"></span><br><span class="line">print &quot;------if判断开始------&quot;</span><br><span class="line"></span><br><span class="line">if age&gt;=18:</span><br><span class="line">    print &quot;我已经成年了&quot;</span><br><span class="line"></span><br><span class="line">print &quot;------if判断结束------&quot;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>运行结果:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">------if判断开始------</span><br><span class="line">我已经成年了</span><br><span class="line">------if判断结束------</span><br></pre></td></tr></table></figure>
-<ul>
-<li>demo2:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">age = 16</span><br><span class="line"></span><br><span class="line">print &quot;------if判断开始------&quot;</span><br><span class="line"></span><br><span class="line">if age&gt;=18:</span><br><span class="line">    print &quot;我已经成年了&quot;</span><br><span class="line"></span><br><span class="line">print &quot;------if判断结束------&quot;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>运行结果:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">------if判断开始------</span><br><span class="line">------if判断结束------</span><br></pre></td></tr></table></figure>
-<p>小总结：</p>
-<ul>
-<li>以上2个demo仅仅是age变量的值不一样，结果却不同；能够看得出if判断语句的作用：就是当满足一定条件时才会执行那块代码，否则就不执行那块代码</li>
-</ul>
-<p>注意：</p>
-<ul>
-<li>代码的缩进为一个tab键，或者4个空格</li>
-</ul>
-<h1 id="比较-即关系-运算符"><a href="#比较-即关系-运算符" class="headerlink" title=" 比较(即关系)运算符"></a><1> 比较(即关系)运算符</1></h1><p>python中的比较运算符如下表</p>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>==</td>
-<td>检查两个操作数的值是否相等，如果是则条件变为真。</td>
-<td>如a=3,b=3则（a == b) 为 true.</td>
-</tr>
-<tr>
-<td>!=</td>
-<td>检查两个操作数的值是否相等，如果值不相等，则条件变为真。</td>
-<td>如a=1,b=3则(a != b) 为 true.</td>
-</tr>
-<tr>
-<td>&lt;&gt;</td>
-<td>检查两个操作数的值是否相等，如果值不相等，则条件变为真。</td>
-<td>如a=1,b=3则(a &lt;&gt; b) 为 true。这个类似于 != 运算符</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>检查左操作数的值是否大于右操作数的值，如果是，则条件成立。</td>
-<td>如a=7,b=3则(a &gt; b) 为 true.</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>检查左操作数的值是否小于右操作数的值，如果是，则条件成立。</td>
-<td>如a=7,b=3则(a &lt; b) 为 false.</td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td>检查左操作数的值是否大于或等于右操作数的值，如果是，则条件成立。</td>
-<td>如a=3,b=3则(a &gt;= b) 为 true.</td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td>检查左操作数的值是否小于或等于右操作数的值，如果是，则条件成立。</td>
-<td>如a=3,b=3则(a &lt;= b) 为 true.</td>
-</tr>
-</tbody>
-</table>
-<h1 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title=" 逻辑运算符"></a><2> 逻辑运算符</2></h1><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>逻辑表达式</th>
-<th>描述</th>
-<th>实例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>and</td>
-<td>x and y</td>
-<td>布尔”与” - 如果 x 为 False，x and y 返回 False，否则它返回 y 的计算值。</td>
-<td>(a and b) 返回 20。</td>
-</tr>
-<tr>
-<td>or</td>
-<td>x or y</td>
-<td>布尔”或” - 如果 x 是 True，它返回 True，否则它返回 y 的计算值。</td>
-<td>(a or b) 返回 10。</td>
-</tr>
-<tr>
-<td>not</td>
-<td>not x</td>
-<td>布尔”非” - 如果 x 为 True，返回 False 。如果 x 为 False，它返回 True。</td>
-<td>not(a and b) 返回 False</td>
-</tr>
-</tbody>
-</table>
+        <h4 id="Web框架"><a href="#Web框架" class="headerlink" title="Web框架"></a>Web<strong>框架</strong></h4><hr>
+<h6 id="常见的框架有"><a href="#常见的框架有" class="headerlink" title="常见的框架有"></a>常见的框架有</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Flask		Django		Tornado		Pyramid		Bottle		Web2py		web.py</span><br></pre></td></tr></table></figure>
+<h6 id="mvc架构"><a href="#mvc架构" class="headerlink" title="mvc架构"></a>mvc架构</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-- model</span><br><span class="line">-- controller</span><br><span class="line">-- view</span><br><span class="line">数据和数据的解耦合</span><br><span class="line"></span><br><span class="line">MVC：模型-视图-控制器</span><br><span class="line">目标：模型（数据）和视图（显示）解耦合</span><br></pre></td></tr></table></figure>
+<p><img src="F:\blog\MVC.jpg" alt="MVC"></p>
+<p>通过控制器，将数据和显示分离，好处是同一个视图可以加载不同的模型，同一个模型也可以显示成不同的视图</p>
+<p>稍具规模的系统都会使用MVC架构或者它的变体（MVP、MVVM等）</p>
+<p>它是对面向对象设计原则中迪米特法则的一个最好的践行</p>
+<h6 id="python中的的模式"><a href="#python中的的模式" class="headerlink" title="python中的的模式"></a>python中的的模式</h6><p><img src="file:///F:/blog/MTV.jpg?lastModify=1526907562" alt="img"></p>
+<h5 id="Windows中django操作"><a href="#Windows中django操作" class="headerlink" title="Windows中django操作"></a>Windows中django操作</h5><h6 id="1，检查python的版本"><a href="#1，检查python的版本" class="headerlink" title="1，检查python的版本"></a>1，检查python的版本</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python --version</span><br><span class="line">python --version</span><br></pre></td></tr></table></figure>
+<h6 id="2，创建虚拟环境"><a href="#2，创建虚拟环境" class="headerlink" title="2，创建虚拟环境"></a>2，创建虚拟环境</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m venv  hello_django_venv</span><br></pre></td></tr></table></figure>
+<h6 id="3-进入文件夹"><a href="#3-进入文件夹" class="headerlink" title="3,     进入文件夹"></a>3,     进入文件夹</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd hello_django_venv</span><br><span class="line">激活虚拟环境</span><br><span class="line">cd srcipts      </span><br><span class="line">deactivate (不激活)</span><br></pre></td></tr></table></figure>
+<h6 id="4-安装django框架"><a href="#4-安装django框架" class="headerlink" title="4,    安装django框架"></a>4,    安装django框架</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install django  版本(指定版本就加上)      &#123;==1.11   (==指定版本)&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="5-检查django的版本"><a href="#5-检查django的版本" class="headerlink" title="5,检查django的版本"></a>5,检查django的版本</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">django-admin --version</span><br></pre></td></tr></table></figure>
+<h6 id="6-创建项目"><a href="#6-创建项目" class="headerlink" title="6, 创建项目"></a>6, 创建项目</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">django-admin startproject hello_django</span><br></pre></td></tr></table></figure>
+<h6 id="7-进入项目目录"><a href="#7-进入项目目录" class="headerlink" title="7,进入项目目录"></a>7,进入项目目录</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py runserver  启动服务</span><br></pre></td></tr></table></figure>
+<h5 id="Macos-linux下面创建django虚拟环境"><a href="#Macos-linux下面创建django虚拟环境" class="headerlink" title="Macos\linux下面创建django虚拟环境"></a>Macos\linux下面创建django虚拟环境</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">1,mkdir hello_django     		创建项目目录</span><br><span class="line">2,cd hello_django/       		切换到项目目录</span><br><span class="line">3,python3 -m venv hd_venv 		使用venv模块创建虚拟环境，目录名hd_venv</span><br><span class="line">4,source hd_venv/bin/activate    激活虚拟环境 </span><br><span class="line">5,python -m pip install --upgrade pip  更新pip到最新版本</span><br><span class="line">6,pip install django              使用pip安装django</span><br><span class="line">7,django-admin --version       通过安装django时安装的脚本工具django-admin检查django版本</span><br><span class="line">8,在虚拟环境下面创建项目</span><br><span class="line">	django-admin startproject hello_django</span><br><span class="line">9,启动服务</span><br><span class="line">	python manage.py runserver  启动服务</span><br><span class="line">    ctrl+c 停服务</span><br><span class="line">    </span><br><span class="line">10,建应用</span><br><span class="line">   python manage.py startapp hrs</span><br><span class="line">   </span><br><span class="line">11,注册功能</span><br><span class="line"># 下面的列表容器表示项目中安装了哪些应用</span><br><span class="line">INSTALLED_APPS = [</span><br><span class="line">    &apos;django.contrib.admin&apos;,</span><br><span class="line">    &apos;django.contrib.auth&apos;,</span><br><span class="line">    &apos;django.contrib.contenttypes&apos;,</span><br><span class="line">    &apos;django.contrib.sessions&apos;,</span><br><span class="line">    &apos;django.contrib.messages&apos;,</span><br><span class="line">    &apos;django.contrib.staticfiles&apos;,</span><br><span class="line">    &apos;hrs&apos;,</span><br><span class="line">    &apos;crms&apos;,</span><br><span class="line">    &apos;sysms&apos;,</span><br><span class="line">]</span><br><span class="line">12,修改view.py文件</span><br><span class="line">13,配置urls.py</span><br></pre></td></tr></table></figure>
+<h5 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#国际化</span><br><span class="line">USE_I18N = True</span><br><span class="line">#本地化</span><br><span class="line">USE_L10N = True</span><br><span class="line"></span><br><span class="line">USE_TZ = True</span><br><span class="line"></span><br><span class="line">#保证存储到数据库中的是 UTC 时间；</span><br><span class="line">#在函数之间传递时间参数时，确保时间已经转换成 UTC 时间；</span><br></pre></td></tr></table></figure>
+<h5 id="pycharm用Django建立MySQL"><a href="#pycharm用Django建立MySQL" class="headerlink" title="pycharm用Django建立MySQL"></a>pycharm用Django建立MySQL</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># ORM - 对象关系映射</span><br><span class="line"># 对象模型  &lt;-------&gt;  关系模型</span><br><span class="line"># 实体类   &lt;-------&gt;    二维表</span><br><span class="line"># 属性    &lt;-------&gt;    列</span><br><span class="line"># 对象   &lt;-------&gt;   记录</span><br><span class="line"></span><br><span class="line">python manage.py makemigrations 应用名  --生成迁移数据脚本</span><br><span class="line"></span><br><span class="line">python manage.py migrate  -- 执行脚本迁移数据</span><br><span class="line"></span><br><span class="line">python manage.py createsuperuser --创建超级用户登录后台</span><br><span class="line"></span><br><span class="line">python manage.py shell   -- 进入虚拟环境交互模式</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -486,8 +402,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/20/Python判断语句应用/" rel="next" title="Python判断语句应用">
-                <i class="fa fa-chevron-left"></i> Python判断语句应用
+              <a href="/2018/05/25/MySQLNotBook/" rel="next" title="Mysql笔记">
+                <i class="fa fa-chevron-left"></i> Mysql笔记
               </a>
             
           </div>
@@ -495,10 +411,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/25/Django之M - Model/" rel="prev" title="Django之M - Model">
-                Django之M - Model <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -650,7 +562,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#if判断语句"><span class="nav-number">1.</span> <span class="nav-text">if判断语句</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#if判断语句介绍"><span class="nav-number">1.1.</span> <span class="nav-text">if判断语句介绍</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比较-即关系-运算符"><span class="nav-number">2.</span> <span class="nav-text"> 比较(即关系)运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">3.</span> <span class="nav-text"> 逻辑运算符</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Web框架"><span class="nav-number">1.</span> <span class="nav-text">Web框架</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#常见的框架有"><span class="nav-number">1.0.1.</span> <span class="nav-text">常见的框架有</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#mvc架构"><span class="nav-number">1.0.2.</span> <span class="nav-text">mvc架构</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#python中的的模式"><span class="nav-number">1.0.3.</span> <span class="nav-text">python中的的模式</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Windows中django操作"><span class="nav-number">1.1.</span> <span class="nav-text">Windows中django操作</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1，检查python的版本"><span class="nav-number">1.1.1.</span> <span class="nav-text">1，检查python的版本</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2，创建虚拟环境"><span class="nav-number">1.1.2.</span> <span class="nav-text">2，创建虚拟环境</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-进入文件夹"><span class="nav-number">1.1.3.</span> <span class="nav-text">3,     进入文件夹</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-安装django框架"><span class="nav-number">1.1.4.</span> <span class="nav-text">4,    安装django框架</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-检查django的版本"><span class="nav-number">1.1.5.</span> <span class="nav-text">5,检查django的版本</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#6-创建项目"><span class="nav-number">1.1.6.</span> <span class="nav-text">6, 创建项目</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#7-进入项目目录"><span class="nav-number">1.1.7.</span> <span class="nav-text">7,进入项目目录</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Macos-linux下面创建django虚拟环境"><span class="nav-number">1.2.</span> <span class="nav-text">Macos\linux下面创建django虚拟环境</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置文件"><span class="nav-number">1.3.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#pycharm用Django建立MySQL"><span class="nav-number">1.4.</span> <span class="nav-text">pycharm用Django建立MySQL</span></a></li></ol></li></ol></div>
             
 
           </div>

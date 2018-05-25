@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="if判断语句if判断语句介绍 if语句是用来进行判断的，其使用格式如下：  12if 要判断的条件:    条件成立时，要做的事情  demo1:  12345678age = 30print &amp;quot;------if判断开始------&amp;quot;if age&amp;gt;=18:    print &amp;quot;我已经成年了&amp;quot;print &amp;quot;------if判断结束------&amp;">
+<meta name="description" content="###Model - 数据交互模块 定义模型 在模型中定义属性，会生成表中的字段 django根据属性的类型确定以下信息： 当前选择的数据库支持字段的类型 渲染管理表单时使用的默认html控件 在管理站点最低限度的验证   django会为表增加自动增长的主键列，每个模型只能有一个主键列，如果使用选项设置某属性为主键列后，则django不会再生成默认的主键列 属性命名限制 不能是python的保留">
 <meta property="og:type" content="article">
-<meta property="og:title" content="if判断语句和运算符">
-<meta property="og:url" content="http://yoursite.com/2018/05/20/if判断语句和运算符/index.html">
+<meta property="og:title" content="Django之M - Model">
+<meta property="og:url" content="http://yoursite.com/2018/05/25/Django之M - Model/index.html">
 <meta property="og:site_name" content="Python Blog">
-<meta property="og:description" content="if判断语句if判断语句介绍 if语句是用来进行判断的，其使用格式如下：  12if 要判断的条件:    条件成立时，要做的事情  demo1:  12345678age = 30print &amp;quot;------if判断开始------&amp;quot;if age&amp;gt;=18:    print &amp;quot;我已经成年了&amp;quot;print &amp;quot;------if判断结束------&amp;">
+<meta property="og:description" content="###Model - 数据交互模块 定义模型 在模型中定义属性，会生成表中的字段 django根据属性的类型确定以下信息： 当前选择的数据库支持字段的类型 渲染管理表单时使用的默认html控件 在管理站点最低限度的验证   django会为表增加自动增长的主键列，每个模型只能有一个主键列，如果使用选项设置某属性为主键列后，则django不会再生成默认的主键列 属性命名限制 不能是python的保留">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-20T03:11:12.151Z">
+<meta property="og:updated_time" content="2018-05-25T10:47:56.001Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="if判断语句和运算符">
-<meta name="twitter:description" content="if判断语句if判断语句介绍 if语句是用来进行判断的，其使用格式如下：  12if 要判断的条件:    条件成立时，要做的事情  demo1:  12345678age = 30print &amp;quot;------if判断开始------&amp;quot;if age&amp;gt;=18:    print &amp;quot;我已经成年了&amp;quot;print &amp;quot;------if判断结束------&amp;">
+<meta name="twitter:title" content="Django之M - Model">
+<meta name="twitter:description" content="###Model - 数据交互模块 定义模型 在模型中定义属性，会生成表中的字段 django根据属性的类型确定以下信息： 当前选择的数据库支持字段的类型 渲染管理表单时使用的默认html控件 在管理站点最低限度的验证   django会为表增加自动增长的主键列，每个模型只能有一个主键列，如果使用选项设置某属性为主键列后，则django不会再生成默认的主键列 属性命名限制 不能是python的保留">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/20/if判断语句和运算符/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/25/Django之M - Model/"/>
 
 
 
 
 
-  <title>if判断语句和运算符 | Python Blog</title>
+  <title>Django之M - Model | Python Blog</title>
   
 
 
@@ -266,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/if判断语句和运算符/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/25/Django之M - Model/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="victor">
@@ -283,7 +283,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">if判断语句和运算符</h2>
+          <h2 class="post-title" itemprop="name headline">Django之M - Model</h2>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-20T11:12:47+08:00">
-                2018-05-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-25T18:11:05+08:00">
+                2018-05-25
               </time>
             
 
@@ -333,112 +333,130 @@
       
 
       
-        <h1 id="if判断语句"><a href="#if判断语句" class="headerlink" title="if判断语句"></a>if判断语句</h1><h2 id="if判断语句介绍"><a href="#if判断语句介绍" class="headerlink" title="if判断语句介绍"></a><1>if判断语句介绍</1></h2><ul>
-<li>if语句是用来进行判断的，其使用格式如下：</li>
+        <p>###Model - 数据交互模块</p>
+<h4 id="定义模型"><a href="#定义模型" class="headerlink" title="定义模型"></a>定义模型</h4><ul>
+<li>在模型中定义属性，会生成表中的字段</li>
+<li>django根据属性的类型确定以下信息：<ul>
+<li>当前选择的数据库支持字段的类型</li>
+<li>渲染管理表单时使用的默认html控件</li>
+<li>在管理站点最低限度的验证</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if 要判断的条件:</span><br><span class="line">    条件成立时，要做的事情</span><br></pre></td></tr></table></figure>
+</li>
+<li>django会为表增加自动增长的主键列，每个模型只能有一个主键列，如果使用选项设置某属性为主键列后，则django不会再生成默认的主键列</li>
+<li>属性命名限制<ul>
+<li>不能是python的保留关键字</li>
+<li>由于django的查询方式，不允许使用连续的下划线</li>
+</ul>
+</li>
+</ul>
+<h5 id="定义属性"><a href="#定义属性" class="headerlink" title="定义属性"></a>定义属性</h5><ul>
+<li>定义属性时，需要字段类型</li>
+<li>字段类型被定义在django.db.models.fields目录下，为了方便使用，被导入到django.db.models中</li>
+<li>使用方式<ol>
+<li>导入from django.db import models</li>
+<li>通过models.Field创建字段类型的对象，赋值给属性</li>
+</ol>
+</li>
+<li><strong>对于重要数据都做逻辑删除，不做物理删除，实现方法是定义isDelete属性，类型为BooleanField，默认值为False</strong></li>
+</ul>
+<h4 id="字段类型"><a href="#字段类型" class="headerlink" title="字段类型"></a>字段类型</h4><ul>
+<li>AutoField：一个根据实际ID自动增长的IntegerField，通常不指定<ul>
+<li>如果不指定，一个主键字段将自动添加到模型中</li>
+</ul>
+</li>
+<li>BooleanField：true/false 字段，此字段的默认表单控制是CheckboxInput</li>
+<li>NullBooleanField：支持null、true、false三种值</li>
+<li>CharField(max_length=字符长度)：字符串，默认的表单样式是 TextInput</li>
+<li>TextField：大文本字段，一般超过4000使用，默认的表单控件是Textarea</li>
+<li>IntegerField：整数</li>
+<li>DecimalField(max_digits=None, decimal_places=None)：使用python的Decimal实例表示的十进制浮点数<ul>
+<li>DecimalField.max_digits：位数总数</li>
+<li>DecimalField.decimal_places：小数点后的数字位数</li>
+</ul>
+</li>
+<li>FloatField：用Python的float实例来表示的浮点数</li>
+<li>DateField[auto_now=False, auto_now_add=False])：使用Python的datetime.date实例表示的日期<ul>
+<li>参数DateField.auto_now：每次保存对象时，自动设置该字段为当前时间，用于”最后一次修改”的时间戳，它总是使用当前日期，默认为false</li>
+<li>参数DateField.auto_now_add：当对象第一次被创建时自动设置当前时间，用于创建的时间戳，它总是使用当前日期，默认为false</li>
+<li>该字段默认对应的表单控件是一个TextInput. 在管理员站点添加了一个JavaScript写的日历控件，和一个“Today”的快捷按钮，包含了一个额外的invalid_date错误消息键</li>
+<li>auto_now_add, auto_now, and default 这些设置是相互排斥的，他们之间的任何组合将会发生错误的结果</li>
+</ul>
+</li>
+<li>TimeField：使用Python的datetime.time实例表示的时间，参数同DateField</li>
+<li>DateTimeField：使用Python的datetime.datetime实例表示的日期和时间，参数同DateField</li>
+<li>FileField：一个上传文件的字段</li>
+<li>ImageField：继承了FileField的所有属性和方法，但对上传的对象进行校验，确保它是个有效的image</li>
+</ul>
+<h5 id="字段选项"><a href="#字段选项" class="headerlink" title="字段选项"></a>字段选项</h5><ul>
+<li>通过字段选项，可以实现对字段的约束</li>
+<li>在字段对象时通过关键字参数指定</li>
+<li>null：如果为True，Django 将空值以NULL 存储到数据库中，默认值是 False</li>
+<li>blank：如果为True，则该字段允许为空白，默认值是 False</li>
+<li><strong>对比：null是数据库范畴的概念，blank是表单验证证范畴的</strong></li>
+<li>db_column：字段的名称，如果未指定，则使用属性的名称</li>
+<li>db_index：若值为 True, 则在表中会为此字段创建索引</li>
+<li>default：默认值</li>
+<li>primary_key：若为 True, 则该字段会成为模型的主键字段</li>
+<li>unique：如果为 True, 这个字段在表中必须有唯一值</li>
+</ul>
+<h5 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h5><ul>
+<li>关系的类型包括<ul>
+<li>ForeignKey：一对多，将字段定义在多的端中</li>
+<li>ManyToManyField：多对多，将字段定义在两端中</li>
+<li>OneToOneField：一对一，将字段定义在任意一端中</li>
+</ul>
+</li>
+<li>可以维护递归的关联关系，使用’self’指定，详见“自关联”</li>
+<li>用一访问多：对象.模型类小写_set</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bookinfo.heroinfo_set</span><br></pre></td></tr></table></figure>
 <ul>
-<li>demo1:</li>
+<li>用一访问一：对象.模型类小写</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">age = 30</span><br><span class="line"></span><br><span class="line">print &quot;------if判断开始------&quot;</span><br><span class="line"></span><br><span class="line">if age&gt;=18:</span><br><span class="line">    print &quot;我已经成年了&quot;</span><br><span class="line"></span><br><span class="line">print &quot;------if判断结束------&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroinfo.bookinfo</span><br></pre></td></tr></table></figure>
 <ul>
-<li>运行结果:</li>
+<li>访问id：对象.属性_id</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">------if判断开始------</span><br><span class="line">我已经成年了</span><br><span class="line">------if判断结束------</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroinfo.book_id</span><br></pre></td></tr></table></figure>
+<h5 id="元选项"><a href="#元选项" class="headerlink" title="元选项"></a>元选项</h5><ul>
+<li>在模型类中定义类Meta，用于设置元信息</li>
+<li>元信息db_table：定义数据表名称，推荐使用小写字母，数据表的默认名称</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;app_name&gt;_&lt;model_name&gt;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>demo2:</li>
+<li>ordering：对象的默认排序字段，获取对象的列表时使用，接收属性构成的列表</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">age = 16</span><br><span class="line"></span><br><span class="line">print &quot;------if判断开始------&quot;</span><br><span class="line"></span><br><span class="line">if age&gt;=18:</span><br><span class="line">    print &quot;我已经成年了&quot;</span><br><span class="line"></span><br><span class="line">print &quot;------if判断结束------&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookInfo</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span><span class="params">()</span>:</span></span><br><span class="line">        ordering = [<span class="string">'id'</span>]</span><br></pre></td></tr></table></figure>
 <ul>
-<li>运行结果:</li>
+<li>字符串前加-表示倒序，不加-表示正序</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">------if判断开始------</span><br><span class="line">------if判断结束------</span><br></pre></td></tr></table></figure>
-<p>小总结：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookInfo</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span><span class="params">()</span>:</span></span><br><span class="line">        ordering = [<span class="string">'-id'</span>]</span><br></pre></td></tr></table></figure>
 <ul>
-<li>以上2个demo仅仅是age变量的值不一样，结果却不同；能够看得出if判断语句的作用：就是当满足一定条件时才会执行那块代码，否则就不执行那块代码</li>
+<li>排序会增加数据库的开销</li>
 </ul>
-<p>注意：</p>
+<h5 id="示例演示"><a href="#示例演示" class="headerlink" title="示例演示"></a>示例演示</h5><ul>
+<li>创建test2项目，并创建booktest应用，使用mysql数据库</li>
+<li>定义图书模型</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class BookInfo(models.Model):</span><br><span class="line">    btitle = models.CharField(max_length=20)</span><br><span class="line">    bpub_date = models.DateTimeField()</span><br><span class="line">    bread = models.IntegerField(default=0)</span><br><span class="line">    bcommet = models.IntegerField(default=0)</span><br><span class="line">    isDelete = models.BooleanField(default=False)</span><br></pre></td></tr></table></figure>
 <ul>
-<li>代码的缩进为一个tab键，或者4个空格</li>
+<li>英雄模型</li>
 </ul>
-<h1 id="比较-即关系-运算符"><a href="#比较-即关系-运算符" class="headerlink" title=" 比较(即关系)运算符"></a><1> 比较(即关系)运算符</1></h1><p>python中的比较运算符如下表</p>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>==</td>
-<td>检查两个操作数的值是否相等，如果是则条件变为真。</td>
-<td>如a=3,b=3则（a == b) 为 true.</td>
-</tr>
-<tr>
-<td>!=</td>
-<td>检查两个操作数的值是否相等，如果值不相等，则条件变为真。</td>
-<td>如a=1,b=3则(a != b) 为 true.</td>
-</tr>
-<tr>
-<td>&lt;&gt;</td>
-<td>检查两个操作数的值是否相等，如果值不相等，则条件变为真。</td>
-<td>如a=1,b=3则(a &lt;&gt; b) 为 true。这个类似于 != 运算符</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>检查左操作数的值是否大于右操作数的值，如果是，则条件成立。</td>
-<td>如a=7,b=3则(a &gt; b) 为 true.</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>检查左操作数的值是否小于右操作数的值，如果是，则条件成立。</td>
-<td>如a=7,b=3则(a &lt; b) 为 false.</td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td>检查左操作数的值是否大于或等于右操作数的值，如果是，则条件成立。</td>
-<td>如a=3,b=3则(a &gt;= b) 为 true.</td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td>检查左操作数的值是否小于或等于右操作数的值，如果是，则条件成立。</td>
-<td>如a=3,b=3则(a &lt;= b) 为 true.</td>
-</tr>
-</tbody>
-</table>
-<h1 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title=" 逻辑运算符"></a><2> 逻辑运算符</2></h1><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>逻辑表达式</th>
-<th>描述</th>
-<th>实例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>and</td>
-<td>x and y</td>
-<td>布尔”与” - 如果 x 为 False，x and y 返回 False，否则它返回 y 的计算值。</td>
-<td>(a and b) 返回 20。</td>
-</tr>
-<tr>
-<td>or</td>
-<td>x or y</td>
-<td>布尔”或” - 如果 x 是 True，它返回 True，否则它返回 y 的计算值。</td>
-<td>(a or b) 返回 10。</td>
-</tr>
-<tr>
-<td>not</td>
-<td>not x</td>
-<td>布尔”非” - 如果 x 为 True，返回 False 。如果 x 为 False，它返回 True。</td>
-<td>not(a and b) 返回 False</td>
-</tr>
-</tbody>
-</table>
-
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class HeroInfo(models.Model):</span><br><span class="line">    hname = models.CharField(max_length=20)</span><br><span class="line">    hgender = models.BooleanField(default=True)</span><br><span class="line">    isDelete = models.BooleanField(default=False)</span><br><span class="line">    hcontent = models.CharField(max_length=100)</span><br><span class="line">    hbook = models.ForeignKey('BookInfo')</span><br></pre></td></tr></table></figure>
+<ul>
+<li>定义index、detail视图</li>
+<li>index.html、detail.html模板</li>
+<li>配置url，能够完成图书及英雄的展示</li>
+</ul>
+<h5 id="测试数据"><a href="#测试数据" class="headerlink" title="测试数据"></a>测试数据</h5><ul>
+<li>模型BookInfo的测试数据</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> booktest_bookinfo(btitle,bpub_date,bread,bcommet,isDelete) <span class="keyword">values</span></span><br><span class="line">(<span class="string">'射雕英雄传'</span>,<span class="string">'1980-5-1'</span>,<span class="number">12</span>,<span class="number">34</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'天龙八部'</span>,<span class="string">'1986-7-24'</span>,<span class="number">36</span>,<span class="number">40</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'笑傲江湖'</span>,<span class="string">'1995-12-24'</span>,<span class="number">20</span>,<span class="number">80</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'雪山飞狐'</span>,<span class="string">'1987-11-11'</span>,<span class="number">58</span>,<span class="number">24</span>,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>模型HeroInfo的测试数据</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> booktest_heroinfo(hname,hgender,hbook_id,hcontent,isDelete) <span class="keyword">values</span></span><br><span class="line">(<span class="string">'郭靖'</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="string">'降龙十八掌'</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'黄蓉'</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="string">'打狗棍法'</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'黄药师'</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="string">'弹指神通'</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'欧阳锋'</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="string">'蛤蟆功'</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'梅超风'</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="string">'九阴白骨爪'</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'乔峰'</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="string">'降龙十八掌'</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'段誉'</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="string">'六脉神剑'</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'虚竹'</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="string">'天山六阳掌'</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'王语嫣'</span>,<span class="number">0</span>,<span class="number">2</span>,<span class="string">'神仙姐姐'</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'令狐冲'</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="string">'独孤九剑'</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'任盈盈'</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="string">'弹琴'</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'岳不群'</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="string">'华山剑法'</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'东方不败'</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="string">'葵花宝典'</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'胡斐'</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="string">'胡家刀法'</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'苗若兰'</span>,<span class="number">0</span>,<span class="number">4</span>,<span class="string">'黄衣'</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'程灵素'</span>,<span class="number">0</span>,<span class="number">4</span>,<span class="string">'医术'</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="string">'袁紫衣'</span>,<span class="number">0</span>,<span class="number">4</span>,<span class="string">'六合拳'</span>,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="V：view-请求处理模块"><a href="#V：view-请求处理模块" class="headerlink" title="V：view - 请求处理模块"></a>V：view - 请求处理模块</h3><h3 id="T：Template-内容替换模块"><a href="#T：Template-内容替换模块" class="headerlink" title="T：Template - 内容替换模块"></a>T：Template - 内容替换模块</h3>
       
     </div>
     
@@ -486,8 +504,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/20/Python判断语句应用/" rel="next" title="Python判断语句应用">
-                <i class="fa fa-chevron-left"></i> Python判断语句应用
+              <a href="/2018/05/20/if判断语句和运算符/" rel="next" title="if判断语句和运算符">
+                <i class="fa fa-chevron-left"></i> if判断语句和运算符
               </a>
             
           </div>
@@ -496,8 +514,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/25/Django之M - Model/" rel="prev" title="Django之M - Model">
-                Django之M - Model <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/25/Model - 请求处理模块/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -650,7 +668,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#if判断语句"><span class="nav-number">1.</span> <span class="nav-text">if判断语句</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#if判断语句介绍"><span class="nav-number">1.1.</span> <span class="nav-text">if判断语句介绍</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比较-即关系-运算符"><span class="nav-number">2.</span> <span class="nav-text"> 比较(即关系)运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">3.</span> <span class="nav-text"> 逻辑运算符</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义模型"><span class="nav-number">1.</span> <span class="nav-text">定义模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义属性"><span class="nav-number">1.1.</span> <span class="nav-text">定义属性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字段类型"><span class="nav-number">2.</span> <span class="nav-text">字段类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#字段选项"><span class="nav-number">2.1.</span> <span class="nav-text">字段选项</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关系"><span class="nav-number">2.2.</span> <span class="nav-text">关系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#元选项"><span class="nav-number">2.3.</span> <span class="nav-text">元选项</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#示例演示"><span class="nav-number">2.4.</span> <span class="nav-text">示例演示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#测试数据"><span class="nav-number">2.5.</span> <span class="nav-text">测试数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#V：view-请求处理模块"><span class="nav-number"></span> <span class="nav-text">V：view - 请求处理模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T：Template-内容替换模块"><span class="nav-number"></span> <span class="nav-text">T：Template - 内容替换模块</span></a></div>
             
 
           </div>
