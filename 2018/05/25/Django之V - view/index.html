@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="Django之V - viewModel - 请求处理模块URLconf 在settings.py文件中通过ROOT_URLCONF指定根级url的配置 urlpatterns是一个url()实例的列表 一个url()对象包括： 正则表达式 视图函数 名称name   编写URLconf的注意： 若要从url中捕获一个值，需要在它周围设置一对圆括号 不需要添加一个前导的反斜杠，如应该写作’tes">
+<meta name="description" content="view - 请求处理模块URLconf 在settings.py文件中通过ROOT_URLCONF指定根级url的配置 urlpatterns是一个url()实例的列表 一个url()对象包括： 正则表达式 视图函数 名称name   编写URLconf的注意： 若要从url中捕获一个值，需要在它周围设置一对圆括号 不需要添加一个前导的反斜杠，如应该写作’test/‘，而不应该写作’/test/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python Blog">
-<meta property="og:url" content="http://yoursite.com/2018/05/25/Model - 请求处理模块/index.html">
+<meta property="og:title" content="Django之V - view - 请求处理模块">
+<meta property="og:url" content="http://yoursite.com/2018/05/25/Django之V - view/index.html">
 <meta property="og:site_name" content="Python Blog">
-<meta property="og:description" content="Django之V - viewModel - 请求处理模块URLconf 在settings.py文件中通过ROOT_URLCONF指定根级url的配置 urlpatterns是一个url()实例的列表 一个url()对象包括： 正则表达式 视图函数 名称name   编写URLconf的注意： 若要从url中捕获一个值，需要在它周围设置一对圆括号 不需要添加一个前导的反斜杠，如应该写作’tes">
+<meta property="og:description" content="view - 请求处理模块URLconf 在settings.py文件中通过ROOT_URLCONF指定根级url的配置 urlpatterns是一个url()实例的列表 一个url()对象包括： 正则表达式 视图函数 名称name   编写URLconf的注意： 若要从url中捕获一个值，需要在它周围设置一对圆括号 不需要添加一个前导的反斜杠，如应该写作’test/‘，而不应该写作’/test/">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="file:///E:/%E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2%20Python%E5%9F%BA%E7%A1%80%E7%8F%AD+%E5%B0%B1%E4%B8%9A%E7%8F%AD/www.zxit8.com_%E8%AF%BE%E4%BB%B6/%E8%AF%BE%E4%BB%B6/django/django/part3/images/redirect1.png">
 <meta property="og:image" content="file:///E:/%E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2%20Python%E5%9F%BA%E7%A1%80%E7%8F%AD+%E5%B0%B1%E4%B8%9A%E7%8F%AD/www.zxit8.com_%E8%AF%BE%E4%BB%B6/%E8%AF%BE%E4%BB%B6/django/django/part3/images/redirect2.png">
-<meta property="og:updated_time" content="2018-05-25T12:10:34.633Z">
+<meta property="og:updated_time" content="2018-05-25T12:18:23.197Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python Blog">
-<meta name="twitter:description" content="Django之V - viewModel - 请求处理模块URLconf 在settings.py文件中通过ROOT_URLCONF指定根级url的配置 urlpatterns是一个url()实例的列表 一个url()对象包括： 正则表达式 视图函数 名称name   编写URLconf的注意： 若要从url中捕获一个值，需要在它周围设置一对圆括号 不需要添加一个前导的反斜杠，如应该写作’tes">
+<meta name="twitter:title" content="Django之V - view - 请求处理模块">
+<meta name="twitter:description" content="view - 请求处理模块URLconf 在settings.py文件中通过ROOT_URLCONF指定根级url的配置 urlpatterns是一个url()实例的列表 一个url()对象包括： 正则表达式 视图函数 名称name   编写URLconf的注意： 若要从url中捕获一个值，需要在它周围设置一对圆括号 不需要添加一个前导的反斜杠，如应该写作’test/‘，而不应该写作’/test/">
 <meta name="twitter:image" content="file:///E:/%E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2%20Python%E5%9F%BA%E7%A1%80%E7%8F%AD+%E5%B0%B1%E4%B8%9A%E7%8F%AD/www.zxit8.com_%E8%AF%BE%E4%BB%B6/%E8%AF%BE%E4%BB%B6/django/django/part3/images/redirect1.png">
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/25/Model - 请求处理模块/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/25/Django之V - view/"/>
 
 
 
 
 
-  <title> | Python Blog</title>
+  <title>Django之V - view - 请求处理模块 | Python Blog</title>
   
 
 
@@ -269,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/25/Model - 请求处理模块/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/25/Django之V - view/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="victor">
@@ -286,7 +286,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline"></h2>
+          <h2 class="post-title" itemprop="name headline">Django之V - view - 请求处理模块</h2>
         
 
         <div class="post-meta">
@@ -336,8 +336,7 @@
       
 
       
-        <hr>
-<h2 id="Django之V-view"><a href="#Django之V-view" class="headerlink" title="Django之V - view"></a>Django之V - view</h2><h2 id="Model-请求处理模块"><a href="#Model-请求处理模块" class="headerlink" title="Model - 请求处理模块"></a>Model - 请求处理模块</h2><h3 id="URLconf"><a href="#URLconf" class="headerlink" title="URLconf"></a>URLconf</h3><ul>
+        <h2 id="view-请求处理模块"><a href="#view-请求处理模块" class="headerlink" title="view - 请求处理模块"></a>view - 请求处理模块</h2><h3 id="URLconf"><a href="#URLconf" class="headerlink" title="URLconf"></a>URLconf</h3><ul>
 <li>在settings.py文件中通过ROOT_URLCONF指定根级url的配置</li>
 <li>urlpatterns是一个url()实例的列表</li>
 <li>一个url()对象包括：<ul>
@@ -669,8 +668,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/25/Django之M - Model/" rel="next" title="Django之M - Model">
-                <i class="fa fa-chevron-left"></i> Django之M - Model
+              <a href="/2018/05/25/Django之M - Model/" rel="next" title="Django之M - Model - 数据交互模块">
+                <i class="fa fa-chevron-left"></i> Django之M - Model - 数据交互模块
               </a>
             
           </div>
@@ -833,7 +832,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Django之V-view"><span class="nav-number">1.</span> <span class="nav-text">Django之V - view</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-请求处理模块"><span class="nav-number">2.</span> <span class="nav-text">Model - 请求处理模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#URLconf"><span class="nav-number">2.1.</span> <span class="nav-text">URLconf</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#包含其它的URLconfs"><span class="nav-number">2.1.1.</span> <span class="nav-text">包含其它的URLconfs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL的反向解析"><span class="nav-number">2.1.2.</span> <span class="nav-text">URL的反向解析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义视图"><span class="nav-number">2.2.</span> <span class="nav-text">定义视图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#错误视图"><span class="nav-number">2.2.1.</span> <span class="nav-text">错误视图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#404-page-not-found-视图"><span class="nav-number">2.2.2.</span> <span class="nav-text">404 (page not found) 视图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#500-server-error-视图"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">500 (server error) 视图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#400-bad-request-视图"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">400 (bad request) 视图</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpReqeust对象"><span class="nav-number">2.3.</span> <span class="nav-text">HttpReqeust对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">2.3.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法"><span class="nav-number">2.3.2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QueryDict对象"><span class="nav-number">2.3.3.</span> <span class="nav-text">QueryDict对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GET属性"><span class="nav-number">2.3.4.</span> <span class="nav-text">GET属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#POST属性"><span class="nav-number">2.3.5.</span> <span class="nav-text">POST属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HttpResponse对象"><span class="nav-number">2.3.6.</span> <span class="nav-text">HttpResponse对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-1"><span class="nav-number">2.3.7.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法-1"><span class="nav-number">2.3.8.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子类HttpResponseRedirect"><span class="nav-number">2.3.9.</span> <span class="nav-text">子类HttpResponseRedirect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子类JsonResponse"><span class="nav-number">2.3.10.</span> <span class="nav-text">子类JsonResponse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简写函数"><span class="nav-number">2.3.11.</span> <span class="nav-text">简写函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#render"><span class="nav-number">2.3.12.</span> <span class="nav-text">render</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重定向"><span class="nav-number">2.3.13.</span> <span class="nav-text">重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#得到对象或返回404"><span class="nav-number">2.3.14.</span> <span class="nav-text">得到对象或返回404</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#view-请求处理模块"><span class="nav-number">1.</span> <span class="nav-text">view - 请求处理模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#URLconf"><span class="nav-number">1.1.</span> <span class="nav-text">URLconf</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#包含其它的URLconfs"><span class="nav-number">1.1.1.</span> <span class="nav-text">包含其它的URLconfs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL的反向解析"><span class="nav-number">1.1.2.</span> <span class="nav-text">URL的反向解析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义视图"><span class="nav-number">1.2.</span> <span class="nav-text">定义视图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#错误视图"><span class="nav-number">1.2.1.</span> <span class="nav-text">错误视图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#404-page-not-found-视图"><span class="nav-number">1.2.2.</span> <span class="nav-text">404 (page not found) 视图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#500-server-error-视图"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">500 (server error) 视图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#400-bad-request-视图"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">400 (bad request) 视图</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpReqeust对象"><span class="nav-number">1.3.</span> <span class="nav-text">HttpReqeust对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">1.3.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法"><span class="nav-number">1.3.2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QueryDict对象"><span class="nav-number">1.3.3.</span> <span class="nav-text">QueryDict对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GET属性"><span class="nav-number">1.3.4.</span> <span class="nav-text">GET属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#POST属性"><span class="nav-number">1.3.5.</span> <span class="nav-text">POST属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HttpResponse对象"><span class="nav-number">1.3.6.</span> <span class="nav-text">HttpResponse对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-1"><span class="nav-number">1.3.7.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法-1"><span class="nav-number">1.3.8.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子类HttpResponseRedirect"><span class="nav-number">1.3.9.</span> <span class="nav-text">子类HttpResponseRedirect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子类JsonResponse"><span class="nav-number">1.3.10.</span> <span class="nav-text">子类JsonResponse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简写函数"><span class="nav-number">1.3.11.</span> <span class="nav-text">简写函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#render"><span class="nav-number">1.3.12.</span> <span class="nav-text">render</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重定向"><span class="nav-number">1.3.13.</span> <span class="nav-text">重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#得到对象或返回404"><span class="nav-number">1.3.14.</span> <span class="nav-text">得到对象或返回404</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
