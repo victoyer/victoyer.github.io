@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="人生苦短我用python;python,lee,python之禅" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="函数函数定义和调用定义函数定义函数的格式如下： 12def 函数名():    代码 demo: 12345# 定义一个函数，能够完成打印信息的功能def printInfo():    print &apos;------------------------------------&apos;    print &apos;         人生苦短，我用Python&apos;    print &apos;-----------------">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Blog">
+<meta property="og:url" content="http://yoursite.com/2018/06/16/函数/index.html">
+<meta property="og:site_name" content="Python Blog">
+<meta property="og:description" content="函数函数定义和调用定义函数定义函数的格式如下： 12def 函数名():    代码 demo: 12345# 定义一个函数，能够完成打印信息的功能def printInfo():    print &apos;------------------------------------&apos;    print &apos;         人生苦短，我用Python&apos;    print &apos;-----------------">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/Img/01-第5天-2.gif">
+<meta property="og:image" content="http://yoursite.com/Img/01-第5天-3.png">
+<meta property="og:image" content="http://yoursite.com/Img/01-第5天-4.png">
+<meta property="og:image" content="http://yoursite.com/Img/01-第7天-11.png">
+<meta property="og:image" content="http://yoursite.com/Img/01-第7天-7.png">
+<meta property="og:image" content="http://yoursite.com/Img/01-第7天-10.png">
+<meta property="og:image" content="http://yoursite.com/Img/01-第7天-9.png">
+<meta property="og:image" content="http://yoursite.com/Img/01-第7天-12.png">
+<meta property="og:image" content="http://yoursite.com/Img/01-第7天-13.png">
+<meta property="og:image" content="http://yoursite.com/Img/digui_jiecheng.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160817_2.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160817_3.png">
+<meta property="og:updated_time" content="2018-06-11T00:20:28.438Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Blog">
+<meta name="twitter:description" content="函数函数定义和调用定义函数定义函数的格式如下： 12def 函数名():    代码 demo: 12345# 定义一个函数，能够完成打印信息的功能def printInfo():    print &apos;------------------------------------&apos;    print &apos;         人生苦短，我用Python&apos;    print &apos;-----------------">
+<meta name="twitter:image" content="http://yoursite.com/Img/01-第5天-2.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/16/函数/"/>
+
+
+
+
+
+  <title> | Python Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Python Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">victor的个人博客</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/16/函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="victor">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Python Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline"></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-16T16:58:34+08:00">
+                2018-06-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="函数定义和调用"><a href="#函数定义和调用" class="headerlink" title="函数定义和调用"></a>函数定义和调用</h2><h2 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a><1>定义函数</1></h2><p>定义函数的格式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> 函数名<span class="params">()</span>:</span></span><br><span class="line">    代码</span><br></pre></td></tr></table></figure>
+<p>demo:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义一个函数，能够完成打印信息的功能</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printInfo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'------------------------------------'</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'         人生苦短，我用Python'</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'------------------------------------'</span></span><br></pre></td></tr></table></figure>
+<h2 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a><2>调用函数</2></h2><p>定义了函数之后，就相当于有了一个具有某些功能的代码，想要让这些代码能够执行，需要调用它</p>
+<p>调用函数很简单的，通过 <strong>函数名() </strong>即可完成调用</p>
+<p>demo:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义完函数后，函数是不会自动执行的，需要调用它才可以</span></span><br><span class="line">printInfo()</span><br></pre></td></tr></table></figure>
+<h2 id="函数的文档说明"><a href="#函数的文档说明" class="headerlink" title="函数的文档说明"></a>函数的文档说明</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(a,b)</span>:</span></span><br><span class="line"><span class="meta">... </span>    <span class="string">"用来完成对2个数求和"</span></span><br><span class="line"><span class="meta">... </span>    print(<span class="string">"%d"</span>%(a+b))</span><br><span class="line"><span class="meta">... </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>test(<span class="number">11</span>,<span class="number">22</span>)</span><br><span class="line"><span class="number">33</span></span><br></pre></td></tr></table></figure>
+<p>如果执行，以下代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>help(test)</span><br></pre></td></tr></table></figure>
+<p>能够看到test函数的相关说明</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Help on function test <span class="keyword">in</span> module __main__:</span><br><span class="line"></span><br><span class="line">test(a, b)</span><br><span class="line">    用来完成对<span class="number">2</span>个数求和</span><br><span class="line">(END)</span><br></pre></td></tr></table></figure>
+<h2 id="函数参数-一"><a href="#函数参数-一" class="headerlink" title="函数参数(一)"></a>函数参数(一)</h2><p>思考一个问题，如下：</p>
+<blockquote>
+<p>现在需要定义一个函数，这个函数能够完成2个数的加法运算，并且把结果打印出来，该怎样设计？下面的代码可以吗？有什么缺陷吗？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;    <span class="function"><span class="keyword">def</span> <span class="title">add2num</span><span class="params">()</span>:</span></span><br><span class="line">&gt;        a = <span class="number">11</span></span><br><span class="line">&gt;        b = <span class="number">22</span></span><br><span class="line">&gt;        c = a+b</span><br><span class="line">&gt;        <span class="keyword">print</span> c</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>为了让一个函数更通用，即想让它计算哪两个数的和，就让它计算哪两个数的和，在定义函数的时候可以让函数接收数据，就解决了这个问题，这就是 函数的参数</p>
+<h2 id="定义带有参数的函数"><a href="#定义带有参数的函数" class="headerlink" title=" 定义带有参数的函数"></a><1> 定义带有参数的函数</1></h2><p>示例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add2num</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    c = a+b</span><br><span class="line">    <span class="keyword">print</span> c</span><br></pre></td></tr></table></figure>
+<h2 id="调用带有参数的函数"><a href="#调用带有参数的函数" class="headerlink" title=" 调用带有参数的函数"></a><2> 调用带有参数的函数</2></h2><p>以调用上面的add2num(a, b)函数为例:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add2num</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    c = a+b</span><br><span class="line">    <span class="keyword">print</span> c</span><br><span class="line"></span><br><span class="line">add2num(<span class="number">11</span>, <span class="number">22</span>) <span class="comment">#调用带有参数的函数时，需要在小括号中，传递数据</span></span><br></pre></td></tr></table></figure>
+<p>调用带有参数函数的运行过程：</p>
+<p><img src="/Img/01-第5天-2.gif" alt="调用带有参数函数"></p>
+<h2 id="调用函数时参数的顺序"><a href="#调用函数时参数的顺序" class="headerlink" title=" 调用函数时参数的顺序"></a><3> 调用函数时参数的顺序</3></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(a,b)</span>:</span></span><br><span class="line"><span class="meta">... </span>    print(a,b)</span><br><span class="line"><span class="meta">... </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>test(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>test(b=<span class="number">1</span>,a=<span class="number">2</span>)</span><br><span class="line"><span class="number">2</span> <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>test(b=<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span></span><br><span class="line">SyntaxError: positional argument follows keyword argument</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="小总结"><a href="#小总结" class="headerlink" title=" 小总结"></a><4> 小总结</4></h2><ul>
+<li>定义时小括号中的参数，用来接收参数用的，称为 “形参”</li>
+<li>调用时小括号中的参数，用来传递给函数用的，称为 “实参”</li>
+</ul>
+<h2 id="函数返回值-一"><a href="#函数返回值-一" class="headerlink" title="函数返回值(一)"></a>函数返回值(一)</h2><h2 id="“返回值”介绍"><a href="#“返回值”介绍" class="headerlink" title="“返回值”介绍"></a><1>“返回值”介绍</1></h2><p>现实生活中的场景:</p>
+<blockquote>
+<p>我给儿子10块钱，让他给我买包烟。这个例子中，10块钱是我给儿子的，就相当于调用函数时传递到参数，让儿子买烟这个事情最终的目标是，让他把烟给你带回来然后给你对么，，，此时烟就是返回值</p>
+</blockquote>
+<p>开发中的场景：</p>
+<blockquote>
+<p>定义了一个函数，完成了获取室内温度，想一想是不是应该把这个结果给调用者，只有调用者拥有了这个返回值，才能够根据当前的温度做适当的调整</p>
+</blockquote>
+<p>综上所述：</p>
+<ul>
+<li>所谓“返回值”，就是程序中函数完成一件事情后，最后给调用者的结果</li>
+</ul>
+<h2 id="带有返回值的函数"><a href="#带有返回值的函数" class="headerlink" title="带有返回值的函数"></a><2>带有返回值的函数</2></h2><p>想要在函数中把结果返回给调用者，需要在函数中使用return</p>
+<p>如下示例:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add2num</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    c = a+b</span><br><span class="line">    <span class="keyword">return</span> c</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add2num</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a+b</span><br></pre></td></tr></table></figure>
+<h2 id="保存函数的返回值"><a href="#保存函数的返回值" class="headerlink" title="保存函数的返回值"></a><3>保存函数的返回值</3></h2><p>在本小节刚开始的时候，说过的“买烟”的例子中，最后儿子给你烟时，你一定是从儿子手中接过来 对么，程序也是如此，如果一个函数返回了一个数据，那么想要用这个数据，那么就需要保存</p>
+<p>保存函数的返回值示例如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add2num</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a+b</span><br><span class="line"></span><br><span class="line"><span class="comment">#调用函数，顺便保存函数的返回值</span></span><br><span class="line">result = add2num(<span class="number">100</span>,<span class="number">98</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#因为result已经保存了add2num的返回值，所以接下来就可以使用了</span></span><br><span class="line"><span class="keyword">print</span> result</span><br></pre></td></tr></table></figure>
+<p>结果:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">198</span></span><br></pre></td></tr></table></figure>
+<h1 id="4种函数的类型"><a href="#4种函数的类型" class="headerlink" title="4种函数的类型"></a>4种函数的类型</h1><p>函数根据有没有参数，有没有返回值，可以相互组合，一共有4种</p>
+<ul>
+<li>无参数，无返回值</li>
+<li>无参数，又反悔</li>
+<li>有参数，无返回值</li>
+<li>有参数，有返回值</li>
+</ul>
+<h2 id="无参数，无返回值的函数"><a href="#无参数，无返回值的函数" class="headerlink" title="无参数，无返回值的函数"></a><1>无参数，无返回值的函数</1></h2><p>此类函数，不能接收参数，也没有返回值，一般情况下，打印提示灯类似的功能，使用这类的函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def printMenu():</span><br><span class="line">    print(&apos;--------------------------&apos;)</span><br><span class="line">    print(&apos;      xx涮涮锅 点菜系统&apos;)</span><br><span class="line">    print(&apos;&apos;)</span><br><span class="line">    print(&apos;  1.  羊肉涮涮锅&apos;)</span><br><span class="line">    print(&apos;  2.  牛肉涮涮锅&apos;)</span><br><span class="line">    print(&apos;  3.  猪肉涮涮锅&apos;)</span><br><span class="line">    print(&apos;--------------------------&apos;)</span><br></pre></td></tr></table></figure>
+<p>结果:</p>
+<p><img src="/Img/01-第5天-3.png" alt="无参数无返回值"></p>
+<h2 id="无参数，有返回值的函数"><a href="#无参数，有返回值的函数" class="headerlink" title="无参数，有返回值的函数"></a><2>无参数，有返回值的函数</2></h2><p>此类函数，不能接收参数，但是可以返回某个数据，一般情况下，像采集数据，用此类函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 获取温度</span><br><span class="line">def getTemperature():</span><br><span class="line"></span><br><span class="line">    #这里是获取温度的一些处理过程</span><br><span class="line"></span><br><span class="line">    #为了简单起见，先模拟返回一个数据</span><br><span class="line">    return 24</span><br><span class="line"></span><br><span class="line">temperature = getTemperature()</span><br><span class="line">print(&apos;当前的温度为:%d&apos;%temperature)</span><br></pre></td></tr></table></figure>
+<p>结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当前的温度为: 24</span><br></pre></td></tr></table></figure>
+<h2 id="有参数，无返回值的函数"><a href="#有参数，无返回值的函数" class="headerlink" title="有参数，无返回值的函数"></a><3>有参数，无返回值的函数</3></h2><p>此类函数，能接收参数，但不可以返回数据，一般情况下，对某些变量设置数据而不需结果时，用此类函数</p>
+<h2 id="有参数，有返回值的函数"><a href="#有参数，有返回值的函数" class="headerlink" title="有参数，有返回值的函数"></a><4>有参数，有返回值的函数</4></h2><p>此类函数，不仅能接收参数，还可以返回某个数据，一般情况下，像数据处理并需要结果的应用，用此类函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 计算1~num的累积和</span><br><span class="line">def calculateNum(num):</span><br><span class="line"></span><br><span class="line">    result = 0</span><br><span class="line">    i = 1</span><br><span class="line">    while i&lt;=num:</span><br><span class="line"></span><br><span class="line">        result = result + i</span><br><span class="line"></span><br><span class="line">        i+=1</span><br><span class="line"></span><br><span class="line">    return result</span><br><span class="line"></span><br><span class="line">result = calculateNum(100)</span><br><span class="line">print(&apos;1~100的累积和为:%d&apos;%result)</span><br></pre></td></tr></table></figure>
+<p>结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1~100的累积和为: 5050</span><br></pre></td></tr></table></figure>
+<h2 id="小总结-1"><a href="#小总结-1" class="headerlink" title="小总结"></a><5>小总结</5></h2><ul>
+<li>函数根据有没有参数，有没有返回值可以相互组合</li>
+<li>定义函数时，是根据实际的功能需求来设计的，所以不同开发人员编写的函数类型各不相同</li>
+</ul>
+<h2 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">testB</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'---- testB start----'</span>)</span><br><span class="line">    print(<span class="string">'这里是testB函数执行的代码...(省略)...'</span>)</span><br><span class="line">    print(<span class="string">'---- testB end----'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">testA</span><span class="params">()</span>:</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">'---- testA start----'</span>)</span><br><span class="line"></span><br><span class="line">    testB()</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'---- testA end----'</span>)</span><br><span class="line"></span><br><span class="line">testA()</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---- testA start----</span><br><span class="line">---- testB start----</span><br><span class="line">这里是testB函数执行的代码...(省略)...</span><br><span class="line">---- testB end----</span><br><span class="line">---- testA end----</span><br></pre></td></tr></table></figure>
+<h4 id="小总结："><a href="#小总结：" class="headerlink" title="小总结："></a>小总结：</h4><ul>
+<li>一个函数里面又调用了另外一个函数，这就是所谓的函数嵌套调用 <img src="/Img/01-第5天-4.png" alt="函数嵌套调用"></li>
+<li>如果函数A中，调用了另外一个函数B，那么先把函数B中的任务都执行完毕之后才会回到上次 函数A执行的位置</li>
+</ul>
+<h2 id="函数应用：打印图形和数学计算"><a href="#函数应用：打印图形和数学计算" class="headerlink" title="函数应用：打印图形和数学计算"></a>函数应用：打印图形和数学计算</h2><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>感受函数的嵌套调用</li>
+<li>感受程序设计的思路,复杂问题分解为简单问题</li>
+</ul>
+<h2 id="实现1"><a href="#实现1" class="headerlink" title="实现1"></a>实现1</h2><ol>
+<li>写一个函数打印一条横线</li>
+<li>打印自定义行数的横线</li>
+</ol>
+<h2 id="参考代码1"><a href="#参考代码1" class="headerlink" title="参考代码1"></a>参考代码1</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打印一条横线</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printOneLine</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"-"</span>*<span class="number">30</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印多条横线</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printNumLine</span><span class="params">(num)</span>:</span></span><br><span class="line">    i=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 因为printOneLine函数已经完成了打印横线的功能，</span></span><br><span class="line">    <span class="comment"># 只需要多次调用此函数即可</span></span><br><span class="line">    <span class="keyword">while</span> i&lt;num:</span><br><span class="line">        printOneLine()</span><br><span class="line">        i+=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">printNumLine(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="实现2"><a href="#实现2" class="headerlink" title="实现2"></a>实现2</h2><ol>
+<li>写一个函数求三个数的和</li>
+<li>写一个函数求三个数的平均值</li>
+</ol>
+<h2 id="参考代码2"><a href="#参考代码2" class="headerlink" title="参考代码2"></a>参考代码2</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 求3个数的和</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum3Number</span><span class="params">(a,b,c)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a+b+c <span class="comment"># return 的后面可以是数值，也可是一个表达式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 完成对3个数求平均值</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">average3Number</span><span class="params">(a,b,c)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 因为sum3Number函数已经完成了3个数的就和，所以只需调用即可</span></span><br><span class="line">    <span class="comment"># 即把接收到的3个数，当做实参传递即可</span></span><br><span class="line">    sumResult = sum3Number(a,b,c)</span><br><span class="line">    aveResult = sumResult/<span class="number">3.0</span></span><br><span class="line">    <span class="keyword">return</span> aveResult</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数，完成对3个数求平均值</span></span><br><span class="line">result = average3Number(<span class="number">11</span>,<span class="number">2</span>,<span class="number">55</span>)</span><br><span class="line">print(<span class="string">"average is %d"</span>%result)</span><br></pre></td></tr></table></figure>
+<h2 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h2><h2 id="什么是局部变量"><a href="#什么是局部变量" class="headerlink" title="什么是局部变量"></a><1>什么是局部变量</1></h2><p>如下图所示:</p>
+<p><img src="/Img/01-第7天-11.png" alt="img"></p>
+<h2 id="小总结-2"><a href="#小总结-2" class="headerlink" title="小总结"></a><2>小总结</2></h2><ul>
+<li>局部变量，就是在函数内部定义的变量</li>
+<li>不同的函数，可以定义相同的名字的局部变量，但是各用个的不会产生影响</li>
+<li>局部变量的作用，为了临时保存数据需要在函数中定义变量来进行存储，这就是它的作用</li>
+</ul>
+<h2 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h2><h2 id="什么是全局变量"><a href="#什么是全局变量" class="headerlink" title="什么是全局变量"></a><1>什么是全局变量</1></h2><p>如果一个变量，既能在一个函数中使用，也能在其他的函数中使用，这样的变量就是<code>全局变量</code></p>
+<p>demo如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义全局变量</span></span><br><span class="line">a = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span><span class="params">()</span>:</span></span><br><span class="line">    print(a)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test2</span><span class="params">()</span>:</span></span><br><span class="line">    print(a)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">test1()</span><br><span class="line">test2()</span><br></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<p><img src="/Img/01-第7天-7.png" alt="img"></p>
+<h2 id="全局变量和局部变量名字相同问题"><a href="#全局变量和局部变量名字相同问题" class="headerlink" title="全局变量和局部变量名字相同问题"></a><2>全局变量和局部变量名字相同问题</2></h2><p>看如下代码:</p>
+<p><img src="/Img/01-第7天-10.png" alt="img"></p>
+<h2 id="修改全局变量"><a href="#修改全局变量" class="headerlink" title="修改全局变量"></a><3>修改全局变量</3></h2><p>既然全局变量，就是能够在所以的函数中进行使用，那么可否进行修改呢？</p>
+<p>代码如下:</p>
+<p><img src="/Img/01-第7天-9.png" alt="img"></p>
+<h2 id="总结1"><a href="#总结1" class="headerlink" title="总结1:"></a><4>总结1:</4></h2><ul>
+<li>在函数外边定义的变量叫做<code>全局变量</code></li>
+<li>全局变量能够在所有的函数中进行访问</li>
+<li>如果在函数中修改全局变量，那么就需要使用<code>global</code>进行声明，否则出错</li>
+<li>如果全局变量的名字和局部变量的名字相同，那么使用的是局部变量的，小技巧<code>强龙不压地头蛇</code></li>
+</ul>
+<h2 id="可变类型的全局变量"><a href="#可变类型的全局变量" class="headerlink" title="可变类型的全局变量"></a><5>可变类型的全局变量</5></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line"><span class="meta">... </span>    a += <span class="number">1</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">print</span> a</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f()</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">2</span>, <span class="keyword">in</span> f</span><br><span class="line">UnboundLocalError: local variable <span class="string">'a'</span> referenced before assignment</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>li = [<span class="number">1</span>,]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line"><span class="meta">... </span>    li.append(<span class="number">1</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">print</span> li</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f2()</span><br><span class="line">[<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>li</span><br><span class="line">[<span class="number">1</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="总结2："><a href="#总结2：" class="headerlink" title="总结2："></a><5>总结2：</5></h2><ul>
+<li>在函数中不使用global声明全局变量时不能修改全局变量的本质是不能修改全局变量的指向，即不能将全局变量指向新的数据。</li>
+<li>对于不可变类型的全局变量来说，因其指向的数据不能修改，所以不使用global时无法修改全局变量。</li>
+<li>对于可变类型的全局变量来说，因其指向的数据可以修改，所以不使用global时也可修改全局变量。</li>
+</ul>
+<h2 id="函数返回值-二"><a href="#函数返回值-二" class="headerlink" title="函数返回值(二)"></a>函数返回值(二)</h2><h3 id="在python中我们可不可以返回多个值？"><a href="#在python中我们可不可以返回多个值？" class="headerlink" title="在python中我们可不可以返回多个值？"></a>在python中我们可不可以返回多个值？</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">divid</span><span class="params">(a, b)</span>:</span></span><br><span class="line"><span class="meta">... </span>    shang = a//b</span><br><span class="line"><span class="meta">... </span>    yushu = a%b </span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> shang, yushu</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sh, yu = divid(<span class="number">5</span>, <span class="number">2</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sh</span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>yu</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>本质是利用了元组</strong></p>
+<h2 id="函数参数-二"><a href="#函数参数-二" class="headerlink" title="函数参数(二)"></a>函数参数(二)</h2><h2 id="1-缺省参数"><a href="#1-缺省参数" class="headerlink" title="1. 缺省参数"></a>1. 缺省参数</h2><p>调用函数时，缺省参数的值如果没有传入，则被认为是默认值。下例会打印默认的age，如果age没有被传入：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printinfo</span><span class="params">( name, age = <span class="number">35</span> )</span>:</span></span><br><span class="line">   <span class="comment"># 打印任何传入的字符串</span></span><br><span class="line">   <span class="keyword">print</span> <span class="string">"Name: "</span>, name</span><br><span class="line">   <span class="keyword">print</span> <span class="string">"Age "</span>, age</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用printinfo函数</span></span><br><span class="line">printinfo(name=<span class="string">"miki"</span> )</span><br><span class="line">printinfo( age=<span class="number">9</span>,name=<span class="string">"miki"</span> )</span><br></pre></td></tr></table></figure>
+<p>以上实例输出结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name:  miki</span><br><span class="line">Age  <span class="number">35</span></span><br><span class="line">Name:  miki</span><br><span class="line">Age  <span class="number">9</span></span><br></pre></td></tr></table></figure>
+<h4 id="注意：带有默认值的参数一定要位于参数列表的最后面。"><a href="#注意：带有默认值的参数一定要位于参数列表的最后面。" class="headerlink" title="注意：带有默认值的参数一定要位于参数列表的最后面。"></a>注意：带有默认值的参数一定要位于参数列表的最后面。</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">printinfo</span><span class="params">(name, age=<span class="number">35</span>, sex)</span>:</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">print</span> name</span><br><span class="line">...</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span></span><br><span class="line">SyntaxError: non-default argument follows default argument</span><br></pre></td></tr></table></figure>
+<h2 id="2-不定长参数"><a href="#2-不定长参数" class="headerlink" title="2.不定长参数"></a>2.不定长参数</h2><p>有时可能需要一个函数能处理比当初声明时更多的参数。这些参数叫做不定长参数，声明时不会命名。</p>
+<p>基本语法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">functionname</span><span class="params">([formal_args,] *args, **kwargs)</span>:</span></span><br><span class="line">   <span class="string">"函数_文档字符串"</span></span><br><span class="line">   function_suite</span><br><span class="line">   <span class="keyword">return</span> [expression]</span><br></pre></td></tr></table></figure>
+<p>加了星号（*）的变量args会存放所有未命名的变量参数，args为元组；而加**的变量kwargs会存放命名参数，即形如key=value的参数， kwargs为字典。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">fun</span><span class="params">(a, b, *args, **kwargs)</span>:</span></span><br><span class="line"><span class="meta">... </span>    <span class="string">"""可变参数演示示例"""</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">print</span> <span class="string">"a ="</span>, a</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">print</span> <span class="string">"b ="</span>, b</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">print</span> <span class="string">"args ="</span>, args</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">print</span> <span class="string">"kwargs: "</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">for</span> key, value <span class="keyword">in</span> kwargs.items():</span><br><span class="line"><span class="meta">... </span>        <span class="keyword">print</span> key, <span class="string">"="</span>, value</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fun(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, m=<span class="number">6</span>, n=<span class="number">7</span>, p=<span class="number">8</span>)  <span class="comment"># 注意传递的参数对应</span></span><br><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line">args = (<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line">kwargs: </span><br><span class="line">p = <span class="number">8</span></span><br><span class="line">m = <span class="number">6</span></span><br><span class="line">n = <span class="number">7</span></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = (<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = &#123;<span class="string">"m"</span>:<span class="number">6</span>, <span class="string">"n"</span>:<span class="number">7</span>, <span class="string">"p"</span>:<span class="number">8</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fun(<span class="number">1</span>, <span class="number">2</span>, *c, **d)    <span class="comment"># 注意元组与字典的传参方式</span></span><br><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line">args = (<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line">kwargs: </span><br><span class="line">p = <span class="number">8</span></span><br><span class="line">m = <span class="number">6</span></span><br><span class="line">n = <span class="number">7</span></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fun(<span class="number">1</span>, <span class="number">2</span>, c, d) <span class="comment"># 注意不加星号与上面的区别</span></span><br><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line">args = ((<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>), &#123;<span class="string">'p'</span>: <span class="number">8</span>, <span class="string">'m'</span>: <span class="number">6</span>, <span class="string">'n'</span>: <span class="number">7</span>&#125;)</span><br><span class="line">kwargs:</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-引用传参"><a href="#3-引用传参" class="headerlink" title="3. 引用传参"></a>3. 引用传参</h2><ul>
+<li>可变类型与不可变类型的变量分别作为函数参数时，会有什么不同吗？</li>
+<li>Python有没有类似C语言中的指针传参呢？</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">selfAdd</span><span class="params">(a)</span>:</span></span><br><span class="line"><span class="meta">... </span>    <span class="string">"""自增"""</span></span><br><span class="line"><span class="meta">... </span>    a += a</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_int = <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_int</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>selfAdd(a_int)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_int</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>selfAdd(a_list)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<p><strong>Python中函数参数是引用传递（注意不是值传递）。对于不可变类型，因变量不能修改，所以运算不会影响到变量自身；而对于可变类型来说，函数体中的运算有可能会更改传入的参数变量。</strong></p>
+<h4 id="想一想为什么"><a href="#想一想为什么" class="headerlink" title="想一想为什么"></a>想一想为什么</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">selfAdd</span><span class="params">(a)</span>:</span></span><br><span class="line"><span class="meta">... </span>    <span class="string">"""自增"""</span></span><br><span class="line"><span class="meta">... </span>    a = a + a   <span class="comment"># 我们更改了函数体的这句话</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_int = <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_int</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>selfAdd(a_int)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_int</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>selfAdd(a_list)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>]      <span class="comment"># 想一想为什么没有变呢？</span></span><br></pre></td></tr></table></figure>
+<h2 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h2><h2 id="什么是递归函数"><a href="#什么是递归函数" class="headerlink" title="什么是递归函数"></a><1>什么是递归函数</1></h2><p>通过前面的学习知道一个函数可以调用其他函数。</p>
+<p>如果一个函数在内部不调用其它的函数，而是自己本身的话，这个函数就是递归函数。</p>
+<h2 id="递归函数的作用"><a href="#递归函数的作用" class="headerlink" title="递归函数的作用"></a><2>递归函数的作用</2></h2><p>举个例子，我们来计算阶乘 <code>n! = 1 * 2 * 3 * ... * n</code></p>
+<p>解决办法1:</p>
+<p><img src="/Img/01-第7天-12.png" alt="img"></p>
+<h4 id="看阶乘的规律"><a href="#看阶乘的规律" class="headerlink" title="看阶乘的规律"></a>看阶乘的规律</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1! = 1</span><br><span class="line">2! = 2 × 1 = 2 × 1!</span><br><span class="line">3! = 3 × 2 × 1 = 3 × 2!</span><br><span class="line">4! = 4 × 3 × 2 × 1 = 4 × 3!</span><br><span class="line">...</span><br><span class="line">n! = n × (n-1)!</span><br></pre></td></tr></table></figure>
+<p>解决办法2:</p>
+<p><img src="/Img/01-第7天-13.png" alt="img"></p>
+<p>原理</p>
+<p><img src="/Img/digui_jiecheng.png" alt="阶乘递归原理"></p>
+<h2 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h2><p>用lambda关键词能创建小型匿名函数。这种函数得名于省略了用def声明函数的标准步骤。</p>
+<p>lambda函数的语法只包含一个语句，如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">lambda</span> [arg1 [,arg2,.....argn]]:expression</span><br></pre></td></tr></table></figure>
+<p>如下实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sum = <span class="keyword">lambda</span> arg1, arg2: arg1 + arg2</span><br><span class="line"></span><br><span class="line"><span class="comment">#调用sum函数</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"Value of total : "</span>, sum( <span class="number">10</span>, <span class="number">20</span> )</span><br><span class="line"><span class="keyword">print</span> <span class="string">"Value of total : "</span>, sum( <span class="number">20</span>, <span class="number">20</span> )</span><br></pre></td></tr></table></figure>
+<p>以上实例输出结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Value of total :  <span class="number">30</span></span><br><span class="line">Value of total :  <span class="number">40</span></span><br></pre></td></tr></table></figure>
+<p>Lambda函数能接收任何数量的参数但只能返回一个表达式的值</p>
+<p>匿名函数不能直接调用print，因为lambda需要一个表达式</p>
+<h2 id="应用场合"><a href="#应用场合" class="headerlink" title="应用场合"></a>应用场合</h2><h4 id="函数作为参数传递"><a href="#函数作为参数传递" class="headerlink" title="函数作为参数传递"></a>函数作为参数传递</h4><ol>
+<li><p>自己定义函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">fun</span><span class="params">(a, b, opt)</span>:</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">print</span> <span class="string">"a ="</span>, a</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">print</span> <span class="string">"b ="</span>, b</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">print</span> <span class="string">"result ="</span>, opt(a, b)</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fun(<span class="number">1</span>, <span class="number">2</span>, <span class="keyword">lambda</span> x,y:x+y)</span><br><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line">result = <span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>作为内置函数的参数</p>
+</li>
+</ol>
+<h4 id="想一想，下面的数据如何指定按age或name排序？"><a href="#想一想，下面的数据如何指定按age或name排序？" class="headerlink" title="想一想，下面的数据如何指定按age或name排序？"></a>想一想，下面的数据如何指定按age或name排序？</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">stus = [</span><br><span class="line">    &#123;<span class="string">"name"</span>:<span class="string">"zhangsan"</span>, <span class="string">"age"</span>:<span class="number">18</span>&#125;, </span><br><span class="line">    &#123;<span class="string">"name"</span>:<span class="string">"lisi"</span>, <span class="string">"age"</span>:<span class="number">19</span>&#125;, </span><br><span class="line">    &#123;<span class="string">"name"</span>:<span class="string">"wangwu"</span>, <span class="string">"age"</span>:<span class="number">17</span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h4 id="按name排序："><a href="#按name排序：" class="headerlink" title="按name排序："></a>按name排序：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>stus.sort(key = <span class="keyword">lambda</span> x:x[<span class="string">'name'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>stus</span><br><span class="line">[&#123;<span class="string">'age'</span>: <span class="number">19</span>, <span class="string">'name'</span>: <span class="string">'lisi'</span>&#125;, &#123;<span class="string">'age'</span>: <span class="number">17</span>, <span class="string">'name'</span>: <span class="string">'wangwu'</span>&#125;, &#123;<span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'name'</span>: <span class="string">'zhangsan'</span>&#125;]</span><br></pre></td></tr></table></figure>
+<h4 id="按age排序："><a href="#按age排序：" class="headerlink" title="按age排序："></a>按age排序：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>stus.sort(key = <span class="keyword">lambda</span> x:x[<span class="string">'age'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>stus</span><br><span class="line">[&#123;<span class="string">'age'</span>: <span class="number">17</span>, <span class="string">'name'</span>: <span class="string">'wangwu'</span>&#125;, &#123;<span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'name'</span>: <span class="string">'zhangsan'</span>&#125;, &#123;<span class="string">'age'</span>: <span class="number">19</span>, <span class="string">'name'</span>: <span class="string">'li</span></span><br></pre></td></tr></table></figure>
+<h2 id="函数使用注意事项"><a href="#函数使用注意事项" class="headerlink" title="函数使用注意事项"></a>函数使用注意事项</h2><h3 id="1-自定义函数"><a href="#1-自定义函数" class="headerlink" title="1. 自定义函数"></a>1. 自定义函数</h3><h4 id="无参数、无返回值"><a href="#无参数、无返回值" class="headerlink" title="无参数、无返回值"></a><1>无参数、无返回值</1></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> 函数名<span class="params">()</span>:</span></span><br><span class="line">    语句</span><br></pre></td></tr></table></figure>
+<h4 id="无参数、有返回值"><a href="#无参数、有返回值" class="headerlink" title="无参数、有返回值"></a><2>无参数、有返回值</2></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> 函数名<span class="params">()</span>:</span></span><br><span class="line">    语句</span><br><span class="line">    <span class="keyword">return</span> 需要返回的数值</span><br></pre></td></tr></table></figure>
+<p>注意:</p>
+<ul>
+<li>一个函数到底有没有返回值，就看有没有return，因为只有return才可以返回数据</li>
+<li>在开发中往往根据需求来设计函数需不需要返回值</li>
+<li>函数中，可以有多个return语句，但是只要执行到一个return语句，那么就意味着这个函数的调用完成</li>
+</ul>
+<h4 id="有参数、无返回值"><a href="#有参数、无返回值" class="headerlink" title="有参数、无返回值"></a><3>有参数、无返回值</3></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> 函数名<span class="params">(形参列表)</span>:</span></span><br><span class="line">    语句</span><br></pre></td></tr></table></figure>
+<p>注意：</p>
+<ul>
+<li>在调用函数时，如果需要把一些数据一起传递过去，被调用函数就需要用参数来接收</li>
+<li>参数列表中变量的个数根据实际传递的数据的多少来确定</li>
+</ul>
+<h4 id="有参数、有返回值"><a href="#有参数、有返回值" class="headerlink" title="有参数、有返回值"></a><4>有参数、有返回值</4></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> 函数名<span class="params">(形参列表)</span>:</span></span><br><span class="line">    语句</span><br><span class="line">    <span class="keyword">return</span> 需要返回的数值</span><br></pre></td></tr></table></figure>
+<h4 id="函数名不能重复"><a href="#函数名不能重复" class="headerlink" title="函数名不能重复"></a><5>函数名不能重复</5></h4><p><img src="/Img/Snip20160817_2.png" alt="img"></p>
+<h3 id="2-调用函数"><a href="#2-调用函数" class="headerlink" title="2. 调用函数"></a>2. 调用函数</h3><h4 id="调用的方式为："><a href="#调用的方式为：" class="headerlink" title="调用的方式为："></a><1>调用的方式为：</1></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">函数名([实参列表])</span><br></pre></td></tr></table></figure>
+<h4 id="调用时，到底写不写-实参"><a href="#调用时，到底写不写-实参" class="headerlink" title="调用时，到底写不写 实参"></a><2>调用时，到底写不写 实参</2></h4><ul>
+<li>如果调用的函数 在定义时有形参，那么在调用的时候就应该传递参数</li>
+</ul>
+<h4 id="调用时，实参的个数和先后顺序应该和定义函数中要求的一致"><a href="#调用时，实参的个数和先后顺序应该和定义函数中要求的一致" class="headerlink" title="调用时，实参的个数和先后顺序应该和定义函数中要求的一致"></a><3>调用时，实参的个数和先后顺序应该和定义函数中要求的一致</3></h4><h4 id="如果调用的函数有返回值，那么就可以用一个变量来进行保存这个值"><a href="#如果调用的函数有返回值，那么就可以用一个变量来进行保存这个值" class="headerlink" title="如果调用的函数有返回值，那么就可以用一个变量来进行保存这个值"></a><4>如果调用的函数有返回值，那么就可以用一个变量来进行保存这个值</4></h4><h3 id="3-作用域"><a href="#3-作用域" class="headerlink" title="3. 作用域"></a>3. 作用域</h3><h4 id="在一个函数中定义的变量，只能在本函数中用-局部变量"><a href="#在一个函数中定义的变量，只能在本函数中用-局部变量" class="headerlink" title="在一个函数中定义的变量，只能在本函数中用(局部变量)"></a><1>在一个函数中定义的变量，只能在本函数中用(局部变量)</1></h4><p><img src="/Img/Snip20160817_3.png" alt="img"></p>
+<h4 id="在函数外定义的变量，可以在所有的函数中使用-全局变量"><a href="#在函数外定义的变量，可以在所有的函数中使用-全局变量" class="headerlink" title="在函数外定义的变量，可以在所有的函数中使用(全局变量)"></a><2>在函数外定义的变量，可以在所有的函数中使用(全局变量)</2></h4>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/WechatIMG.png" alt="victor WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/16/文件操作、综合应用/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/16/字典/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">victor</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/victoyer" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:3126735774@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/Suvvictor/" title="我的CSNDBlog" target="_blank">我的CSNDBlog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.python.org" title="python" target="_blank">python</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://redisdoc.com/" title="redis" target="_blank">redis</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">1.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数定义和调用"><span class="nav-number">1.1.</span> <span class="nav-text">函数定义和调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义函数"><span class="nav-number">1.2.</span> <span class="nav-text">定义函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用函数"><span class="nav-number">1.3.</span> <span class="nav-text">调用函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的文档说明"><span class="nav-number">1.4.</span> <span class="nav-text">函数的文档说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数参数-一"><span class="nav-number">1.5.</span> <span class="nav-text">函数参数(一)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义带有参数的函数"><span class="nav-number">1.6.</span> <span class="nav-text"> 定义带有参数的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用带有参数的函数"><span class="nav-number">1.7.</span> <span class="nav-text"> 调用带有参数的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用函数时参数的顺序"><span class="nav-number">1.8.</span> <span class="nav-text"> 调用函数时参数的顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小总结"><span class="nav-number">1.9.</span> <span class="nav-text"> 小总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数返回值-一"><span class="nav-number">1.10.</span> <span class="nav-text">函数返回值(一)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#“返回值”介绍"><span class="nav-number">1.11.</span> <span class="nav-text">“返回值”介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带有返回值的函数"><span class="nav-number">1.12.</span> <span class="nav-text">带有返回值的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保存函数的返回值"><span class="nav-number">1.13.</span> <span class="nav-text">保存函数的返回值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4种函数的类型"><span class="nav-number">2.</span> <span class="nav-text">4种函数的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#无参数，无返回值的函数"><span class="nav-number">2.1.</span> <span class="nav-text">无参数，无返回值的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无参数，有返回值的函数"><span class="nav-number">2.2.</span> <span class="nav-text">无参数，有返回值的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有参数，无返回值的函数"><span class="nav-number">2.3.</span> <span class="nav-text">有参数，无返回值的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有参数，有返回值的函数"><span class="nav-number">2.4.</span> <span class="nav-text">有参数，有返回值的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小总结-1"><span class="nav-number">2.5.</span> <span class="nav-text">小总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的嵌套调用"><span class="nav-number">2.6.</span> <span class="nav-text">函数的嵌套调用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#小总结："><span class="nav-number">2.6.0.1.</span> <span class="nav-text">小总结：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数应用：打印图形和数学计算"><span class="nav-number">2.7.</span> <span class="nav-text">函数应用：打印图形和数学计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">2.8.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现1"><span class="nav-number">2.9.</span> <span class="nav-text">实现1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考代码1"><span class="nav-number">2.10.</span> <span class="nav-text">参考代码1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现2"><span class="nav-number">2.11.</span> <span class="nav-text">实现2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考代码2"><span class="nav-number">2.12.</span> <span class="nav-text">参考代码2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局部变量"><span class="nav-number">2.13.</span> <span class="nav-text">局部变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是局部变量"><span class="nav-number">2.14.</span> <span class="nav-text">什么是局部变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小总结-2"><span class="nav-number">2.15.</span> <span class="nav-text">小总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局变量"><span class="nav-number">2.16.</span> <span class="nav-text">全局变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是全局变量"><span class="nav-number">2.17.</span> <span class="nav-text">什么是全局变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局变量和局部变量名字相同问题"><span class="nav-number">2.18.</span> <span class="nav-text">全局变量和局部变量名字相同问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改全局变量"><span class="nav-number">2.19.</span> <span class="nav-text">修改全局变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结1"><span class="nav-number">2.20.</span> <span class="nav-text">总结1:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可变类型的全局变量"><span class="nav-number">2.21.</span> <span class="nav-text">可变类型的全局变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结2："><span class="nav-number">2.22.</span> <span class="nav-text">总结2：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数返回值-二"><span class="nav-number">2.23.</span> <span class="nav-text">函数返回值(二)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在python中我们可不可以返回多个值？"><span class="nav-number">2.23.1.</span> <span class="nav-text">在python中我们可不可以返回多个值？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数参数-二"><span class="nav-number">2.24.</span> <span class="nav-text">函数参数(二)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-缺省参数"><span class="nav-number">2.25.</span> <span class="nav-text">1. 缺省参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意：带有默认值的参数一定要位于参数列表的最后面。"><span class="nav-number">2.25.0.1.</span> <span class="nav-text">注意：带有默认值的参数一定要位于参数列表的最后面。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-不定长参数"><span class="nav-number">2.26.</span> <span class="nav-text">2.不定长参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-引用传参"><span class="nav-number">2.27.</span> <span class="nav-text">3. 引用传参</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#想一想为什么"><span class="nav-number">2.27.0.1.</span> <span class="nav-text">想一想为什么</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归函数"><span class="nav-number">2.28.</span> <span class="nav-text">递归函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是递归函数"><span class="nav-number">2.29.</span> <span class="nav-text">什么是递归函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归函数的作用"><span class="nav-number">2.30.</span> <span class="nav-text">递归函数的作用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#看阶乘的规律"><span class="nav-number">2.30.0.1.</span> <span class="nav-text">看阶乘的规律</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#匿名函数"><span class="nav-number">2.31.</span> <span class="nav-text">匿名函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场合"><span class="nav-number">2.32.</span> <span class="nav-text">应用场合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数作为参数传递"><span class="nav-number">2.32.0.1.</span> <span class="nav-text">函数作为参数传递</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#想一想，下面的数据如何指定按age或name排序？"><span class="nav-number">2.32.0.2.</span> <span class="nav-text">想一想，下面的数据如何指定按age或name排序？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按name排序："><span class="nav-number">2.32.0.3.</span> <span class="nav-text">按name排序：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按age排序："><span class="nav-number">2.32.0.4.</span> <span class="nav-text">按age排序：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数使用注意事项"><span class="nav-number">2.33.</span> <span class="nav-text">函数使用注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-自定义函数"><span class="nav-number">2.33.1.</span> <span class="nav-text">1. 自定义函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#无参数、无返回值"><span class="nav-number">2.33.1.1.</span> <span class="nav-text">无参数、无返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#无参数、有返回值"><span class="nav-number">2.33.1.2.</span> <span class="nav-text">无参数、有返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有参数、无返回值"><span class="nav-number">2.33.1.3.</span> <span class="nav-text">有参数、无返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有参数、有返回值"><span class="nav-number">2.33.1.4.</span> <span class="nav-text">有参数、有返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数名不能重复"><span class="nav-number">2.33.1.5.</span> <span class="nav-text">函数名不能重复</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-调用函数"><span class="nav-number">2.33.2.</span> <span class="nav-text">2. 调用函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#调用的方式为："><span class="nav-number">2.33.2.1.</span> <span class="nav-text">调用的方式为：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调用时，到底写不写-实参"><span class="nav-number">2.33.2.2.</span> <span class="nav-text">调用时，到底写不写 实参</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调用时，实参的个数和先后顺序应该和定义函数中要求的一致"><span class="nav-number">2.33.2.3.</span> <span class="nav-text">调用时，实参的个数和先后顺序应该和定义函数中要求的一致</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果调用的函数有返回值，那么就可以用一个变量来进行保存这个值"><span class="nav-number">2.33.2.4.</span> <span class="nav-text">如果调用的函数有返回值，那么就可以用一个变量来进行保存这个值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-作用域"><span class="nav-number">2.33.3.</span> <span class="nav-text">3. 作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在一个函数中定义的变量，只能在本函数中用-局部变量"><span class="nav-number">2.33.3.1.</span> <span class="nav-text">在一个函数中定义的变量，只能在本函数中用(局部变量)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在函数外定义的变量，可以在所有的函数中使用-全局变量"><span class="nav-number">2.33.3.2.</span> <span class="nav-text">在函数外定义的变量，可以在所有的函数中使用(全局变量)</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">victor</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

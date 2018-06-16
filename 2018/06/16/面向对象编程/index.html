@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="人生苦短我用python;python,lee,python之禅" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="title:面向对象编程面向对象编程类和对象面向对象编程的2个非常重要的概念：类和对象 对象是面向对象编程的核心，在使用对象的过程中，为了将具有共同特征和行为的一组对象抽象定义，提出了另外一个新的概念——类 类就相当于制造飞机时的图纸，用它来进行创建的飞机就相当于对象 1. 类123人以类聚 物以群分。具有相似内部状态和运动规律的实体的集合(或统称为抽象)。 具有相同属性和行为事物的统称 类是抽">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Blog">
+<meta property="og:url" content="http://yoursite.com/2018/06/16/面向对象编程/index.html">
+<meta property="og:site_name" content="Python Blog">
+<meta property="og:description" content="title:面向对象编程面向对象编程类和对象面向对象编程的2个非常重要的概念：类和对象 对象是面向对象编程的核心，在使用对象的过程中，为了将具有共同特征和行为的一组对象抽象定义，提出了另外一个新的概念——类 类就相当于制造飞机时的图纸，用它来进行创建的飞机就相当于对象 1. 类123人以类聚 物以群分。具有相似内部状态和运动规律的实体的集合(或统称为抽象)。 具有相同属性和行为事物的统称 类是抽">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/Img/01-第7天-1.png">
+<meta property="og:image" content="http://yoursite.com/Img/01-第7天-2.png">
+<meta property="og:image" content="http://yoursite.com/Img/01-第7天-3.jpg">
+<meta property="og:image" content="http://yoursite.com/Img/01-第7天-4.jpg">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20161023_83.png">
+<meta property="og:image" content="http://yoursite.com/Img/月饼.jpg">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160820_3.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160820_4.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20161023_84.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20161023_86.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20161023_87.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20161023_88.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20161023_89.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20161023_90.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20161024_91.png">
+<meta property="og:updated_time" content="2018-06-16T08:57:52.080Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Blog">
+<meta name="twitter:description" content="title:面向对象编程面向对象编程类和对象面向对象编程的2个非常重要的概念：类和对象 对象是面向对象编程的核心，在使用对象的过程中，为了将具有共同特征和行为的一组对象抽象定义，提出了另外一个新的概念——类 类就相当于制造飞机时的图纸，用它来进行创建的飞机就相当于对象 1. 类123人以类聚 物以群分。具有相似内部状态和运动规律的实体的集合(或统称为抽象)。 具有相同属性和行为事物的统称 类是抽">
+<meta name="twitter:image" content="http://yoursite.com/Img/01-第7天-1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/16/面向对象编程/"/>
+
+
+
+
+
+  <title> | Python Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Python Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">victor的个人博客</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/16/面向对象编程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="victor">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Python Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline"></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-16T16:58:34+08:00">
+                2018-06-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<h2 id="title-面向对象编程"><a href="#title-面向对象编程" class="headerlink" title="title:面向对象编程"></a>title:面向对象编程</h2><h1 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h1><h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><p>面向对象编程的2个非常重要的概念：类和对象</p>
+<p>对象是面向对象编程的核心，在使用对象的过程中，为了将具有共同特征和行为的一组对象抽象定义，提出了另外一个新的概念——类</p>
+<p>类就相当于制造飞机时的图纸，用它来进行创建的飞机就相当于对象</p>
+<h3 id="1-类"><a href="#1-类" class="headerlink" title="1. 类"></a>1. 类</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">人以类聚 物以群分。</span><br><span class="line">具有相似内部状态和运动规律的实体的集合(或统称为抽象)。 </span><br><span class="line">具有相同属性和行为事物的统称</span><br></pre></td></tr></table></figure>
+<p>类是抽象的,在使用的时候通常会找到这个类的一个具体的存在,使用这个具体的存在。一个类可以找到多个对象</p>
+<p><img src="/Img/01-第7天-1.png" alt="战斗机图纸"></p>
+<h3 id="2-对象"><a href="#2-对象" class="headerlink" title="2. 对象"></a>2. 对象</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">某一个具体事物的存在 ,在现实世界中可以是看得见摸得着的。</span><br><span class="line"></span><br><span class="line">可以是直接使用的</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/01-第7天-2.png" alt="战斗机图纸"></p>
+<h3 id="3-类和对象之间的关系"><a href="#3-类和对象之间的关系" class="headerlink" title="3. 类和对象之间的关系"></a>3. 类和对象之间的关系</h3><p><img src="/Img/01-第7天-3.jpg" alt="战斗机图纸"></p>
+<p>小总结：类就是创建对象的模板</p>
+<h3 id="4-类的构成"><a href="#4-类的构成" class="headerlink" title="4. 类的构成"></a>4. 类的构成</h3><p>类(Class) 由3个部分构成</p>
+<ul>
+<li>类的名称:类名</li>
+<li>类的属性:一组数据</li>
+<li>类的方法:允许对进行操作的方法 (行为)</li>
+</ul>
+<h4 id="举例："><a href="#举例：" class="headerlink" title=" 举例："></a><1> 举例：</1></h4><p>1）人类设计,只关心3样东西:</p>
+<ul>
+<li>事物名称(类名):人(Person)</li>
+<li>属性:身高(height)、年龄(age)</li>
+<li>方法(行为/功能):跑(run)、打架(fight)</li>
+</ul>
+<p>2）狗类的设计</p>
+<ul>
+<li>类名:狗(Dog)</li>
+<li>属性:品种 、毛色、性别、名字、 腿儿的数量</li>
+<li>方法(行为/功能):叫 、跑、咬人、吃、摇尾巴</li>
+</ul>
+<p><img src="/Img/01-第7天-4.jpg" alt="战斗机图纸"></p>
+<h3 id="5-类的抽象"><a href="#5-类的抽象" class="headerlink" title="5. 类的抽象"></a>5. 类的抽象</h3><p>如何把日常生活中的事物抽象成程序中的类?</p>
+<p>拥有相同(或者类似)属性和行为的对象都可以抽像出一个类</p>
+<p>方法:一般名词都是类(名词提炼法)</p>
+<h4 id="坦克发射3颗炮弹轰掉了2架飞机"><a href="#坦克发射3颗炮弹轰掉了2架飞机" class="headerlink" title=" 坦克发射3颗炮弹轰掉了2架飞机"></a><1> 坦克发射3颗炮弹轰掉了2架飞机</1></h4><ul>
+<li>坦克–》可以抽象成 类</li>
+<li>炮弹–》可以抽象成类</li>
+<li>飞机-》可以抽象成类</li>
+</ul>
+<h4 id="小明在公车上牵着一条叼着热狗的狗"><a href="#小明在公车上牵着一条叼着热狗的狗" class="headerlink" title=" 小明在公车上牵着一条叼着热狗的狗"></a><2> 小明在公车上牵着一条叼着热狗的狗</2></h4><ul>
+<li>小明–》 人类</li>
+<li>公车–》 交通工具类</li>
+<li>热狗–》 食物类</li>
+<li>狗–》 狗类</li>
+</ul>
+<h2 id="定义类"><a href="#定义类" class="headerlink" title="定义类"></a>定义类</h2><p>定义一个类，格式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名:</span></span><br><span class="line">    方法列表</span><br></pre></td></tr></table></figure>
+<p>demo：定义一个Car类</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>:</span></span><br><span class="line">    <span class="comment"># 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getCarInfo</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'车轮子个数:%d, 颜色%s'</span>%(self.wheelNum, self.color))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"车正在移动..."</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h4><ul>
+<li>定义类时有2种：新式类和经典类，上面的Car为经典类，如果是Car(object)则为新式类</li>
+<li>类名 的命名规则按照”大驼峰”</li>
+</ul>
+<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>python中，可以根据已经定义的类去创建出一个个对象</p>
+<p>创建对象的格式为:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对象名 = 类名()</span><br></pre></td></tr></table></figure>
+<p>创建对象demo:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>:</span></span><br><span class="line">    <span class="comment"># 移动</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'车在奔跑...'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 鸣笛</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">toot</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"车在鸣笛...嘟嘟.."</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个对象，并用变量BMW来保存它的引用</span></span><br><span class="line">BMW = Car()</span><br><span class="line">BMW.color = <span class="string">'黑色'</span></span><br><span class="line">BMW.wheelNum = <span class="number">4</span> <span class="comment">#轮子数量</span></span><br><span class="line">BMW.move()</span><br><span class="line">BMW.toot()</span><br><span class="line">print(BMW.color)</span><br><span class="line">print(BMW.wheelNum)</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20161023_83.png" alt="img"></p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><ul>
+<li>BMW = Car()，这样就产生了一个Car的实例对象，此时也可以通过实例对象BMW来访问属性或者方法</li>
+<li>第一次使用BMW.color = ‘黑色’表示给BMW这个对象添加属性，如果后面再次出现BMW.color = xxx表示对属性进行修改</li>
+<li>BMW是一个对象，它拥有属性（数据）和方法（函数）</li>
+<li>当创建一个对象时，就是用一个模子，来制造一个实物 <img src="/Img/月饼.jpg" alt="img"></li>
+</ul>
+<h2 id="init-方法"><a href="#init-方法" class="headerlink" title="init()方法"></a><strong>init</strong>()方法</h2><h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a><1>使用方式</1></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> 类名:</span></span><br><span class="line">    <span class="comment">#初始化函数，用来完成一些默认的设定</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<h3 id="init-方法的调用"><a href="#init-方法的调用" class="headerlink" title="__init__()方法的调用"></a><2><code>__init__()</code>方法的调用</2></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义汽车类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.wheelNum = <span class="number">4</span></span><br><span class="line">        self.color = <span class="string">'蓝色'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'车在跑，目标:夏威夷'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建对象</span></span><br><span class="line">BMW = Car()</span><br><span class="line"></span><br><span class="line">print(<span class="string">'车的颜色为:%s'</span>%BMW.color)</span><br><span class="line">print(<span class="string">'车轮胎数量为:%d'</span>%BMW.wheelNum)</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160820_3.png" alt="img"></p>
+<h4 id="总结1"><a href="#总结1" class="headerlink" title="总结1"></a>总结1</h4><blockquote>
+<p>当创建Car对象后，在没有调用<code>__init__()</code>方法的前提下，BMW就默认拥有了2个属性wheelNum和color，原因是<code>__init__()</code>方法是在创建对象后，就立刻被默认调用了</p>
+</blockquote>
+<h2 id="init传参"><a href="#init传参" class="headerlink" title="init传参"></a><strong>init</strong>传参</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义汽车类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, newWheelNum, newColor)</span>:</span></span><br><span class="line">        self.wheelNum = newWheelNum</span><br><span class="line">        self.color = newColor</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'车在跑，目标:夏威夷'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建对象</span></span><br><span class="line">BMW = Car(<span class="number">4</span>, <span class="string">'green'</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'车的颜色为:%s'</span>%BMW.color)</span><br><span class="line">print(<span class="string">'车轮子数量为:%d'</span>%BMW.wheelNum)</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160820_4.png" alt="img"></p>
+<h4 id="总结2"><a href="#总结2" class="headerlink" title="总结2"></a>总结2</h4><ul>
+<li><code>__init__()</code>方法，在创建一个对象时默认被调用，不需要手动调用</li>
+<li><code>__init__(self)</code>中，默认有1个参数名字为self，如果在创建对象时传递了2个实参，那么<code>__init__(self)</code>中出了self作为第一个形参外还需要2个形参，例如<code>__init__(self,x,y)</code></li>
+<li><code>__init__(self)</code>中的self参数，不需要开发者传递，python解释器会自动把当前的对象引用传递进去</li>
+</ul>
+<h2 id="“魔法”方法"><a href="#“魔法”方法" class="headerlink" title="“魔法”方法"></a>“魔法”方法</h2><h3 id="1-打印id"><a href="#1-打印id" class="headerlink" title="1. 打印id()"></a>1. 打印id()</h3><p>如果把BMW使用print进行输出的话，会看到如下的信息</p>
+<p><img src="/Img/Snip20161023_84.png" alt="img"></p>
+<p>即看到的是创建出来的BMW对象在内存中的地址</p>
+<h3 id="2-定义-str-方法"><a href="#2-定义-str-方法" class="headerlink" title="2. 定义__str__()方法"></a>2. 定义<code>__str__()</code>方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, newWheelNum, newColor)</span>:</span></span><br><span class="line">        self.wheelNum = newWheelNum</span><br><span class="line">        self.color = newColor</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        msg = <span class="string">"嘿。。。我的颜色是"</span> + self.color + <span class="string">"我有"</span> + int(self.wheelNum) + <span class="string">"个轮胎..."</span></span><br><span class="line">        <span class="keyword">return</span> msg</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'车在跑，目标:夏威夷'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">BMW = Car(<span class="number">4</span>, <span class="string">"白色"</span>)</span><br><span class="line">print(BMW)</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20161023_86.png" alt="img"></p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<li>在python中方法名如果是<code>__xxxx__()</code>的，那么就有特殊的功能，因此叫做“魔法”方法</li>
+<li>当使用print输出对象的时候，只要自己定义了<code>__str__(self)</code>方法，那么就会打印从在这个方法中return的数据</li>
+</ul>
+<h2 id="self"><a href="#self" class="headerlink" title="self"></a>self</h2><h3 id="1-理解self"><a href="#1-理解self" class="headerlink" title="1. 理解self"></a>1. 理解self</h3><p>看如下示例:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义一个类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">printName</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'名字为:%s'</span>%self.name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义一个函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myPrint</span><span class="params">(animal)</span>:</span></span><br><span class="line">    animal.printName()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">dog1 = Animal(<span class="string">'西西'</span>)</span><br><span class="line">myPrint(dog1)</span><br><span class="line"></span><br><span class="line">dog2 = Animal(<span class="string">'北北'</span>)</span><br><span class="line">myPrint(dog2)</span><br></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<p><img src="/Img/Snip20161023_87.png" alt="self"></p>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>所谓的self，可以理解为自己</li>
+<li>可以把self当做C++中类里面的this指针一样理解，就是对象自身的意思</li>
+<li>某个对象调用其方法时，python解释器会把这个对象作为第一个参数传递给self，所以开发者只需要传递后面的参数即可</li>
+</ul>
+<h2 id="应用-烤地瓜"><a href="#应用-烤地瓜" class="headerlink" title="应用:烤地瓜"></a>应用:烤地瓜</h2><p>为了更好的理解面向对象编程，下面以“烤地瓜”为案例，进行分析</p>
+<h3 id="1-分析“烤地瓜”的属性和方法"><a href="#1-分析“烤地瓜”的属性和方法" class="headerlink" title="1. 分析“烤地瓜”的属性和方法"></a>1. 分析“烤地瓜”的属性和方法</h3><h4 id="示例属性如下"><a href="#示例属性如下" class="headerlink" title="示例属性如下:"></a>示例属性如下:</h4><ul>
+<li>cookedLevel : 这是数字；0~3表示还是生的，超过3表示半生不熟，超过5表示已经烤好了，超过8表示已经烤成木炭了！我们的地瓜开始时时生的</li>
+<li>cookedString : 这是字符串；描述地瓜的生熟程度</li>
+<li>condiments : 这是地瓜的配料列表，比如番茄酱、芥末酱等</li>
+</ul>
+<h4 id="示例方法如下"><a href="#示例方法如下" class="headerlink" title="示例方法如下:"></a>示例方法如下:</h4><ul>
+<li><code>cook()</code> : 把地瓜烤一段时间</li>
+<li><code>addCondiments()</code> : 给地瓜添加配料</li>
+<li><code>__init__()</code> : 设置默认的属性</li>
+<li><code>__str__()</code> : 让print的结果看起来更好一些</li>
+</ul>
+<h4 id="2-定义类，并且定义-init-方法"><a href="#2-定义类，并且定义-init-方法" class="headerlink" title="2. 定义类，并且定义__init__()方法"></a>2. 定义类，并且定义<code>__init__()</code>方法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义`地瓜`类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SweetPotato</span>:</span></span><br><span class="line">    <span class="string">'这是烤地瓜的类'</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#定义初始化方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.cookedLevel = <span class="number">0</span></span><br><span class="line">        self.cookedString = <span class="string">"生的"</span></span><br><span class="line">        self.condiments = []</span><br></pre></td></tr></table></figure>
+<h4 id="3-添加”烤地瓜”方法"><a href="#3-添加”烤地瓜”方法" class="headerlink" title="3. 添加”烤地瓜”方法"></a>3. 添加”烤地瓜”方法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#烤地瓜方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cook</span><span class="params">(self, time)</span>:</span></span><br><span class="line">    self.cookedLevel += time</span><br><span class="line">    <span class="keyword">if</span> self.cookedLevel &gt; <span class="number">8</span>:</span><br><span class="line">        self.cookedString = <span class="string">"烤成灰了"</span></span><br><span class="line">    <span class="keyword">elif</span> self.cookedLevel &gt; <span class="number">5</span>:</span><br><span class="line">        self.cookedString = <span class="string">"烤好了"</span>    </span><br><span class="line">    <span class="keyword">elif</span> self.cookedLevel &gt; <span class="number">3</span>:</span><br><span class="line">        self.cookedString = <span class="string">"半生不熟"</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        self.cookedString = <span class="string">"生的"</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-基本的功能已经有了一部分，赶紧测试一下"><a href="#4-基本的功能已经有了一部分，赶紧测试一下" class="headerlink" title="4. 基本的功能已经有了一部分，赶紧测试一下"></a>4. 基本的功能已经有了一部分，赶紧测试一下</h4><p>把上面2块代码合并为一个程序后，在代码的下面添加以下代码进行测试</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mySweetPotato = SweetPotato()</span><br><span class="line">print(mySweetPotato.cookedLevel)</span><br><span class="line">print(mySweetPotato.cookedString)</span><br><span class="line">print(mySweetPotato.condiments)</span><br></pre></td></tr></table></figure>
+<p>完整的代码为:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SweetPotato</span>:</span></span><br><span class="line">    <span class="string">'这是烤地瓜的类'</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#定义初始化方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.cookedLevel = <span class="number">0</span></span><br><span class="line">        self.cookedString = <span class="string">"生的"</span></span><br><span class="line">        self.condiments = []</span><br><span class="line"></span><br><span class="line">        <span class="comment">#烤地瓜方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cook</span><span class="params">(self, time)</span>:</span></span><br><span class="line">        self.cookedLevel += time</span><br><span class="line">        <span class="keyword">if</span> self.cookedLevel &gt; <span class="number">8</span>:</span><br><span class="line">            self.cookedString = <span class="string">"烤成灰了"</span></span><br><span class="line">        <span class="keyword">elif</span> self.cookedLevel &gt; <span class="number">5</span>:</span><br><span class="line">            self.cookedString = <span class="string">"烤好了"</span>    </span><br><span class="line">        <span class="keyword">elif</span> self.cookedLevel &gt; <span class="number">3</span>:</span><br><span class="line">            self.cookedString = <span class="string">"半生不熟"</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.cookedString = <span class="string">"生的"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 用来进行测试</span></span><br><span class="line">mySweetPotato = SweetPotato()</span><br><span class="line">print(mySweetPotato.cookedLevel)</span><br><span class="line">print(mySweetPotato.cookedString)</span><br><span class="line">print(mySweetPotato.condiments)</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20161023_88.png" alt="img"></p>
+<h4 id="5-测试cook方法是否好用"><a href="#5-测试cook方法是否好用" class="headerlink" title="5. 测试cook方法是否好用"></a>5. 测试cook方法是否好用</h4><p>在上面的代码最后面添加如下代码:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"------接下来要进行烤地瓜了-----"</span>)</span><br><span class="line">mySweetPotato.cook(<span class="number">4</span>) <span class="comment">#烤4分钟</span></span><br><span class="line">print(mySweetPotato.cookedLevel)</span><br><span class="line">print(mySweetPotato.cookedString)</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20161023_89.png" alt="img"></p>
+<h4 id="6-定义addCondiments-方法和-str-方法"><a href="#6-定义addCondiments-方法和-str-方法" class="headerlink" title="6. 定义addCondiments()方法和__str__()方法"></a>6. 定义<code>addCondiments()</code>方法和<code>__str__()</code>方法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">    msg = self.cookedString + <span class="string">" 地瓜"</span></span><br><span class="line">    <span class="keyword">if</span> len(self.condiments) &gt; <span class="number">0</span>:</span><br><span class="line">        msg = msg + <span class="string">"("</span></span><br><span class="line">        <span class="keyword">for</span> temp <span class="keyword">in</span> self.condiments:</span><br><span class="line">            msg = msg + temp + <span class="string">", "</span></span><br><span class="line">        msg = msg.strip(<span class="string">", "</span>)</span><br><span class="line"></span><br><span class="line">        msg = msg + <span class="string">")"</span></span><br><span class="line">    <span class="keyword">return</span> msg</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">addCondiments</span><span class="params">(self, condiments)</span>:</span></span><br><span class="line">    self.condiments.append(condiments)</span><br></pre></td></tr></table></figure>
+<h2 id="7-再次测试"><a href="#7-再次测试" class="headerlink" title="7. 再次测试"></a>7. 再次测试</h2><p>完整的代码如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SweetPotato</span>:</span></span><br><span class="line">    <span class="string">"这是烤地瓜的类"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#定义初始化方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.cookedLevel = <span class="number">0</span></span><br><span class="line">        self.cookedString = <span class="string">"生的"</span></span><br><span class="line">        self.condiments = []</span><br><span class="line"></span><br><span class="line">    <span class="comment">#定制print时的显示内容</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        msg = self.cookedString + <span class="string">" 地瓜"</span></span><br><span class="line">        <span class="keyword">if</span> len(self.condiments) &gt; <span class="number">0</span>:</span><br><span class="line">            msg = msg + <span class="string">"("</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> temp <span class="keyword">in</span> self.condiments:</span><br><span class="line">                msg = msg + temp + <span class="string">", "</span></span><br><span class="line">            msg = msg.strip(<span class="string">", "</span>)</span><br><span class="line"></span><br><span class="line">            msg = msg + <span class="string">")"</span></span><br><span class="line">        <span class="keyword">return</span> msg</span><br><span class="line"></span><br><span class="line">    <span class="comment">#烤地瓜方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cook</span><span class="params">(self, time)</span>:</span></span><br><span class="line">        self.cookedLevel += time</span><br><span class="line">        <span class="keyword">if</span> self.cookedLevel &gt; <span class="number">8</span>:</span><br><span class="line">            self.cookedString = <span class="string">"烤成灰了"</span></span><br><span class="line">        <span class="keyword">elif</span> self.cookedLevel &gt; <span class="number">5</span>:</span><br><span class="line">            self.cookedString = <span class="string">"烤好了"</span>    </span><br><span class="line">        <span class="keyword">elif</span> self.cookedLevel &gt; <span class="number">3</span>:</span><br><span class="line">            self.cookedString = <span class="string">"半生不熟"</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.cookedString = <span class="string">"生的"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#添加配料</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addCondiments</span><span class="params">(self, condiments)</span>:</span></span><br><span class="line">        self.condiments.append(condiments)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用来进行测试</span></span><br><span class="line">mySweetPotato = SweetPotato()</span><br><span class="line">print(<span class="string">"------有了一个地瓜，还没有烤-----"</span>)</span><br><span class="line">print(mySweetPotato.cookedLevel)</span><br><span class="line">print(mySweetPotato.cookedString)</span><br><span class="line">print(mySweetPotato.condiments)</span><br><span class="line">print(<span class="string">"------接下来要进行烤地瓜了-----"</span>)</span><br><span class="line">print(<span class="string">"------地瓜经烤了4分钟-----"</span>)</span><br><span class="line">mySweetPotato.cook(<span class="number">4</span>) <span class="comment">#烤4分钟</span></span><br><span class="line">print(mySweetPotato)</span><br><span class="line">print(<span class="string">"------地瓜又经烤了3分钟-----"</span>)</span><br><span class="line">mySweetPotato.cook(<span class="number">3</span>) <span class="comment">#又烤了3分钟</span></span><br><span class="line">print(mySweetPotato)</span><br><span class="line">print(<span class="string">"------接下来要添加配料-番茄酱------"</span>)</span><br><span class="line">mySweetPotato.addCondiments(<span class="string">"番茄酱"</span>)</span><br><span class="line">print(mySweetPotato)</span><br><span class="line">print(<span class="string">"------地瓜又经烤了5分钟-----"</span>)</span><br><span class="line">mySweetPotato.cook(<span class="number">5</span>) <span class="comment">#又烤了5分钟</span></span><br><span class="line">print(mySweetPotato)</span><br><span class="line">print(<span class="string">"------接下来要添加配料-芥末酱------"</span>)</span><br><span class="line">mySweetPotato.addCondiments(<span class="string">"芥末酱"</span>)</span><br><span class="line">print(mySweetPotato)</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20161023_90.png" alt="img"></p>
+<h2 id="隐藏数据"><a href="#隐藏数据" class="headerlink" title="隐藏数据"></a>隐藏数据</h2><p>可能你已经意识到，查看过着修改对象的属性（数据），有2种方法</p>
+<h3 id="1-直接通过对象名修改"><a href="#1-直接通过对象名修改" class="headerlink" title="1. 直接通过对象名修改"></a>1. 直接通过对象名修改</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SweetPotato.cookedLevel = <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-通过方法间接修改"><a href="#2-通过方法间接修改" class="headerlink" title="2. 通过方法间接修改"></a>2. 通过方法间接修改</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SweetPotato.cook(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>明明可以使用第1种方法直接修改，为什么还要定义方法来间接修改呢？</p>
+<p>至少有2个原因：</p>
+<ul>
+<li>如果直接修改属性，烤地瓜至少需要修改2部分，即修改cookedLevel和cookedString。而使用方法来修改时，只需要调用一次即可完成</li>
+<li>如果直接访问属性，可能会出现一些数据设置错误的情况产生例如<code>cookedLevel = -3</code>。这会使地瓜比以前还生，当然了这也没有任何意义，通过使用方法来进行修改，就可以在方法中进行数据合法性的检查</li>
+</ul>
+<h2 id="应用-存放家具"><a href="#应用-存放家具" class="headerlink" title="应用:存放家具"></a>应用:存放家具</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义一个home类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Home</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, area)</span>:</span></span><br><span class="line">        self.area = area <span class="comment">#房间剩余的可用面积</span></span><br><span class="line">        <span class="comment">#self.light = 'on' #灯默认是亮的</span></span><br><span class="line">        self.containsItem = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        msg = <span class="string">"当前房间可用面积为:"</span> + str(self.area)</span><br><span class="line">        <span class="keyword">if</span> len(self.containsItem) &gt; <span class="number">0</span>:</span><br><span class="line">            msg = msg + <span class="string">" 容纳的物品有: "</span></span><br><span class="line">            <span class="keyword">for</span> temp <span class="keyword">in</span> self.containsItem:</span><br><span class="line">                msg = msg + temp.getName() + <span class="string">", "</span></span><br><span class="line">            msg = msg.strip(<span class="string">", "</span>)</span><br><span class="line">        <span class="keyword">return</span> msg</span><br><span class="line"></span><br><span class="line">    <span class="comment">#容纳物品</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">accommodateItem</span><span class="params">(self,item)</span>:</span></span><br><span class="line">        <span class="comment">#如果可用面积大于物品的占用面积</span></span><br><span class="line">        needArea = item.getUsedArea()</span><br><span class="line">        <span class="keyword">if</span> self.area &gt; needArea:</span><br><span class="line">            self.containsItem.append(item)</span><br><span class="line">            self.area -= needArea</span><br><span class="line">            print(<span class="string">"ok:已经存放到房间中"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"err:房间可用面积为:%d,但是当前要存放的物品需要的面积为%d"</span>%(self.area, needArea))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#定义bed类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bed</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,area,name = <span class="string">'床'</span>)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.area = area</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        msg = <span class="string">'床的面积为:'</span> + str(self.area)</span><br><span class="line">        <span class="keyword">return</span> msg</span><br><span class="line"></span><br><span class="line">    <span class="comment">#获取床的占用面积</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getUsedArea</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.area</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getName</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#创建一个新家对象</span></span><br><span class="line">newHome = Home(<span class="number">100</span>)<span class="comment">#100平米</span></span><br><span class="line">print(newHome)</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建一个床对象</span></span><br><span class="line">newBed = Bed(<span class="number">20</span>)</span><br><span class="line">print(newBed)</span><br><span class="line"></span><br><span class="line"><span class="comment">#把床安放到家里</span></span><br><span class="line">newHome.accommodateItem(newBed)</span><br><span class="line">print(newHome)</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建一个床对象</span></span><br><span class="line">newBed2 = Bed(<span class="number">30</span>,<span class="string">'席梦思'</span>)</span><br><span class="line">print(newBed2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#把床安放到家里</span></span><br><span class="line">newHome.accommodateItem(newBed2)</span><br><span class="line">print(newHome)</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20161024_91.png" alt="img"></p>
+<h4 id="总结：-1"><a href="#总结：-1" class="headerlink" title="总结："></a>总结：</h4><ul>
+<li>如果一个对象与另外一个对象有一定的关系，那么一个对象可用是另外一个对象的属性</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/WechatIMG.png" alt="victor WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/27/Web前端概述/" rel="next" title="Web前端概述">
+                <i class="fa fa-chevron-left"></i> Web前端概述
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/16/文件操作、综合应用/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">victor</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/victoyer" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:3126735774@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/Suvvictor/" title="我的CSNDBlog" target="_blank">我的CSNDBlog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.python.org" title="python" target="_blank">python</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://redisdoc.com/" title="redis" target="_blank">redis</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#title-面向对象编程"><span class="nav-number">1.</span> <span class="nav-text">title:面向对象编程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象编程"><span class="nav-number"></span> <span class="nav-text">面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类和对象"><span class="nav-number">1.</span> <span class="nav-text">类和对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-类"><span class="nav-number">1.1.</span> <span class="nav-text">1. 类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-对象"><span class="nav-number">1.2.</span> <span class="nav-text">2. 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-类和对象之间的关系"><span class="nav-number">1.3.</span> <span class="nav-text">3. 类和对象之间的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-类的构成"><span class="nav-number">1.4.</span> <span class="nav-text">4. 类的构成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#举例："><span class="nav-number">1.4.1.</span> <span class="nav-text"> 举例：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-类的抽象"><span class="nav-number">1.5.</span> <span class="nav-text">5. 类的抽象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#坦克发射3颗炮弹轰掉了2架飞机"><span class="nav-number">1.5.1.</span> <span class="nav-text"> 坦克发射3颗炮弹轰掉了2架飞机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小明在公车上牵着一条叼着热狗的狗"><span class="nav-number">1.5.2.</span> <span class="nav-text"> 小明在公车上牵着一条叼着热狗的狗</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义类"><span class="nav-number">2.</span> <span class="nav-text">定义类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#说明："><span class="nav-number">2.0.1.</span> <span class="nav-text">说明：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建对象"><span class="nav-number">3.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结："><span class="nav-number">4.</span> <span class="nav-text">总结：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#init-方法"><span class="nav-number">5.</span> <span class="nav-text">init()方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方式"><span class="nav-number">5.1.</span> <span class="nav-text">使用方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#init-方法的调用"><span class="nav-number">5.2.</span> <span class="nav-text">__init__()方法的调用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#总结1"><span class="nav-number">5.2.1.</span> <span class="nav-text">总结1</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#init传参"><span class="nav-number">6.</span> <span class="nav-text">init传参</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#总结2"><span class="nav-number">6.0.1.</span> <span class="nav-text">总结2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#“魔法”方法"><span class="nav-number">7.</span> <span class="nav-text">“魔法”方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-打印id"><span class="nav-number">7.1.</span> <span class="nav-text">1. 打印id()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-定义-str-方法"><span class="nav-number">7.2.</span> <span class="nav-text">2. 定义__str__()方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">7.2.1.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#self"><span class="nav-number">8.</span> <span class="nav-text">self</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-理解self"><span class="nav-number">8.1.</span> <span class="nav-text">1. 理解self</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结-1"><span class="nav-number">8.2.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用-烤地瓜"><span class="nav-number">9.</span> <span class="nav-text">应用:烤地瓜</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-分析“烤地瓜”的属性和方法"><span class="nav-number">9.1.</span> <span class="nav-text">1. 分析“烤地瓜”的属性和方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#示例属性如下"><span class="nav-number">9.1.1.</span> <span class="nav-text">示例属性如下:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例方法如下"><span class="nav-number">9.1.2.</span> <span class="nav-text">示例方法如下:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-定义类，并且定义-init-方法"><span class="nav-number">9.1.3.</span> <span class="nav-text">2. 定义类，并且定义__init__()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-添加”烤地瓜”方法"><span class="nav-number">9.1.4.</span> <span class="nav-text">3. 添加”烤地瓜”方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-基本的功能已经有了一部分，赶紧测试一下"><span class="nav-number">9.1.5.</span> <span class="nav-text">4. 基本的功能已经有了一部分，赶紧测试一下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-测试cook方法是否好用"><span class="nav-number">9.1.6.</span> <span class="nav-text">5. 测试cook方法是否好用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-定义addCondiments-方法和-str-方法"><span class="nav-number">9.1.7.</span> <span class="nav-text">6. 定义addCondiments()方法和__str__()方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-再次测试"><span class="nav-number">10.</span> <span class="nav-text">7. 再次测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏数据"><span class="nav-number">11.</span> <span class="nav-text">隐藏数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-直接通过对象名修改"><span class="nav-number">11.1.</span> <span class="nav-text">1. 直接通过对象名修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-通过方法间接修改"><span class="nav-number">11.2.</span> <span class="nav-text">2. 通过方法间接修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">11.3.</span> <span class="nav-text">分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用-存放家具"><span class="nav-number">12.</span> <span class="nav-text">应用:存放家具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#总结：-1"><span class="nav-number">12.0.1.</span> <span class="nav-text">总结：</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">victor</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

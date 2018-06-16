@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="人生苦短我用python;python,lee,python之禅" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="字符串字符串介绍 想一想：  当打来浏览器登录某些网站的时候，需要输入密码，浏览器把密码传送到服务器后，服务器会对密码进行验证，其验证过程是把之前保存的密码与本次传递过去的密码进行对比，如果相等，那么就认为密码正确，否则就认为不对；服务器既然想要存储这些密码可以用数据库（比如MySQL），当然为了简单起见，咱们可以先找个变量把密码存储起来即可；那么怎样存储带有字母的密码呢？   答：  字符串">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Blog">
+<meta property="og:url" content="http://yoursite.com/2018/06/16/字符串/index.html">
+<meta property="og:site_name" content="Python Blog">
+<meta property="og:description" content="字符串字符串介绍 想一想：  当打来浏览器登录某些网站的时候，需要输入密码，浏览器把密码传送到服务器后，服务器会对密码进行验证，其验证过程是把之前保存的密码与本次传递过去的密码进行对比，如果相等，那么就认为密码正确，否则就认为不对；服务器既然想要存储这些密码可以用数据库（比如MySQL），当然为了简单起见，咱们可以先找个变量把密码存储起来即可；那么怎样存储带有字母的密码呢？   答：  字符串">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/Img/01-第3天-1.gif">
+<meta property="og:image" content="http://yoursite.com/Img/01-第5天-11.jpg">
+<meta property="og:image" content="http://yoursite.com/Img/01-第5天-8.jpg">
+<meta property="og:image" content="http://yoursite.com/Img/01-第5天-10.jpg">
+<meta property="og:image" content="http://yoursite.com/Img/01-第5天-9.jpg">
+<meta property="og:image" content="http://yoursite.com/Img/01-第5天-12.png">
+<meta property="og:image" content="http://yoursite.com/Img/01-第5天-13.png">
+<meta property="og:image" content="http://yoursite.com/Img/01-第5天-14.png">
+<meta property="og:image" content="http://yoursite.com/Img/01-第5天-15.png">
+<meta property="og:image" content="http://yoursite.com/Img/01-第5天-16.png">
+<meta property="og:image" content="http://yoursite.com/Img/01-第5天-17.png">
+<meta property="og:image" content="http://yoursite.com/Img/01-第5天-18.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_215.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_216.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_217.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_218.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_214.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_211.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_219.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_221.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_222.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_223.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_224.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_225.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_226.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_220.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_227.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_228.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_233.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_235.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_230.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_232.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_229.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_237.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_238.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_236.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_240.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160814_242.png">
+<meta property="og:updated_time" content="2018-06-07T00:35:59.837Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Blog">
+<meta name="twitter:description" content="字符串字符串介绍 想一想：  当打来浏览器登录某些网站的时候，需要输入密码，浏览器把密码传送到服务器后，服务器会对密码进行验证，其验证过程是把之前保存的密码与本次传递过去的密码进行对比，如果相等，那么就认为密码正确，否则就认为不对；服务器既然想要存储这些密码可以用数据库（比如MySQL），当然为了简单起见，咱们可以先找个变量把密码存储起来即可；那么怎样存储带有字母的密码呢？   答：  字符串">
+<meta name="twitter:image" content="http://yoursite.com/Img/01-第3天-1.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/16/字符串/"/>
+
+
+
+
+
+  <title> | Python Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Python Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">victor的个人博客</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/16/字符串/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="victor">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Python Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline"></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-16T16:58:34+08:00">
+                2018-06-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><h2 id="字符串介绍"><a href="#字符串介绍" class="headerlink" title="字符串介绍"></a>字符串介绍</h2><ul>
+<li><p>想一想：</p>
+<blockquote>
+<p>当打来浏览器登录某些网站的时候，需要输入密码，浏览器把密码传送到服务器后，服务器会对密码进行验证，其验证过程是把之前保存的密码与本次传递过去的密码进行对比，如果相等，那么就认为密码正确，否则就认为不对；服务器既然想要存储这些密码可以用数据库（比如MySQL），当然为了简单起见，咱们可以先找个变量把密码存储起来即可；那么怎样存储带有字母的密码呢？</p>
+</blockquote>
+</li>
+<li><p>答：</p>
+<blockquote>
+<p>字符串</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="python中字符串的格式"><a href="#python中字符串的格式" class="headerlink" title="python中字符串的格式"></a><1>python中字符串的格式</1></h2><p>如下定义的变量a，存储的是数字类型的值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">100</span></span><br></pre></td></tr></table></figure>
+<p>如下定义的变量b，存储的是字符串类型的值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="string">"hello itcast.cn"</span></span><br><span class="line">或者</span><br><span class="line">b = <span class="string">'hello itcast.cn'</span></span><br></pre></td></tr></table></figure>
+<h2 id="字符串输出"><a href="#字符串输出" class="headerlink" title="字符串输出"></a>字符串输出</h2><p>demo</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'xiaoming'</span></span><br><span class="line">position = <span class="string">'讲师'</span></span><br><span class="line">address = <span class="string">'北京市昌平区建材城西路金燕龙办公楼1层'</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">'--------------------------------------------------'</span>)</span><br><span class="line">print(<span class="string">"姓名：%s"</span>%name)</span><br><span class="line">print(<span class="string">"职位：%s"</span>%position)</span><br><span class="line">print(<span class="string">"公司地址：%s"</span>%address)</span><br><span class="line">print(<span class="string">'--------------------------------------------------'</span>)</span><br></pre></td></tr></table></figure>
+<p>结果:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">--------------------------------------------------</span><br><span class="line">姓名： xiaoming</span><br><span class="line">职位： 讲师</span><br><span class="line">公司地址： 北京市昌平区建材城西路金燕龙办公楼<span class="number">1</span>层</span><br><span class="line">--------------------------------------------------</span><br></pre></td></tr></table></figure>
+<h2 id="字符串输入"><a href="#字符串输入" class="headerlink" title="字符串输入"></a>字符串输入</h2><p>之前在学习input的时候，通过它能够完成从键盘获取数据，然后保存到指定的变量中；</p>
+<p>注意：input获取的数据，都以字符串的方式进行保存，即使输入的是数字，那么也是以字符串方式保存</p>
+<p>demo:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">userName = input(<span class="string">'请输入用户名:'</span>)</span><br><span class="line">print(<span class="string">"用户名为：%s"</span>%userName)</span><br><span class="line"></span><br><span class="line">password = input(<span class="string">'请输入密码:'</span>)</span><br><span class="line">print(<span class="string">"密码为：%s"</span>%password)</span><br></pre></td></tr></table></figure>
+<p>结果：（根据输入的不同结果也不同）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">请输入用户名:dongGe</span><br><span class="line">用户名为： dongGe</span><br><span class="line">请输入密码:haohaoxuexitiantianxiangshang</span><br><span class="line">密码为： haohaoxuexitiantianxiangshang</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/01-第3天-1.gif" alt="输入密码"></p>
+<h1 id="下标和切片"><a href="#下标和切片" class="headerlink" title="下标和切片"></a>下标和切片</h1><h2 id="1-下标索引"><a href="#1-下标索引" class="headerlink" title="1. 下标索引"></a>1. 下标索引</h2><p>所谓<code>“下标”</code>，就是编号，就好比超市中的存储柜的编号，通过这个编号就能找到相应的存储空间</p>
+<ul>
+<li><p>生活中的 “下标”</p>
+<p>超市储物柜</p>
+<p><img src="/Img/01-第5天-11.jpg" alt="img"></p>
+<p>高铁二等座</p>
+<p><img src="/Img/01-第5天-8.jpg" alt="img"></p>
+<p>高铁一等座</p>
+<p><img src="/Img/01-第5天-10.jpg" alt="img"></p>
+<p>绿皮车</p>
+<p><img src="/Img/01-第5天-9.jpg" alt="img"></p>
+</li>
+<li><p>字符串中”下标”的使用</p>
+<p><strong>列表与元组支持下标索引好理解，字符串实际上就是字符的数组，所以也支持下标索引。</strong></p>
+<p>如果有字符串:<code>name = &#39;abcdef&#39;</code>，在内存中的实际存储如下:</p>
+<p><img src="/Img/01-第5天-12.png" alt="img"></p>
+<p>如果想取出部分字符，那么可以通过<code>下标</code>的方法，（注意python中下标从 0 开始）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'abcdef'</span></span><br><span class="line"></span><br><span class="line">print(name[<span class="number">0</span>])</span><br><span class="line">print(name[<span class="number">1</span>])</span><br><span class="line">print(name[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+<p>运行结果: <img src="/Img/01-第5天-13.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="2-切片"><a href="#2-切片" class="headerlink" title="2. 切片"></a>2. 切片</h2><p>切片是指对操作的对象截取其中一部分的操作。<strong>字符串、列表、元组</strong>都支持切片操作。</p>
+<h4 id="切片的语法：-起始-结束-步长"><a href="#切片的语法：-起始-结束-步长" class="headerlink" title="切片的语法：[起始:结束:步长]"></a>切片的语法：[起始:结束:步长]</h4><p><strong>注意：选取的区间属于左闭右开型，即从”起始”位开始，到”结束”位的前一位结束（不包含结束位本身)。</strong></p>
+<p>我们以字符串为例讲解。</p>
+<p>如果取出一部分，则可以在中括号[]中，使用:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'abcdef'</span></span><br><span class="line"></span><br><span class="line">print(name[<span class="number">0</span>:<span class="number">3</span>]) <span class="comment"># 取 下标0~2 的字符</span></span><br></pre></td></tr></table></figure>
+<p>运行结果:<img src="/Img/01-第5天-14.png" alt="img"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'abcdef'</span></span><br><span class="line"></span><br><span class="line">print(name[<span class="number">0</span>:<span class="number">5</span>]) <span class="comment"># 取 下标为0~4 的字符</span></span><br></pre></td></tr></table></figure>
+<p>运行结果:<img src="/Img/01-第5天-15.png" alt="img"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'abcdef'</span></span><br><span class="line"></span><br><span class="line">print(name[<span class="number">3</span>:<span class="number">5</span>]) <span class="comment"># 取 下标为3、4 的字符</span></span><br></pre></td></tr></table></figure>
+<p>运行结果:<img src="/Img/01-第5天-16.png" alt="img"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'abcdef'</span></span><br><span class="line"></span><br><span class="line">print(name[<span class="number">2</span>:]) <span class="comment"># 取 下标为2开始到最后的字符</span></span><br></pre></td></tr></table></figure>
+<p>运行结果:<img src="/Img/01-第5天-17.png" alt="img"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'abcdef'</span></span><br><span class="line"></span><br><span class="line">print(name[<span class="number">1</span>:<span class="number">-1</span>]) <span class="comment"># 取 下标为1开始 到 最后第2个  之间的字符</span></span><br></pre></td></tr></table></figure>
+<p>运行结果:<img src="/Img/01-第5天-18.png" alt="img"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">"abcdef"</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[:<span class="number">3</span>]</span><br><span class="line"><span class="string">'abc'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[::<span class="number">2</span>]</span><br><span class="line"><span class="string">'ace'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">5</span>:<span class="number">1</span>:<span class="number">2</span>] </span><br><span class="line"><span class="string">''</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">1</span>:<span class="number">5</span>:<span class="number">2</span>]</span><br><span class="line"><span class="string">'bd'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[::<span class="number">-2</span>]</span><br><span class="line"><span class="string">'fdb'</span> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">5</span>:<span class="number">1</span>:<span class="number">-2</span>]</span><br><span class="line"><span class="string">'fd'</span></span><br></pre></td></tr></table></figure>
+<h2 id="字符串常见操作"><a href="#字符串常见操作" class="headerlink" title="字符串常见操作"></a>字符串常见操作</h2><p>如有字符串<code>mystr = &#39;hello world itcast and itcastcpp&#39;</code>，以下是常见的操作</p>
+<h4 id="find"><a href="#find" class="headerlink" title="find"></a><1>find</1></h4><p>检测 str 是否包含在 mystr中，如果是返回开始的索引值，否则返回-1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.find(str, start=<span class="number">0</span>, end=len(mystr))</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_215.png" alt="img"></p>
+<p><img src="/Img/Snip20160814_216.png" alt="img"></p>
+<h4 id="index"><a href="#index" class="headerlink" title="index"></a><2>index</2></h4><p>跟find()方法一样，只不过如果str不在 mystr中会报一个异常.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.index(str, start=<span class="number">0</span>, end=len(mystr))</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_217.png" alt="img"></p>
+<h4 id="count"><a href="#count" class="headerlink" title="count"></a><3>count</3></h4><p>返回 str在start和end之间 在 mystr里面出现的次数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.count(str, start=<span class="number">0</span>, end=len(mystr))</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_218.png" alt="img"></p>
+<h4 id="replace"><a href="#replace" class="headerlink" title="replace"></a><4>replace</4></h4><p>把 mystr 中的 str1 替换成 str2,如果 count 指定，则替换不超过 count 次.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.replace(str1, str2,  mystr.count(str1))</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_214.png" alt="img"></p>
+<h4 id="split"><a href="#split" class="headerlink" title="split"></a><5>split</5></h4><p>以 str 为分隔符切片 mystr，如果 maxsplit有指定值，则仅分隔 maxsplit 个子字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.split(str=<span class="string">" "</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_211.png" alt="img"></p>
+<h4 id="capitalize"><a href="#capitalize" class="headerlink" title="capitalize"></a><6>capitalize</6></h4><p>把字符串的第一个字符大写</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.capitalize()</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_219.png" alt="img"></p>
+<h4 id="title"><a href="#title" class="headerlink" title="title"></a><7>title</7></h4><p>把字符串的每个单词首字母大写</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">"hello itcast"</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.title()</span><br><span class="line"><span class="string">'Hello Itcast'</span></span><br></pre></td></tr></table></figure>
+<h4 id="startswith"><a href="#startswith" class="headerlink" title="startswith"></a><8>startswith</8></h4><p>检查字符串是否是以 obj 开头, 是则返回 True，否则返回 False</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.startswith(obj)</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_221.png" alt="img"></p>
+<h4 id="endswith"><a href="#endswith" class="headerlink" title="endswith"></a><9>endswith</9></h4><p>检查字符串是否以obj结束，如果是返回True,否则返回 False.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.endswith(obj)</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_222.png" alt="img"></p>
+<h4 id="lower"><a href="#lower" class="headerlink" title="lower"></a><10>lower</10></h4><p>转换 mystr 中所有大写字符为小写</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.lower()</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_223.png" alt="img"></p>
+<h4 id="upper"><a href="#upper" class="headerlink" title="upper"></a><11>upper</11></h4><p>转换 mystr 中的小写字母为大写</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.upper()</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_224.png" alt="img"></p>
+<h4 id="ljust"><a href="#ljust" class="headerlink" title="ljust"></a><12>ljust</12></h4><p>返回一个原字符串左对齐,并使用空格填充至长度 width 的新字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.ljust(width)</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_225.png" alt="img"></p>
+<h4 id="rjust"><a href="#rjust" class="headerlink" title="rjust"></a><13>rjust</13></h4><p>返回一个原字符串右对齐,并使用空格填充至长度 width 的新字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.rjust(width)</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_226.png" alt="img"></p>
+<h4 id="center"><a href="#center" class="headerlink" title="center"></a><14>center</14></h4><p>返回一个原字符串居中,并使用空格填充至长度 width 的新字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.center(width)</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_220.png" alt="img"></p>
+<h4 id="lstrip"><a href="#lstrip" class="headerlink" title="lstrip"></a><15>lstrip</15></h4><p>删除 mystr 左边的空白字符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.lstrip()</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_227.png" alt="img"></p>
+<h4 id="rstrip"><a href="#rstrip" class="headerlink" title="rstrip"></a><16>rstrip</16></h4><p>删除 mystr 字符串末尾的空白字符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.rstrip()</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_228.png" alt="img"></p>
+<h4 id="strip"><a href="#strip" class="headerlink" title="strip"></a><17>strip</17></h4><p>删除mystr字符串两端的空白字符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">"\n\t itcast \t\n"</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.strip()</span><br><span class="line"><span class="string">'itcast'</span></span><br></pre></td></tr></table></figure>
+<h3 id="rfind"><a href="#rfind" class="headerlink" title="rfind"></a><18>rfind</18></h3><p>类似于 find()函数，不过是从右边开始查找.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.rfind(str, start=<span class="number">0</span>,end=len(mystr) )</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_233.png" alt="img"></p>
+<h3 id="rindex"><a href="#rindex" class="headerlink" title="rindex"></a><19>rindex</19></h3><p>类似于 index()，不过是从右边开始.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.rindex( str, start=<span class="number">0</span>,end=len(mystr))</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_235.png" alt="img"></p>
+<h3 id="partition"><a href="#partition" class="headerlink" title="partition"></a><20>partition</20></h3><p>把mystr以str分割成三部分,str前，str和str后</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.partition(str)</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_230.png" alt="img"></p>
+<h3 id="rpartition"><a href="#rpartition" class="headerlink" title="rpartition"></a><21>rpartition</21></h3><p>类似于 partition()函数,不过是从右边开始.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.rpartition(str)</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_232.png" alt="img"></p>
+<h3 id="splitlines"><a href="#splitlines" class="headerlink" title="splitlines"></a><22>splitlines</22></h3><p>按照行分隔，返回一个包含各行作为元素的列表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.splitlines()</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_229.png" alt="img"></p>
+<h3 id="isalpha"><a href="#isalpha" class="headerlink" title="isalpha"></a><23>isalpha</23></h3><p>如果 mystr 所有字符都是字母 则返回 True,否则返回 False</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.isalpha()</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_237.png" alt="img"></p>
+<h3 id="isdigit"><a href="#isdigit" class="headerlink" title="isdigit"></a><24>isdigit</24></h3><p>如果 mystr 只包含数字则返回 True 否则返回 False.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.isdigit()</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_238.png" alt="img"></p>
+<h3 id="isalnum"><a href="#isalnum" class="headerlink" title="isalnum"></a><25>isalnum</25></h3><p>如果 mystr 所有字符都是字母或数字则返回 True,否则返回 False</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.isalnum()</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_236.png" alt="img"></p>
+<h3 id="isspace"><a href="#isspace" class="headerlink" title="isspace"></a><26>isspace</26></h3><p>如果 mystr 中只包含空格，则返回 True，否则返回 False.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.isspace()</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_240.png" alt="img"></p>
+<h3 id="join"><a href="#join" class="headerlink" title="join"></a><27>join</27></h3><p>mystr 中每个字符后面插入str,构造出一个新的字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mystr.join(str)</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160814_242.png" alt="img"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/WechatIMG.png" alt="victor WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/16/列表的相关操作/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/16/for循环语法以及终止循环/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">victor</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/victoyer" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:3126735774@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/Suvvictor/" title="我的CSNDBlog" target="_blank">我的CSNDBlog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.python.org" title="python" target="_blank">python</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://redisdoc.com/" title="redis" target="_blank">redis</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串介绍"><span class="nav-number">1.1.</span> <span class="nav-text">字符串介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python中字符串的格式"><span class="nav-number">1.2.</span> <span class="nav-text">python中字符串的格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串输出"><span class="nav-number">1.3.</span> <span class="nav-text">字符串输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串输入"><span class="nav-number">1.4.</span> <span class="nav-text">字符串输入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下标和切片"><span class="nav-number">2.</span> <span class="nav-text">下标和切片</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-下标索引"><span class="nav-number">2.1.</span> <span class="nav-text">1. 下标索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-切片"><span class="nav-number">2.2.</span> <span class="nav-text">2. 切片</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#切片的语法：-起始-结束-步长"><span class="nav-number">2.2.0.1.</span> <span class="nav-text">切片的语法：[起始:结束:步长]</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串常见操作"><span class="nav-number">2.3.</span> <span class="nav-text">字符串常见操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#find"><span class="nav-number">2.3.0.1.</span> <span class="nav-text">find</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#index"><span class="nav-number">2.3.0.2.</span> <span class="nav-text">index</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#count"><span class="nav-number">2.3.0.3.</span> <span class="nav-text">count</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#replace"><span class="nav-number">2.3.0.4.</span> <span class="nav-text">replace</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#split"><span class="nav-number">2.3.0.5.</span> <span class="nav-text">split</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#capitalize"><span class="nav-number">2.3.0.6.</span> <span class="nav-text">capitalize</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#title"><span class="nav-number">2.3.0.7.</span> <span class="nav-text">title</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#startswith"><span class="nav-number">2.3.0.8.</span> <span class="nav-text">startswith</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#endswith"><span class="nav-number">2.3.0.9.</span> <span class="nav-text">endswith</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lower"><span class="nav-number">2.3.0.10.</span> <span class="nav-text">lower</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#upper"><span class="nav-number">2.3.0.11.</span> <span class="nav-text">upper</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ljust"><span class="nav-number">2.3.0.12.</span> <span class="nav-text">ljust</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rjust"><span class="nav-number">2.3.0.13.</span> <span class="nav-text">rjust</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#center"><span class="nav-number">2.3.0.14.</span> <span class="nav-text">center</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lstrip"><span class="nav-number">2.3.0.15.</span> <span class="nav-text">lstrip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rstrip"><span class="nav-number">2.3.0.16.</span> <span class="nav-text">rstrip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strip"><span class="nav-number">2.3.0.17.</span> <span class="nav-text">strip</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rfind"><span class="nav-number">2.3.1.</span> <span class="nav-text">rfind</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rindex"><span class="nav-number">2.3.2.</span> <span class="nav-text">rindex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#partition"><span class="nav-number">2.3.3.</span> <span class="nav-text">partition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rpartition"><span class="nav-number">2.3.4.</span> <span class="nav-text">rpartition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#splitlines"><span class="nav-number">2.3.5.</span> <span class="nav-text">splitlines</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isalpha"><span class="nav-number">2.3.6.</span> <span class="nav-text">isalpha</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isdigit"><span class="nav-number">2.3.7.</span> <span class="nav-text">isdigit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isalnum"><span class="nav-number">2.3.8.</span> <span class="nav-text">isalnum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isspace"><span class="nav-number">2.3.9.</span> <span class="nav-text">isspace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#join"><span class="nav-number">2.3.10.</span> <span class="nav-text">join</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">victor</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

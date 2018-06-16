@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="人生苦短我用python;python,lee,python之禅" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="title:文件操作、综合应用文件操作、综合应用文件的打开与关闭打开文件在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件 open(文件名，访问模式) 示例如下： 1f = open(&apos;test.txt&apos;, &apos;w&apos;) 说明:    访问模式 说明     r 以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。   w 打开一个文件只用于写入。如果该文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Blog">
+<meta property="og:url" content="http://yoursite.com/2018/06/16/文件操作、综合应用/index.html">
+<meta property="og:site_name" content="Python Blog">
+<meta property="og:description" content="title:文件操作、综合应用文件操作、综合应用文件的打开与关闭打开文件在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件 open(文件名，访问模式) 示例如下： 1f = open(&apos;test.txt&apos;, &apos;w&apos;) 说明:    访问模式 说明     r 以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。   w 打开一个文件只用于写入。如果该文">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160818_68.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160818_70.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160818_71.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160818_72.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160818_74.png">
+<meta property="og:image" content="http://yoursite.com/Img/Snip20160818_75.png">
+<meta property="og:image" content="http://yoursite.com/Img/01-第8天-1.png">
+<meta property="og:image" content="http://yoursite.com/Img/01-第8天-2.png">
+<meta property="og:updated_time" content="2018-06-16T08:28:00.882Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Blog">
+<meta name="twitter:description" content="title:文件操作、综合应用文件操作、综合应用文件的打开与关闭打开文件在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件 open(文件名，访问模式) 示例如下： 1f = open(&apos;test.txt&apos;, &apos;w&apos;) 说明:    访问模式 说明     r 以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。   w 打开一个文件只用于写入。如果该文">
+<meta name="twitter:image" content="http://yoursite.com/Img/Snip20160818_68.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/16/文件操作、综合应用/"/>
+
+
+
+
+
+  <title> | Python Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Python Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">victor的个人博客</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/16/文件操作、综合应用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="victor">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Python Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline"></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-16T16:58:34+08:00">
+                2018-06-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<h2 id="title-文件操作、综合应用"><a href="#title-文件操作、综合应用" class="headerlink" title="title:文件操作、综合应用"></a>title:文件操作、综合应用</h2><h1 id="文件操作、综合应用"><a href="#文件操作、综合应用" class="headerlink" title="文件操作、综合应用"></a>文件操作、综合应用</h1><h2 id="文件的打开与关闭"><a href="#文件的打开与关闭" class="headerlink" title="文件的打开与关闭"></a>文件的打开与关闭</h2><h3 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a><1>打开文件</1></h3><p>在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件</p>
+<p>open(文件名，访问模式)</p>
+<p>示例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'w'</span>)</span><br></pre></td></tr></table></figure>
+<p>说明:</p>
+<table>
+<thead>
+<tr>
+<th>访问模式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r</td>
+<td>以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td>w</td>
+<td>打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>a</td>
+<td>打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td>rb</td>
+<td>以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td>wb</td>
+<td>以二进制格式打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>ab</td>
+<td>以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td>r+</td>
+<td>打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+<tr>
+<td>rb+</td>
+<td>以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td>wb+</td>
+<td>以二进制格式打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>ab+</td>
+<td>以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a><2>关闭文件</2></h3><p>close( )</p>
+<p>示例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新建一个文件，文件名为:test.txt</span></span><br><span class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭这个文件</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<p>##文件的读写</p>
+<h3 id="写数据-write"><a href="#写数据-write" class="headerlink" title="写数据(write)"></a><1>写数据(write)</1></h3><p>使用write()可以完成向文件写入数据</p>
+<p>demo:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line">f.write(<span class="string">'hello world, i am here!'</span>)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<p>运行现象:</p>
+<p><img src="/Img/Snip20160818_68.png" alt="img"></p>
+<p>注意：</p>
+<ul>
+<li>如果文件不存在那么创建，如果存在那么就先清空，然后写入数据</li>
+</ul>
+<h3 id="读数据-read"><a href="#读数据-read" class="headerlink" title="读数据(read)"></a><2>读数据(read)</2></h3><p>使用read(num)可以从文件中读取数据，num表示要从文件中读取的数据的长度（单位是字节），如果没有传入num，那么就表示读取文件中所有的数据</p>
+<p>demo:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'r'</span>)</span><br><span class="line"></span><br><span class="line">content = f.read(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">print(content)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"-"</span>*<span class="number">30</span>)</span><br><span class="line"></span><br><span class="line">content = f.read()</span><br><span class="line"></span><br><span class="line">print(content)</span><br><span class="line"></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<p>运行现象：</p>
+<p><img src="/Img/Snip20160818_70.png" alt="img"></p>
+<p>注意：</p>
+<ul>
+<li>如果open是打开一个文件，那么可以不用谢打开的模式，即只写 <code>open(&#39;test.txt&#39;)</code></li>
+<li>如果使用读了多次，那么后面读取的数据是从上次读完后的位置开始的</li>
+</ul>
+<h3 id="读数据（readlines）"><a href="#读数据（readlines）" class="headerlink" title="读数据（readlines）"></a><3>读数据（readlines）</3></h3><p>就像read没有参数时一样，readlines可以按照行的方式把整个文件中的内容进行一次性读取，并且返回的是一个列表，其中每一行的数据为一个元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'r'</span>)</span><br><span class="line"></span><br><span class="line">content = f.readlines()</span><br><span class="line"></span><br><span class="line">print(type(content))</span><br><span class="line"></span><br><span class="line">i=<span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> temp <span class="keyword">in</span> content:</span><br><span class="line">    print(<span class="string">"%d:%s"</span>%(i, temp))</span><br><span class="line">    i+=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<p>运行现象：</p>
+<p><img src="/Img/Snip20160818_71.png" alt="img"></p>
+<h3 id="读数据（readline）"><a href="#读数据（readline）" class="headerlink" title="读数据（readline）"></a><4>读数据（readline）</4></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'test.txt'</span>, <span class="string">'r'</span>)</span><br><span class="line"></span><br><span class="line">content = f.readline()</span><br><span class="line">print(<span class="string">"1:%s"</span>%content)</span><br><span class="line"></span><br><span class="line">content = f.readline()</span><br><span class="line">print(<span class="string">"2:%s"</span>%content)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<p><img src="/Img/Snip20160818_72.png" alt="img"></p>
+<h2 id="应用1-制作文件的备份"><a href="#应用1-制作文件的备份" class="headerlink" title="应用1:制作文件的备份"></a>应用1:制作文件的备份</h2><h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3><ul>
+<li>输入文件的名字，然后程序自动完成对文件进行备份</li>
+</ul>
+<p><img src="/Img/Snip20160818_74.png" alt="img"></p>
+<p><img src="/Img/Snip20160818_75.png" alt="img"></p>
+<h2 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"></span><br><span class="line">oldFileName = input(<span class="string">"请输入要拷贝的文件名字:"</span>)</span><br><span class="line"></span><br><span class="line">oldFile = open(oldFileName,<span class="string">'r'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果打开文件</span></span><br><span class="line"><span class="keyword">if</span> oldFile:</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 提取文件的后缀</span></span><br><span class="line">    fileFlagNum = oldFileName.rfind(<span class="string">'.'</span>)</span><br><span class="line">    <span class="keyword">if</span> fileFlagNum &gt; <span class="number">0</span>:</span><br><span class="line">        fileFlag = oldFileName[fileFlagNum:]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 组织新的文件名字</span></span><br><span class="line">    newFileName = oldFileName[:fileFlagNum] + <span class="string">'[复件]'</span> + fileFlag</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建新文件</span></span><br><span class="line">    newFile = open(newFileName, <span class="string">'w'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 把旧文件中的数据，一行一行的进行复制到新文件中</span></span><br><span class="line">    <span class="keyword">for</span> lineContent <span class="keyword">in</span> oldFile.readlines():</span><br><span class="line">        newFile.write(lineContent)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 关闭文件</span></span><br><span class="line">    oldFile.close()</span><br><span class="line">    newFile.close()</span><br></pre></td></tr></table></figure>
+<h2 id="文件的随机读写"><a href="#文件的随机读写" class="headerlink" title="文件的随机读写"></a>文件的随机读写</h2><h3 id="获取当前读写的位置"><a href="#获取当前读写的位置" class="headerlink" title="获取当前读写的位置"></a><1>获取当前读写的位置</1></h3><p>在读写文件的过程中，如果想知道当前的位置，可以使用tell()来获取</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开一个已经存在的文件</span></span><br><span class="line">f = open(<span class="string">"test.txt"</span>, <span class="string">"r"</span>)</span><br><span class="line">str = f.read(<span class="number">3</span>)</span><br><span class="line"><span class="keyword">print</span> <span class="string">"读取的数据是 : "</span>, str</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找当前位置</span></span><br><span class="line">position = f.tell()</span><br><span class="line"><span class="keyword">print</span> <span class="string">"当前文件位置 : "</span>, position</span><br><span class="line"></span><br><span class="line">str = f.read(<span class="number">3</span>)</span><br><span class="line"><span class="keyword">print</span> <span class="string">"读取的数据是 : "</span>, str</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找当前位置</span></span><br><span class="line">position = f.tell()</span><br><span class="line"><span class="keyword">print</span> <span class="string">"当前文件位置 : "</span>, position</span><br><span class="line"></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<h3 id="定位到某个位置"><a href="#定位到某个位置" class="headerlink" title="定位到某个位置"></a><2>定位到某个位置</2></h3><p>如果在读写文件的过程中，需要从另外一个位置进行操作的话，可以使用seek()</p>
+<p>seek(offset, from)有2个参数</p>
+<ul>
+<li>offset:偏移量</li>
+<li>from:方向<ul>
+<li>0:表示文件开头</li>
+<li>1:表示当前位置</li>
+<li>2:表示文件末尾</li>
+</ul>
+</li>
+</ul>
+<p>demo:把位置设置为：从文件开头，偏移5个字节</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开一个已经存在的文件</span></span><br><span class="line">f = open(<span class="string">"test.txt"</span>, <span class="string">"r"</span>)</span><br><span class="line">str = f.read(<span class="number">30</span>)</span><br><span class="line"><span class="keyword">print</span> <span class="string">"读取的数据是 : "</span>, str</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找当前位置</span></span><br><span class="line">position = f.tell()</span><br><span class="line"><span class="keyword">print</span> <span class="string">"当前文件位置 : "</span>, position</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新设置位置</span></span><br><span class="line">f.seek(<span class="number">5</span>,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找当前位置</span></span><br><span class="line">position = f.tell()</span><br><span class="line"><span class="keyword">print</span> <span class="string">"当前文件位置 : "</span>, position</span><br><span class="line"></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<p>demo:把位置设置为：离文件末尾，3字节处</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开一个已经存在的文件</span></span><br><span class="line">f = open(<span class="string">"test.txt"</span>, <span class="string">"r"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找当前位置</span></span><br><span class="line">position = f.tell()</span><br><span class="line"><span class="keyword">print</span> <span class="string">"当前文件位置 : "</span>, position</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新设置位置</span></span><br><span class="line">f.seek(<span class="number">-3</span>,<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取到的数据为：文件最后3个字节数据</span></span><br><span class="line">str = f.read()</span><br><span class="line"><span class="keyword">print</span> <span class="string">"读取的数据是 : "</span>, str</span><br><span class="line"></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<h2 id="文件的重命名、删除"><a href="#文件的重命名、删除" class="headerlink" title="文件的重命名、删除"></a>文件的重命名、删除</h2><p>有些时候，需要对文件进行重命名、删除等一些操作，python的os模块中都有这么功能</p>
+<h3 id="文件重命名"><a href="#文件重命名" class="headerlink" title="文件重命名"></a><1>文件重命名</1></h3><p>os模块中的rename()可以完成对文件的重命名操作</p>
+<p>rename(需要修改的文件名, 新的文件名)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.rename(<span class="string">"毕业论文.txt"</span>, <span class="string">"毕业论文-最终版.txt"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a><2>删除文件</2></h3><p>os模块中的remove()可以完成对文件的删除操作</p>
+<p>remove(待删除的文件名)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.remove(<span class="string">"毕业论文.txt"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="文件夹的相关操作"><a href="#文件夹的相关操作" class="headerlink" title="文件夹的相关操作"></a>文件夹的相关操作</h2><p>实际开发中，有时需要用程序的方式对文件夹进行一定的操作，比如创建、删除等</p>
+<p>就像对文件操作需要os模块一样，如果要操作文件夹，同样需要os模块</p>
+<h3 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a><1>创建文件夹</1></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.mkdir(<span class="string">"张三"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="获取当前目录"><a href="#获取当前目录" class="headerlink" title="获取当前目录"></a><2>获取当前目录</2></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.getcwd()</span><br></pre></td></tr></table></figure>
+<h3 id="改变默认目录"><a href="#改变默认目录" class="headerlink" title="改变默认目录"></a><3>改变默认目录</3></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.chdir(<span class="string">"../"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="获取目录列表"><a href="#获取目录列表" class="headerlink" title="获取目录列表"></a><4>获取目录列表</4></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.listdir(<span class="string">"./"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="删除文件夹"><a href="#删除文件夹" class="headerlink" title="删除文件夹"></a><5>删除文件夹</5></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.rmdir(<span class="string">"张三"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="应用：批量修改文件名"><a href="#应用：批量修改文件名" class="headerlink" title="应用：批量修改文件名"></a>应用：批量修改文件名</h2><h3 id="运行过程演示"><a href="#运行过程演示" class="headerlink" title="运行过程演示"></a><1>运行过程演示</1></h3><ul>
+<li><p>运行程序之前</p>
+<p><img src="/Img/01-第8天-1.png" alt="img"></p>
+</li>
+<li><p>运行程序之后</p>
+<p><img src="/Img/01-第8天-2.png" alt="img"></p>
+</li>
+</ul>
+<h3 id="参考代码-1"><a href="#参考代码-1" class="headerlink" title="参考代码"></a><2>参考代码</2></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">#coding=utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 批量在文件名前加前缀</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">funFlag = <span class="number">1</span> <span class="comment"># 1表示添加标志  2表示删除标志</span></span><br><span class="line"></span><br><span class="line">folderName = <span class="string">'./renameDir/'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取指定路径的所有文件名字</span></span><br><span class="line">dirList = os.listdir(folderName)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历输出所有文件名字</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> dirList:</span><br><span class="line">    <span class="keyword">print</span> name</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> funFlag == <span class="number">1</span>:</span><br><span class="line">        newName = <span class="string">'[东哥出品]-'</span> + name</span><br><span class="line">    <span class="keyword">elif</span> funFlag == <span class="number">2</span>:</span><br><span class="line">        num = len(<span class="string">'[东哥出品]-'</span>)</span><br><span class="line">        newName = name[num:]</span><br><span class="line">    <span class="keyword">print</span> newName</span><br><span class="line"></span><br><span class="line">    os.rename(folderName+name, folderName+newName)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/WechatIMG.png" alt="victor WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/16/面向对象编程/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/16/函数/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">victor</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/victoyer" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:3126735774@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/Suvvictor/" title="我的CSNDBlog" target="_blank">我的CSNDBlog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.python.org" title="python" target="_blank">python</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://redisdoc.com/" title="redis" target="_blank">redis</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#title-文件操作、综合应用"><span class="nav-number">1.</span> <span class="nav-text">title:文件操作、综合应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件操作、综合应用"><span class="nav-number"></span> <span class="nav-text">文件操作、综合应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件的打开与关闭"><span class="nav-number">1.</span> <span class="nav-text">文件的打开与关闭</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开文件"><span class="nav-number">1.1.</span> <span class="nav-text">打开文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭文件"><span class="nav-number">1.2.</span> <span class="nav-text">关闭文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写数据-write"><span class="nav-number">1.3.</span> <span class="nav-text">写数据(write)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读数据-read"><span class="nav-number">1.4.</span> <span class="nav-text">读数据(read)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读数据（readlines）"><span class="nav-number">1.5.</span> <span class="nav-text">读数据（readlines）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读数据（readline）"><span class="nav-number">1.6.</span> <span class="nav-text">读数据（readline）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用1-制作文件的备份"><span class="nav-number">2.</span> <span class="nav-text">应用1:制作文件的备份</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#要求"><span class="nav-number">2.1.</span> <span class="nav-text">要求</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考代码"><span class="nav-number">3.</span> <span class="nav-text">参考代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件的随机读写"><span class="nav-number">4.</span> <span class="nav-text">文件的随机读写</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取当前读写的位置"><span class="nav-number">4.1.</span> <span class="nav-text">获取当前读写的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定位到某个位置"><span class="nav-number">4.2.</span> <span class="nav-text">定位到某个位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件的重命名、删除"><span class="nav-number">5.</span> <span class="nav-text">文件的重命名、删除</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件重命名"><span class="nav-number">5.1.</span> <span class="nav-text">文件重命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除文件"><span class="nav-number">5.2.</span> <span class="nav-text">删除文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件夹的相关操作"><span class="nav-number">6.</span> <span class="nav-text">文件夹的相关操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建文件夹"><span class="nav-number">6.1.</span> <span class="nav-text">创建文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取当前目录"><span class="nav-number">6.2.</span> <span class="nav-text">获取当前目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变默认目录"><span class="nav-number">6.3.</span> <span class="nav-text">改变默认目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取目录列表"><span class="nav-number">6.4.</span> <span class="nav-text">获取目录列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除文件夹"><span class="nav-number">6.5.</span> <span class="nav-text">删除文件夹</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用：批量修改文件名"><span class="nav-number">7.</span> <span class="nav-text">应用：批量修改文件名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#运行过程演示"><span class="nav-number">7.1.</span> <span class="nav-text">运行过程演示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考代码-1"><span class="nav-number">7.2.</span> <span class="nav-text">参考代码</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">victor</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
