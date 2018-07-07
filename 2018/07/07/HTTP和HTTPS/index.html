@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="人生苦短我用python;python,lee,python之禅" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="HTTP和HTTPSHTTP协议（HyperText Transfer Protocol，超文本传输协议）：是一种发布和接收 HTML页面的方法。 HTTPS（Hypertext Transfer Protocol over Secure Socket Layer）简单讲是HTTP的安全版，在HTTP下加入SSL层。 SSL（Secure Sockets Layer 安全套接层）主要用于Web的安">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP和HTTPS">
+<meta property="og:url" content="http://yoursite.com/2018/07/07/HTTP和HTTPS/index.html">
+<meta property="og:site_name" content="Python Blog">
+<meta property="og:description" content="HTTP和HTTPSHTTP协议（HyperText Transfer Protocol，超文本传输协议）：是一种发布和接收 HTML页面的方法。 HTTPS（Hypertext Transfer Protocol over Secure Socket Layer）简单讲是HTTP的安全版，在HTTP下加入SSL层。 SSL（Secure Sockets Layer 安全套接层）主要用于Web的安">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/02_http_pro.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/07/images/01-httpstruct.jpg">
+<meta property="og:image" content="http://yoursite.com/img/01_request.png">
+<meta property="og:image" content="http://yoursite.com/img/01_response.jpg">
+<meta property="og:updated_time" content="2018-06-25T10:54:50.378Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTP和HTTPS">
+<meta name="twitter:description" content="HTTP和HTTPSHTTP协议（HyperText Transfer Protocol，超文本传输协议）：是一种发布和接收 HTML页面的方法。 HTTPS（Hypertext Transfer Protocol over Secure Socket Layer）简单讲是HTTP的安全版，在HTTP下加入SSL层。 SSL（Secure Sockets Layer 安全套接层）主要用于Web的安">
+<meta name="twitter:image" content="http://yoursite.com/img/02_http_pro.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/07/HTTP和HTTPS/"/>
+
+
+
+
+
+  <title>HTTP和HTTPS | Python Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Python Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">victor的个人博客</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/07/HTTP和HTTPS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="victor">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Python Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">HTTP和HTTPS</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-07T10:37:35+08:00">
+                2018-07-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="HTTP和HTTPS"><a href="#HTTP和HTTPS" class="headerlink" title="HTTP和HTTPS"></a>HTTP和HTTPS</h2><p>HTTP协议（HyperText Transfer Protocol，超文本传输协议）：是一种发布和接收 HTML页面的方法。</p>
+<p>HTTPS（Hypertext Transfer Protocol over Secure Socket Layer）简单讲是HTTP的安全版，在HTTP下加入SSL层。</p>
+<p>SSL（Secure Sockets Layer 安全套接层）主要用于Web的安全传输协议，在传输层对网络连接进行加密，保障在Internet上数据传输的安全。</p>
+<ul>
+<li><code>HTTP</code>的端口号为<code>80</code>，</li>
+<li><code>HTTPS</code>的端口号为<code>443</code></li>
+</ul>
+<h4 id="HTTP工作原理"><a href="#HTTP工作原理" class="headerlink" title="HTTP工作原理"></a>HTTP工作原理</h4><p>网络爬虫抓取过程可以理解为<code>模拟浏览器操作的过程</code>。</p>
+<p>浏览器的主要功能是向服务器发出请求，在浏览器窗口中展示您选择的网络资源，HTTP是一套计算机通过网络进行通信的规则。</p>
+<h2 id="HTTP的请求与响应"><a href="#HTTP的请求与响应" class="headerlink" title="HTTP的请求与响应"></a>HTTP的请求与响应</h2><p>HTTP通信由两部分组成： <strong>客户端请求消息</strong> 与 <strong>服务器响应消息</strong></p>
+<p><img src="/img/02_http_pro.jpg" alt="img"></p>
+<h3 id="浏览器发送HTTP请求的过程："><a href="#浏览器发送HTTP请求的过程：" class="headerlink" title="浏览器发送HTTP请求的过程："></a>浏览器发送HTTP请求的过程：</h3><ol>
+<li>当用户在浏览器的地址栏中输入一个URL并按回车键之后，浏览器会向HTTP服务器发送HTTP请求。HTTP请求主要分为“Get”和“Post”两种方法。</li>
+<li>当我们在浏览器输入URL <a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a> 的时候，浏览器发送一个Request请求去获取 <a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a> 的html文件，服务器把Response文件对象发送回给浏览器。</li>
+<li>浏览器分析Response中的 HTML，发现其中引用了很多其他文件，比如Images文件，CSS文件，JS文件。 浏览器会自动再次发送Request去获取图片，CSS文件，或者JS文件。</li>
+<li>当所有的文件都下载成功后，网页会根据HTML语法结构，完整的显示出来了。</li>
+</ol>
+<p>URL（Uniform / Universal Resource Locator的缩写）：统一资源定位符，是用于完整地描述Internet上网页和其他资源的地址的一种标识方法。</p>
+<p><img src="../images/01-httpstruct.jpg" alt="img"></p>
+<p>基本格式：<code>scheme://host[:port#]/path/…/[?query-string][#anchor]</code></p>
+<ul>
+<li>scheme：协议(例如：http, https, ftp)</li>
+<li>host：服务器的IP地址或者域名</li>
+<li>port#：服务器的端口（如果是走协议默认端口，缺省端口80）</li>
+<li>path：访问资源的路径</li>
+<li>query-string：参数，发送给http服务器的数据</li>
+<li>anchor：锚（跳转到网页的指定锚点位置）</li>
+</ul>
+<p>例如：</p>
+<ul>
+<li><a href="ftp://192.168.0.116:8080/index" target="_blank" rel="noopener">ftp://192.168.0.116:8080/index</a></li>
+<li><a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a></li>
+<li><a href="http://item.jd.com/11936238.html#product-detail" target="_blank" rel="noopener">http://item.jd.com/11936238.html#product-detail</a></li>
+</ul>
+<h2 id="客户端HTTP请求"><a href="#客户端HTTP请求" class="headerlink" title="客户端HTTP请求"></a>客户端HTTP请求</h2><p>URL只是标识资源的位置，而HTTP是用来提交和获取资源。客户端发送一个HTTP请求到服务器的请求消息，包括以下格式：</p>
+<p><code>请求行</code>、<code>请求头部</code>、<code>空行</code>、<code>请求数据</code></p>
+<p>四个部分组成，下图给出了请求报文的一般格式。</p>
+<p><img src="/img/01_request.png" alt="img"></p>
+<h5 id="一个典型的HTTP请求示例"><a href="#一个典型的HTTP请求示例" class="headerlink" title="一个典型的HTTP请求示例"></a>一个典型的HTTP请求示例</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">GET https://www.baidu.com/ HTTP/<span class="number">1.1</span></span><br><span class="line">Host: www.baidu.com</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Upgrade-Insecure-Requests: <span class="number">1</span></span><br><span class="line">User-Agent: Mozilla/<span class="number">5.0</span> (Windows NT <span class="number">10.0</span>; Win64; x64) AppleWebKit/<span class="number">537.36</span> (KHTML, like Gecko) Chrome/<span class="number">54.0</span><span class="number">.2840</span><span class="number">.99</span> Safari/<span class="number">537.36</span></span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=<span class="number">0.9</span>,image/webp,*/*;q=<span class="number">0.8</span></span><br><span class="line">Referer: http://www.baidu.com/</span><br><span class="line">Accept-Encoding: gzip, deflate, sdch, br</span><br><span class="line">Accept-Language: zh-CN,zh;q=<span class="number">0.8</span>,en;q=<span class="number">0.6</span></span><br><span class="line">Cookie: BAIDUID=<span class="number">04E4001</span>F34EA74AD4601512DD3C41A7B:FG=<span class="number">1</span>; BIDUPSID=<span class="number">04E4001</span>F34EA74AD4601512DD3C41A7B; PSTM=<span class="number">1470329258</span>; MCITY=<span class="number">-343</span>%<span class="number">3</span>A340%<span class="number">3</span>A; BDUSS=nF0MVFiMTVLcUh-Q2MxQ0M3STZGQUZ4N2hBa1FFRkIzUDI3QlBCZjg5cFdOd1pZQVFBQUFBJCQAAAAAAAAAAAEAAADpLvgG0KGyvLrcyfrG-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFaq3ldWqt5XN; H_PS_PSSID=<span class="number">1447</span>_18240_21105_21386_21454_21409_21554; BD_UPN=<span class="number">12314753</span>; sug=<span class="number">3</span>; sugstore=<span class="number">0</span>; ORIGIN=<span class="number">0</span>; bdime=<span class="number">0</span>; H_PS_645EC=<span class="number">7e2</span>ad3QHl181NSPbFbd7PRUCE1LlufzxrcFmwYin0E6b%<span class="number">2</span>BW8bbTMKHZbDP0g; BDSVRTM=<span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h4 id="请求方法"><a href="#请求方法" class="headerlink" title="请求方法"></a>请求方法</h4><p><code>GET https://www.baidu.com/ HTTP/1.1</code></p>
+<p>根据HTTP标准，HTTP请求可以使用多种请求方法。</p>
+<p>HTTP 0.9：只有基本的文本 GET 功能。</p>
+<p>HTTP 1.0：完善的请求/响应模型，并将协议补充完整，定义了三种请求方法： GET, POST 和 HEAD方法。</p>
+<p>HTTP 1.1：在 1.0 基础上进行更新，新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。</p>
+<p>HTTP 2.0（未普及）：请求/响应首部的定义基本没有改变，只是所有首部键必须全部小写，而且请求行要独立为 :method、:scheme、:host、:path这些键值对。</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>GET</td>
+<td>请求指定的页面信息，并返回实体主体。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>HEAD</td>
+<td>类似于get请求，只不过返回的响应中没有具体的内容，用于获取报头</td>
+</tr>
+<tr>
+<td>3</td>
+<td>POST</td>
+<td>向指定资源提交数据进行处理请求（例如提交表单或者上传文件），数据被包含在请求体中。POST请求可能会导致新的资源的建立和/或已有资源的修改。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>PUT</td>
+<td>从客户端向服务器传送的数据取代指定的文档的内容。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>DELETE</td>
+<td>请求服务器删除指定的页面。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>CONNECT</td>
+<td>HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>OPTIONS</td>
+<td>允许客户端查看服务器的性能。</td>
+</tr>
+<tr>
+<td>8</td>
+<td>TRACE</td>
+<td>回显服务器收到的请求，主要用于测试或诊断。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="HTTP请求主要分为Get和Post两种方法"><a href="#HTTP请求主要分为Get和Post两种方法" class="headerlink" title="HTTP请求主要分为Get和Post两种方法"></a>HTTP请求主要分为<code>Get</code>和<code>Post</code>两种方法</h4><ul>
+<li>GET是从服务器上获取数据，POST是向服务器传送数据</li>
+<li>GET请求参数显示，都显示在浏览器网址上，HTTP服务器根据该请求所包含URL中的参数来产生响应内容，即“Get”请求的参数是URL的一部分。 例如： <code>http://www.baidu.com/s?wd=Chinese</code></li>
+<li>POST请求参数在请求体当中，消息长度没有限制而且以隐式的方式进行发送，通常用来向HTTP服务器提交量比较大的数据（比如请求中包含许多参数或者文件上传操作等），请求的参数包含在“Content-Type”消息头里，指明该消息体的媒体类型和编码，</li>
+</ul>
+<p><strong>注意：避免使用Get方式提交表单，因为有可能会导致安全问题。 比如说在登陆表单中用Get方式，用户输入的用户名和密码将在地址栏中暴露无遗。</strong></p>
+<h4 id="常用的请求报头"><a href="#常用的请求报头" class="headerlink" title="常用的请求报头"></a>常用的请求报头</h4><h4 id="1-Host-主机和端口号"><a href="#1-Host-主机和端口号" class="headerlink" title="1. Host (主机和端口号)"></a>1. Host (主机和端口号)</h4><p>Host：对应网址URL中的Web名称和端口号，用于指定被请求资源的Internet主机和端口号，通常属于URL的一部分。</p>
+<h4 id="2-Connection-链接类型"><a href="#2-Connection-链接类型" class="headerlink" title="2. Connection (链接类型)"></a>2. Connection (链接类型)</h4><p>Connection：表示客户端与服务连接类型</p>
+<ol>
+<li>Client 发起一个包含 <code>Connection:keep-alive</code> 的请求，HTTP/1.1使用 <code>keep-alive</code> 为默认值。</li>
+<li>Server收到请求后：<ul>
+<li>如果 Server 支持 keep-alive，回复一个包含 Connection:keep-alive 的响应，不关闭连接；</li>
+<li>如果 Server 不支持 keep-alive，回复一个包含 Connection:close 的响应，关闭连接。</li>
+</ul>
+</li>
+<li>如果client收到包含 <code>Connection:keep-alive</code> 的响应，向同一个连接发送下一个请求，直到一方主动关闭连接。</li>
+</ol>
+<p><strong><em>keep-alive在很多情况下能够重用连接，减少资源消耗，缩短响应时间，比如当浏览器需要多个文件时(比如一个HTML文件和相关的图形文件)，不需要每次都去请求建立连接。</em></strong></p>
+<h4 id="3-Upgrade-Insecure-Requests-升级为HTTPS请求"><a href="#3-Upgrade-Insecure-Requests-升级为HTTPS请求" class="headerlink" title="3. Upgrade-Insecure-Requests (升级为HTTPS请求)"></a>3. Upgrade-Insecure-Requests (升级为HTTPS请求)</h4><p>Upgrade-Insecure-Requests：升级不安全的请求，意思是会在加载 http 资源时自动替换成 https 请求，让浏览器不再显示https页面中的http请求警报。</p>
+<p><strong>HTTPS 是以安全为目标的 HTTP 通道，所以在 HTTPS 承载的页面上不允许出现 HTTP 请求，一旦出现就是提示或报错。</strong></p>
+<h4 id="4-User-Agent-浏览器名称"><a href="#4-User-Agent-浏览器名称" class="headerlink" title="4. User-Agent (浏览器名称)"></a>4. User-Agent (浏览器名称)</h4><p>User-Agent：是客户浏览器的名称，以后会详细讲。</p>
+<h4 id="5-Accept-传输文件类型"><a href="#5-Accept-传输文件类型" class="headerlink" title="5. Accept (传输文件类型)"></a>5. Accept (传输文件类型)</h4><p>Accept：指浏览器或其他客户端可以接受的MIME（Multipurpose Internet Mail Extensions（多用途互联网邮件扩展））文件类型，服务器可以根据它判断并返回适当的文件格式。</p>
+<h5 id="举例："><a href="#举例：" class="headerlink" title="举例："></a>举例：</h5><p><code>Accept: */*</code>：表示什么都可以接收。</p>
+<p><code>Accept：image/gif</code>：表明客户端希望接受GIF图像格式的资源；</p>
+<p><code>Accept：text/html</code>：表明客户端希望接受html文本。</p>
+<p><code>Accept: text/html, application/xhtml+xml;q=0.9, image/*;q=0.8</code>：表示浏览器支持的 MIME 类型分别是 html文本、xhtml和xml文档、所有的图像格式资源。</p>
+<p><strong>q是权重系数，范围 0 =&lt; q &lt;= 1，q 值越大，请求越倾向于获得其“;”之前的类型表示的内容。若没有指定q值，则默认为1，按从左到右排序顺序；若被赋值为0，则用于表示浏览器不接受此内容类型。</strong></p>
+<p><strong>Text：用于标准化地表示的文本信息，文本消息可以是多种字符集和或者多种格式的；Application：用于传输应用程序数据或者二进制数据。详细请点击</strong></p>
+<h4 id="6-Referer-页面跳转处"><a href="#6-Referer-页面跳转处" class="headerlink" title="6. Referer (页面跳转处)"></a>6. Referer (页面跳转处)</h4><p>Referer：表明产生请求的网页来自于哪个URL，用户是从该 Referer页面访问到当前请求的页面。这个属性可以用来跟踪Web请求来自哪个页面，是从什么网站来的等。</p>
+<p>有时候遇到下载某网站图片，需要对应的referer，否则无法下载图片，那是因为人家做了防盗链，原理就是根据referer去判断是否是本网站的地址，如果不是，则拒绝，如果是，就可以下载；</p>
+<h4 id="7-Accept-Encoding（文件编解码格式）"><a href="#7-Accept-Encoding（文件编解码格式）" class="headerlink" title="7. Accept-Encoding（文件编解码格式）"></a>7. Accept-Encoding（文件编解码格式）</h4><p>Accept-Encoding：指出浏览器可以接受的编码方式。编码方式不同于文件格式，它是为了压缩文件并加速文件传递速度。浏览器在接收到Web响应之后先解码，然后再检查文件格式，许多情形下这可以减少大量的下载时间。</p>
+<h5 id="举例：Accept-Encoding-gzip-q-1-0-identity-q-0-5-q-0"><a href="#举例：Accept-Encoding-gzip-q-1-0-identity-q-0-5-q-0" class="headerlink" title="举例：Accept-Encoding:gzip;q=1.0, identity; q=0.5, *;q=0"></a>举例：Accept-Encoding:gzip;q=1.0, identity; q=0.5, *;q=0</h5><p>如果有多个Encoding同时匹配, 按照q值顺序排列，本例中按顺序支持 gzip, identity压缩编码，支持gzip的浏览器会返回经过gzip编码的HTML页面。 <strong>如果请求消息中没有设置这个域服务器假定客户端对各种内容编码都可以接受。</strong></p>
+<h4 id="8-Accept-Language（语言种类）"><a href="#8-Accept-Language（语言种类）" class="headerlink" title="8. Accept-Language（语言种类）"></a>8. Accept-Language（语言种类）</h4><p>Accept-Langeuage：指出浏览器可以接受的语言种类，如en或en-us指英语，zh或者zh-cn指中文，当服务器能够提供一种以上的语言版本时要用到。</p>
+<h4 id="9-Accept-Charset（字符编码）"><a href="#9-Accept-Charset（字符编码）" class="headerlink" title="9. Accept-Charset（字符编码）"></a>9. Accept-Charset（字符编码）</h4><p>Accept-Charset：指出浏览器可以接受的字符编码。</p>
+<h5 id="举例：Accept-Charset-iso-8859-1-gb2312-utf-8"><a href="#举例：Accept-Charset-iso-8859-1-gb2312-utf-8" class="headerlink" title="举例：Accept-Charset:iso-8859-1,gb2312,utf-8"></a>举例：Accept-Charset:iso-8859-1,gb2312,utf-8</h5><ul>
+<li>ISO8859-1：通常叫做Latin-1。Latin-1包括了书写所有西方欧洲语言不可缺少的附加字符，英文浏览器的默认值是ISO-8859-1.</li>
+<li>gb2312：标准简体中文字符集;</li>
+<li>utf-8：UNICODE 的一种变长字符编码，可以解决多种语言文本显示问题，从而实现应用国际化和本地化。</li>
+</ul>
+<p><strong>如果在请求消息中没有设置这个域，缺省是任何字符集都可以接受。</strong></p>
+<h4 id="10-Cookie-（Cookie）"><a href="#10-Cookie-（Cookie）" class="headerlink" title="10. Cookie （Cookie）"></a>10. Cookie （Cookie）</h4><p>Cookie：浏览器用这个属性向服务器发送Cookie。Cookie是在浏览器中寄存的小型数据体，它可以记载和服务器相关的用户信息，也可以用来实现会话功能，以后会详细讲。</p>
+<h4 id="11-Content-Type-POST数据类型"><a href="#11-Content-Type-POST数据类型" class="headerlink" title="11. Content-Type (POST数据类型)"></a>11. Content-Type (POST数据类型)</h4><p>Content-Type：POST请求里用来表示的内容类型。</p>
+<h5 id="举例：Content-Type-Text-XML-charset-gb2312："><a href="#举例：Content-Type-Text-XML-charset-gb2312：" class="headerlink" title="举例：Content-Type = Text/XML; charset=gb2312："></a>举例：Content-Type = Text/XML; charset=gb2312：</h5><p>指明该请求的消息体中包含的是纯文本的XML类型的数据，字符编码采用“gb2312”。</p>
+<h3 id="服务端HTTP响应"><a href="#服务端HTTP响应" class="headerlink" title="服务端HTTP响应"></a>服务端HTTP响应</h3><p>HTTP响应也由四个部分组成，分别是： <code>状态行</code>、<code>消息报头</code>、<code>空行</code>、<code>响应正文</code></p>
+<p><img src="/img/01_response.jpg" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Server: Tengine</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Date: Wed, 30 Nov 2016 07:58:21 GMT</span><br><span class="line">Cache-Control: no-cache</span><br><span class="line">Content-Type: text/html;charset=UTF-8</span><br><span class="line">Keep-Alive: timeout=20</span><br><span class="line">Vary: Accept-Encoding</span><br><span class="line">Pragma: no-cache</span><br><span class="line">X-NWS-LOG-UUID: bd27210a-24e5-4740-8f6c-25dbafa9c395</span><br><span class="line">Content-Length: 180945</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; ....</span><br></pre></td></tr></table></figure>
+<h3 id="常用的响应报头-了解"><a href="#常用的响应报头-了解" class="headerlink" title="常用的响应报头(了解)"></a>常用的响应报头(了解)</h3><p>理论上所有的响应头信息都应该是回应请求头的。但是服务端为了效率，安全，还有其他方面的考虑，会添加相对应的响应头信息，从上图可以看到：</p>
+<h4 id="1-Cache-Control：must-revalidate-no-cache-private。"><a href="#1-Cache-Control：must-revalidate-no-cache-private。" class="headerlink" title="1. Cache-Control：must-revalidate, no-cache, private。"></a>1. Cache-Control：must-revalidate, no-cache, private。</h4><p>这个值告诉客户端，服务端不希望客户端缓存资源，在下次请求资源时，必须要从新请求服务器，不能从缓存副本中获取资源。</p>
+<ul>
+<li>Cache-Control是响应头中很重要的信息，当客户端请求头中包含Cache-Control:max-age=0请求，明确表示不会缓存服务器资源时,Cache-Control作为作为回应信息，通常会返回no-cache，意思就是说，”那就不缓存呗”。</li>
+<li>当客户端在请求头中没有包含Cache-Control时，服务端往往会定,不同的资源不同的缓存策略，比如说oschina在缓存图片资源的策略就是Cache-Control：max-age=86400,这个意思是，从当前时间开始，在86400秒的时间内，客户端可以直接从缓存副本中读取资源，而不需要向服务器请求。</li>
+</ul>
+<h4 id="2-Connection：keep-alive"><a href="#2-Connection：keep-alive" class="headerlink" title="2. Connection：keep-alive"></a>2. Connection：keep-alive</h4><p>这个字段作为回应客户端的Connection：keep-alive，告诉客户端服务器的tcp连接也是一个长连接，客户端可以继续使用这个tcp连接发送http请求。</p>
+<h4 id="3-Content-Encoding-gzip"><a href="#3-Content-Encoding-gzip" class="headerlink" title="3. Content-Encoding:gzip"></a>3. Content-Encoding:gzip</h4><p>告诉客户端，服务端发送的资源是采用gzip编码的，客户端看到这个信息后，应该采用gzip对资源进行解码。</p>
+<h4 id="4-Content-Type：text-html-charset-UTF-8"><a href="#4-Content-Type：text-html-charset-UTF-8" class="headerlink" title="4. Content-Type：text/html;charset=UTF-8"></a>4. Content-Type：text/html;charset=UTF-8</h4><p>告诉客户端，资源文件的类型，还有字符编码，客户端通过utf-8对资源进行解码，然后对资源进行html解析。通常我们会看到有些网站是乱码的，往往就是服务器端没有返回正确的编码。</p>
+<h4 id="5-Date：Sun-21-Sep-2016-06-18-21-GMT"><a href="#5-Date：Sun-21-Sep-2016-06-18-21-GMT" class="headerlink" title="5. Date：Sun, 21 Sep 2016 06:18:21 GMT"></a>5. Date：Sun, 21 Sep 2016 06:18:21 GMT</h4><p>这个是服务端发送资源时的服务器时间，GMT是格林尼治所在地的标准时间。http协议中发送的时间都是GMT的，这主要是解决在互联网上，不同时区在相互请求资源的时候，时间混乱问题。</p>
+<h4 id="6-Expires-Sun-1-Jan-2000-01-00-00-GMT"><a href="#6-Expires-Sun-1-Jan-2000-01-00-00-GMT" class="headerlink" title="6. Expires:Sun, 1 Jan 2000 01:00:00 GMT"></a>6. Expires:Sun, 1 Jan 2000 01:00:00 GMT</h4><p>这个响应头也是跟缓存有关的，告诉客户端在这个时间前，可以直接访问缓存副本，很显然这个值会存在问题，因为客户端和服务器的时间不一定会都是相同的，如果时间不同就会导致问题。所以这个响应头是没有Cache-Control：max-age=*这个响应头准确的，因为max-age=date中的date是个相对时间，不仅更好理解，也更准确。</p>
+<h4 id="7-Pragma-no-cache"><a href="#7-Pragma-no-cache" class="headerlink" title="7. Pragma:no-cache"></a>7. Pragma:no-cache</h4><p>这个含义与Cache-Control等同。</p>
+<h4 id="8-Server：Tengine-1-4-6"><a href="#8-Server：Tengine-1-4-6" class="headerlink" title="8.Server：Tengine/1.4.6"></a>8.Server：Tengine/1.4.6</h4><p>这个是服务器和相对应的版本，只是告诉客户端服务器的信息。</p>
+<h4 id="9-Transfer-Encoding：chunked"><a href="#9-Transfer-Encoding：chunked" class="headerlink" title="9. Transfer-Encoding：chunked"></a>9. Transfer-Encoding：chunked</h4><p>这个响应头告诉客户端，服务器发送的资源的方式是分块发送的。一般分块发送的资源都是服务器动态生成的，在发送时还不知道发送资源的大小，所以采用分块发送，每一块都是独立的，独立的块都能标示自己的长度，最后一块是0长度的，当客户端读到这个0长度的块时，就可以确定资源已经传输完了。</p>
+<h4 id="10-Vary-Accept-Encoding"><a href="#10-Vary-Accept-Encoding" class="headerlink" title="10. Vary: Accept-Encoding"></a>10. Vary: Accept-Encoding</h4><p>告诉缓存服务器，缓存压缩文件和非压缩文件两个版本，现在这个字段用处并不大，因为现在的浏览器都是支持压缩的。</p>
+<h3 id="响应状态码"><a href="#响应状态码" class="headerlink" title="响应状态码"></a>响应状态码</h3><p>响应状态代码有三位数字组成，第一个数字定义了响应的类别，且有五种可能取值。</p>
+<h4 id="常见状态码："><a href="#常见状态码：" class="headerlink" title="常见状态码："></a>常见状态码：</h4><ul>
+<li><code>100~199</code>：表示服务器成功接收部分请求，要求客户端继续提交其余请求才能完成整个处理过程。</li>
+<li><code>200~299</code>：表示服务器成功接收请求并已完成整个处理过程。常用200（OK 请求成功）。</li>
+<li><code>300~399</code>：为完成请求，客户需进一步细化请求。例如：请求的资源已经移动一个新地址、常用302（所请求的页面已经临时转移至新的url）、307和304（使用缓存资源）。</li>
+<li><code>400~499</code>：客户端的请求有错误，常用404（服务器无法找到被请求的页面）、403（服务器拒绝访问，权限不够）。</li>
+<li><code>500~599</code>：服务器端出现错误，常用500（请求未完成。服务器遇到不可预知的情况）。</li>
+</ul>
+<h3 id="Cookie-和-Session："><a href="#Cookie-和-Session：" class="headerlink" title="Cookie 和 Session："></a>Cookie 和 Session：</h3><p>服务器和客户端的交互仅限于请求/响应过程，结束之后便断开，在下一次请求时，服务器会认为新的客户端。</p>
+<p>为了维护他们之间的链接，让服务器知道这是前一个用户发送的请求，必须在一个地方保存客户端的信息。</p>
+<p><strong>Cookie</strong>：通过在 客户端 记录的信息确定用户的身份。</p>
+<p><strong>Session</strong>：通过在 服务器端 记录的信息确定用户的身份。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/WechatIMG.png" alt="victor WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/07/HTML文档处理-----LXML/" rel="next" title="HTML文档处理 --- LXML">
+                <i class="fa fa-chevron-left"></i> HTML文档处理 --- LXML
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/07/JSON数据提取与JSONPATH/" rel="prev" title="JSON数据提取与JSONPATH">
+                JSON数据提取与JSONPATH <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">victor</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/victoyer" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:3126735774@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/Suvvictor/" title="我的CSNDBlog" target="_blank">我的CSNDBlog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.python.org" title="python" target="_blank">python</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://redisdoc.com/" title="redis" target="_blank">redis</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP和HTTPS"><span class="nav-number">1.</span> <span class="nav-text">HTTP和HTTPS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP工作原理"><span class="nav-number">1.0.1.</span> <span class="nav-text">HTTP工作原理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP的请求与响应"><span class="nav-number">2.</span> <span class="nav-text">HTTP的请求与响应</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器发送HTTP请求的过程："><span class="nav-number">2.1.</span> <span class="nav-text">浏览器发送HTTP请求的过程：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端HTTP请求"><span class="nav-number">3.</span> <span class="nav-text">客户端HTTP请求</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一个典型的HTTP请求示例"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">一个典型的HTTP请求示例</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请求方法"><span class="nav-number">3.0.1.</span> <span class="nav-text">请求方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP请求主要分为Get和Post两种方法"><span class="nav-number">3.0.2.</span> <span class="nav-text">HTTP请求主要分为Get和Post两种方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用的请求报头"><span class="nav-number">3.0.3.</span> <span class="nav-text">常用的请求报头</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Host-主机和端口号"><span class="nav-number">3.0.4.</span> <span class="nav-text">1. Host (主机和端口号)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Connection-链接类型"><span class="nav-number">3.0.5.</span> <span class="nav-text">2. Connection (链接类型)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Upgrade-Insecure-Requests-升级为HTTPS请求"><span class="nav-number">3.0.6.</span> <span class="nav-text">3. Upgrade-Insecure-Requests (升级为HTTPS请求)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-User-Agent-浏览器名称"><span class="nav-number">3.0.7.</span> <span class="nav-text">4. User-Agent (浏览器名称)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Accept-传输文件类型"><span class="nav-number">3.0.8.</span> <span class="nav-text">5. Accept (传输文件类型)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#举例："><span class="nav-number">3.0.8.1.</span> <span class="nav-text">举例：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-Referer-页面跳转处"><span class="nav-number">3.0.9.</span> <span class="nav-text">6. Referer (页面跳转处)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-Accept-Encoding（文件编解码格式）"><span class="nav-number">3.0.10.</span> <span class="nav-text">7. Accept-Encoding（文件编解码格式）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#举例：Accept-Encoding-gzip-q-1-0-identity-q-0-5-q-0"><span class="nav-number">3.0.10.1.</span> <span class="nav-text">举例：Accept-Encoding:gzip;q=1.0, identity; q=0.5, *;q=0</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-Accept-Language（语言种类）"><span class="nav-number">3.0.11.</span> <span class="nav-text">8. Accept-Language（语言种类）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-Accept-Charset（字符编码）"><span class="nav-number">3.0.12.</span> <span class="nav-text">9. Accept-Charset（字符编码）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#举例：Accept-Charset-iso-8859-1-gb2312-utf-8"><span class="nav-number">3.0.12.1.</span> <span class="nav-text">举例：Accept-Charset:iso-8859-1,gb2312,utf-8</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-Cookie-（Cookie）"><span class="nav-number">3.0.13.</span> <span class="nav-text">10. Cookie （Cookie）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-Content-Type-POST数据类型"><span class="nav-number">3.0.14.</span> <span class="nav-text">11. Content-Type (POST数据类型)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#举例：Content-Type-Text-XML-charset-gb2312："><span class="nav-number">3.0.14.1.</span> <span class="nav-text">举例：Content-Type = Text/XML; charset=gb2312：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务端HTTP响应"><span class="nav-number">3.1.</span> <span class="nav-text">服务端HTTP响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的响应报头-了解"><span class="nav-number">3.2.</span> <span class="nav-text">常用的响应报头(了解)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Cache-Control：must-revalidate-no-cache-private。"><span class="nav-number">3.2.1.</span> <span class="nav-text">1. Cache-Control：must-revalidate, no-cache, private。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Connection：keep-alive"><span class="nav-number">3.2.2.</span> <span class="nav-text">2. Connection：keep-alive</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Content-Encoding-gzip"><span class="nav-number">3.2.3.</span> <span class="nav-text">3. Content-Encoding:gzip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Content-Type：text-html-charset-UTF-8"><span class="nav-number">3.2.4.</span> <span class="nav-text">4. Content-Type：text/html;charset=UTF-8</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Date：Sun-21-Sep-2016-06-18-21-GMT"><span class="nav-number">3.2.5.</span> <span class="nav-text">5. Date：Sun, 21 Sep 2016 06:18:21 GMT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-Expires-Sun-1-Jan-2000-01-00-00-GMT"><span class="nav-number">3.2.6.</span> <span class="nav-text">6. Expires:Sun, 1 Jan 2000 01:00:00 GMT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-Pragma-no-cache"><span class="nav-number">3.2.7.</span> <span class="nav-text">7. Pragma:no-cache</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-Server：Tengine-1-4-6"><span class="nav-number">3.2.8.</span> <span class="nav-text">8.Server：Tengine/1.4.6</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-Transfer-Encoding：chunked"><span class="nav-number">3.2.9.</span> <span class="nav-text">9. Transfer-Encoding：chunked</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-Vary-Accept-Encoding"><span class="nav-number">3.2.10.</span> <span class="nav-text">10. Vary: Accept-Encoding</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应状态码"><span class="nav-number">3.3.</span> <span class="nav-text">响应状态码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常见状态码："><span class="nav-number">3.3.1.</span> <span class="nav-text">常见状态码：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie-和-Session："><span class="nav-number">3.4.</span> <span class="nav-text">Cookie 和 Session：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">victor</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="人生苦短我用python;python,lee,python之禅" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Handler处理器 和 自定义Opener opener是 urllib2.OpenerDirector 的实例，我们之前一直都在使用的urlopen，它是一个特殊的opener（也就是模块帮我们构建好的）。 但是基本的urlopen()方法不支持代理、cookie等其他的HTTP/HTTPS高级功能。所以要支持这些功能： 使用相关的 Handler处理器 来创建特定功能的处理器对象； 然后通过">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Handler处理器 和 自定义Opener">
+<meta property="og:url" content="http://yoursite.com/2018/07/07/Handler处理器 和 自定义Opener/index.html">
+<meta property="og:site_name" content="Python Blog">
+<meta property="og:description" content="Handler处理器 和 自定义Opener opener是 urllib2.OpenerDirector 的实例，我们之前一直都在使用的urlopen，它是一个特殊的opener（也就是模块帮我们构建好的）。 但是基本的urlopen()方法不支持代理、cookie等其他的HTTP/HTTPS高级功能。所以要支持这些功能： 使用相关的 Handler处理器 来创建特定功能的处理器对象； 然后通过">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/httpauth.jpg">
+<meta property="og:image" content="http://yoursite.com/img/renrenmaozhaojun.jpg">
+<meta property="og:updated_time" content="2018-06-26T00:36:22.177Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Handler处理器 和 自定义Opener">
+<meta name="twitter:description" content="Handler处理器 和 自定义Opener opener是 urllib2.OpenerDirector 的实例，我们之前一直都在使用的urlopen，它是一个特殊的opener（也就是模块帮我们构建好的）。 但是基本的urlopen()方法不支持代理、cookie等其他的HTTP/HTTPS高级功能。所以要支持这些功能： 使用相关的 Handler处理器 来创建特定功能的处理器对象； 然后通过">
+<meta name="twitter:image" content="http://yoursite.com/img/httpauth.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/07/Handler处理器 和 自定义Opener/"/>
+
+
+
+
+
+  <title>Handler处理器 和 自定义Opener | Python Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Python Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">victor的个人博客</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/07/Handler处理器 和 自定义Opener/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="victor">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Python Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Handler处理器 和 自定义Opener</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-07T10:37:35+08:00">
+                2018-07-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Handler处理器-和-自定义Opener"><a href="#Handler处理器-和-自定义Opener" class="headerlink" title="Handler处理器 和 自定义Opener"></a>Handler处理器 和 自定义Opener</h2><ul>
+<li>opener是 urllib2.OpenerDirector 的实例，我们之前一直都在使用的urlopen，它是一个特殊的opener（也就是模块帮我们构建好的）。</li>
+<li>但是基本的urlopen()方法不支持代理、cookie等其他的HTTP/HTTPS高级功能。所以要支持这些功能：<ol>
+<li>使用相关的 <code>Handler处理器</code> 来创建特定功能的处理器对象；</li>
+<li>然后通过 <code>urllib2.build_opener()</code>方法使用这些处理器对象，创建自定义opener对象；</li>
+<li>使用自定义的opener对象，调用<code>open()</code>方法发送请求。</li>
+</ol>
+</li>
+<li>如果程序里所有的请求都使用自定义的opener，可以使用<code>urllib2.install_opener()</code> 将自定义的 opener 对象 定义为 全局opener，表示如果之后凡是调用urlopen，都将使用这个opener（根据自己的需求来选择）</li>
+</ul>
+<h3 id="简单的自定义opener"><a href="#简单的自定义opener" class="headerlink" title="简单的自定义opener()"></a>简单的自定义opener()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建一个HTTPHandler 处理器对象，支持处理HTTP请求</span></span><br><span class="line">http_handler = urllib2.HTTPHandler()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建一个HTTPHandler 处理器对象，支持处理HTTPS请求</span></span><br><span class="line"><span class="comment"># http_handler = urllib2.HTTPSHandler()</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用urllib2.build_opener()方法，创建支持处理HTTP请求的opener对象</span></span><br><span class="line">opener = urllib2.build_opener(http_handler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建 Request请求</span></span><br><span class="line">request = urllib2.Request(<span class="string">"http://www.baidu.com/"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用自定义opener对象的open()方法，发送request请求</span></span><br><span class="line">response = opener.open(request)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取服务器响应内容</span></span><br><span class="line"><span class="keyword">print</span> response.read()</span><br></pre></td></tr></table></figure>
+<p>这种方式发送请求得到的结果，和使用<code>urllib2.urlopen()</code>发送HTTP/HTTPS请求得到的结果是一样的。</p>
+<p>如果在 HTTPHandler()增加 <code>debuglevel=1</code>参数，还会将 Debug Log 打开，这样程序在执行的时候，会把收包和发包的报头在屏幕上自动打印出来，方便调试，有时可以省去抓包的工作。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 仅需要修改的代码部分：</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建一个HTTPHandler 处理器对象，支持处理HTTP请求，同时开启Debug Log，debuglevel 值默认 0</span></span><br><span class="line">http_handler = urllib2.HTTPHandler(debuglevel=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建一个HTTPHSandler 处理器对象，支持处理HTTPS请求，同时开启Debug Log，debuglevel 值默认 0</span></span><br><span class="line">https_handler = urllib2.HTTPSHandler(debuglevel=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="ProxyHandler处理器（代理设置）"><a href="#ProxyHandler处理器（代理设置）" class="headerlink" title="ProxyHandler处理器（代理设置）"></a>ProxyHandler处理器（代理设置）</h4><p>使用代理IP，这是爬虫/反爬虫的第二大招，通常也是最好用的。</p>
+<p>很多网站会检测某一段时间某个IP的访问次数(通过流量统计，系统日志等)，如果访问次数多的不像正常人，它会禁止这个IP的访问。</p>
+<p>所以我们可以设置一些代理服务器，每隔一段时间换一个代理，就算IP被禁止，依然可以换个IP继续爬取。</p>
+<p>urllib2中通过ProxyHandler来设置使用代理服务器，下面代码说明如何使用自定义opener来使用代理：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#urllib2_proxy1.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建了两个代理Handler，一个有代理IP，一个没有代理IP</span></span><br><span class="line">httpproxy_handler = urllib2.ProxyHandler(&#123;<span class="string">"http"</span> : <span class="string">"124.88.67.81:80"</span>&#125;)</span><br><span class="line">nullproxy_handler = urllib2.ProxyHandler(&#123;&#125;)</span><br><span class="line"></span><br><span class="line">proxySwitch = <span class="keyword">True</span> <span class="comment">#定义一个代理开关</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过 urllib2.build_opener()方法使用这些代理Handler对象，创建自定义opener对象</span></span><br><span class="line"><span class="comment"># 根据代理开关是否打开，使用不同的代理模式</span></span><br><span class="line"><span class="keyword">if</span> proxySwitch:  </span><br><span class="line">    opener = urllib2.build_opener(httpproxy_handler)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    opener = urllib2.build_opener(nullproxy_handler)</span><br><span class="line"></span><br><span class="line">request = urllib2.Request(<span class="string">"http://www.baidu.com/"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 如果这么写，只有使用opener.open()方法发送请求才使用自定义的代理，而urlopen()则不使用自定义代理。</span></span><br><span class="line">response = opener.open(request)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 如果这么写，就是将opener应用到全局，之后所有的，不管是opener.open()还是urlopen() 发送请求，都将使用自定义代理。</span></span><br><span class="line"><span class="comment"># urllib2.install_opener(opener)</span></span><br><span class="line"><span class="comment"># response = urlopen(request)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> response.read()</span><br></pre></td></tr></table></figure>
+<p>免费的开放代理获取基本没有成本，我们可以在一些代理网站上收集这些免费代理，测试后如果可以用，就把它收集起来用在爬虫上面。</p>
+<p>免费短期代理网站举例：</p>
+<ul>
+<li><a href="http://www.xicidaili.com/" target="_blank" rel="noopener">西刺免费代理IP</a></li>
+<li><a href="http://www.kuaidaili.com/free/inha/" target="_blank" rel="noopener">快代理免费代理</a></li>
+<li><a href="http://www.proxy360.cn/default.aspx" target="_blank" rel="noopener">Proxy360代理</a></li>
+<li><a href="http://www.goubanjia.com/free/index.shtml" target="_blank" rel="noopener">全网代理IP</a></li>
+</ul>
+<p>如果代理IP足够多，就可以像随机获取User-Agent一样，随机选择一个代理去访问网站。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">proxy_list = [</span><br><span class="line">    &#123;<span class="string">"http"</span> : <span class="string">"124.88.67.81:80"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"http"</span> : <span class="string">"124.88.67.81:80"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"http"</span> : <span class="string">"124.88.67.81:80"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"http"</span> : <span class="string">"124.88.67.81:80"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"http"</span> : <span class="string">"124.88.67.81:80"</span>&#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 随机选择一个代理</span></span><br><span class="line">proxy = random.choice(proxy_list)</span><br><span class="line"><span class="comment"># 使用选择的代理构建代理处理器对象</span></span><br><span class="line">httpproxy_handler = urllib2.ProxyHandler(proxy)</span><br><span class="line"></span><br><span class="line">opener = urllib2.build_opener(httpproxy_handler)</span><br><span class="line"></span><br><span class="line">request = urllib2.Request(<span class="string">"http://www.baidu.com/"</span>)</span><br><span class="line">response = opener.open(request)</span><br><span class="line"><span class="keyword">print</span> response.read()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>但是，这些免费开放代理一般会有很多人都在使用，而且代理有寿命短，速度慢，匿名度不高，HTTP/HTTPS支持不稳定等缺点（免费没好货）。</p>
+<p>所以，专业爬虫工程师或爬虫公司会使用高品质的私密代理，这些代理通常需要找专门的代理供应商购买，再通过用户名/密码授权使用（舍不得孩子套不到狼）。</p>
+</blockquote>
+<h4 id="HTTPPasswordMgrWithDefaultRealm"><a href="#HTTPPasswordMgrWithDefaultRealm" class="headerlink" title="HTTPPasswordMgrWithDefaultRealm()"></a>HTTPPasswordMgrWithDefaultRealm()</h4><p><code>HTTPPasswordMgrWithDefaultRealm()</code>类将创建一个密码管理对象，用来保存 HTTP 请求相关的用户名和密码，主要应用两个场景：</p>
+<ol>
+<li>验证代理授权的用户名和密码 (<code>ProxyBasicAuthHandler()</code>)</li>
+<li>验证Web客户端的的用户名和密码 (<code>HTTPBasicAuthHandler()</code>)</li>
+</ol>
+<h4 id="ProxyBasicAuthHandler-代理授权验证"><a href="#ProxyBasicAuthHandler-代理授权验证" class="headerlink" title="ProxyBasicAuthHandler(代理授权验证)"></a>ProxyBasicAuthHandler(代理授权验证)</h4><p>如果我们使用之前的代码来使用私密代理，会报 HTTP 407 错误，表示代理没有通过身份验证：</p>
+<p><code>urllib2.HTTPError: HTTP Error 407: Proxy Authentication Required</code></p>
+<p>所以我们需要改写代码，通过：</p>
+<ul>
+<li><code>HTTPPasswordMgrWithDefaultRealm()</code>：来保存私密代理的用户密码</li>
+<li><code>ProxyBasicAuthHandler()</code>：来处理代理的身份验证。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#urllib2_proxy2.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"></span><br><span class="line"><span class="comment"># 私密代理授权的账户</span></span><br><span class="line">user = <span class="string">"mr_mao_hacker"</span></span><br><span class="line"><span class="comment"># 私密代理授权的密码</span></span><br><span class="line">passwd = <span class="string">"sffqry9r"</span></span><br><span class="line"><span class="comment"># 私密代理 IP</span></span><br><span class="line">proxyserver = <span class="string">"61.158.163.130:16816"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 构建一个密码管理对象，用来保存需要处理的用户名和密码</span></span><br><span class="line">passwdmgr = urllib2.HTTPPasswordMgrWithDefaultRealm()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 添加账户信息，第一个参数realm是与远程服务器相关的域信息，一般没人管它都是写None，后面三个参数分别是 代理服务器、用户名、密码</span></span><br><span class="line">passwdmgr.add_password(<span class="keyword">None</span>, proxyserver, user, passwd)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 构建一个代理基础用户名/密码验证的ProxyBasicAuthHandler处理器对象，参数是创建的密码管理对象</span></span><br><span class="line"><span class="comment">#   注意，这里不再使用普通ProxyHandler类了</span></span><br><span class="line">proxyauth_handler = urllib2.ProxyBasicAuthHandler(passwdmgr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 通过 build_opener()方法使用这些代理Handler对象，创建自定义opener对象，参数包括构建的 proxy_handler 和 proxyauth_handler</span></span><br><span class="line">opener = urllib2.build_opener(proxyauth_handler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 构造Request 请求</span></span><br><span class="line">request = urllib2.Request(<span class="string">"http://www.baidu.com/"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6. 使用自定义opener发送请求</span></span><br><span class="line">response = opener.open(request)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 7. 打印响应内容</span></span><br><span class="line"><span class="keyword">print</span> response.read()</span><br></pre></td></tr></table></figure>
+<h3 id="HTTPBasicAuthHandler处理器（Web客户端授权验证）"><a href="#HTTPBasicAuthHandler处理器（Web客户端授权验证）" class="headerlink" title="HTTPBasicAuthHandler处理器（Web客户端授权验证）"></a>HTTPBasicAuthHandler处理器（Web客户端授权验证）</h3><p><img src="/img/httpauth.jpg" alt="img"></p>
+<p>有些Web服务器（包括HTTP/FTP等）访问时，需要进行用户身份验证，爬虫直接访问会报HTTP 401 错误，表示访问身份未经授权：</p>
+<p><code>urllib2.HTTPError: HTTP Error 401: Unauthorized</code></p>
+<p>如果我们有客户端的用户名和密码，我们可以通过下面的方法去访问爬取：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用户名</span></span><br><span class="line">user = <span class="string">"test"</span></span><br><span class="line"><span class="comment"># 密码</span></span><br><span class="line">passwd = <span class="string">"123456"</span></span><br><span class="line"><span class="comment"># Web服务器 IP</span></span><br><span class="line">webserver = <span class="string">"http://192.168.199.107"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 构建一个密码管理对象，用来保存需要处理的用户名和密码</span></span><br><span class="line">passwdmgr = urllib2.HTTPPasswordMgrWithDefaultRealm()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 添加账户信息，第一个参数realm是与远程服务器相关的域信息，一般没人管它都是写None，后面三个参数分别是 Web服务器、用户名、密码</span></span><br><span class="line">passwdmgr.add_password(<span class="keyword">None</span>, webserver, user, passwd)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 构建一个HTTP基础用户名/密码验证的HTTPBasicAuthHandler处理器对象，参数是创建的密码管理对象</span></span><br><span class="line">httpauth_handler = urllib2.HTTPBasicAuthHandler(passwdmgr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 通过 build_opener()方法使用这些代理Handler对象，创建自定义opener对象，参数包括构建的 proxy_handler</span></span><br><span class="line">opener = urllib2.build_opener(httpauth_handler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 可以选择通过install_opener()方法定义opener为全局opener</span></span><br><span class="line">urllib2.install_opener(opener)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6. 构建 Request对象</span></span><br><span class="line">request = urllib2.Request(<span class="string">"http://192.168.199.107"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 7. 定义opener为全局opener后，可直接使用urlopen()发送请求</span></span><br><span class="line">response = urllib2.urlopen(request)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 8. 打印响应内容</span></span><br><span class="line"><span class="keyword">print</span> response.read()</span><br></pre></td></tr></table></figure>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p>Cookie 是指某些网站服务器为了辨别用户身份和进行Session跟踪，而储存在用户浏览器上的文本文件，Cookie可以保持登录信息到用户下次与服务器的会话。</p>
+<h4 id="Cookie原理"><a href="#Cookie原理" class="headerlink" title="Cookie原理"></a>Cookie原理</h4><p>HTTP是无状态的面向连接的协议, 为了保持连接状态, 引入了Cookie机制 Cookie是http消息头中的一种属性，包括：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Cookie名字（Name）</span><br><span class="line">Cookie的值（Value）</span><br><span class="line">Cookie的过期时间（Expires/Max-Age）</span><br><span class="line">Cookie作用路径（Path）</span><br><span class="line">Cookie所在域名（Domain），</span><br><span class="line">使用Cookie进行安全连接（Secure）。</span><br><span class="line"></span><br><span class="line">前两个参数是Cookie应用的必要条件，另外，还包括Cookie大小（Size，不同浏览器对Cookie个数及大小限制是有差异的）。</span><br></pre></td></tr></table></figure>
+<p>Cookie由变量名和值组成，根据 Netscape公司的规定，Cookie格式如下：</p>
+<p><code>Set－Cookie: NAME=VALUE；Expires=DATE；Path=PATH；Domain=DOMAIN_NAME；SECURE</code></p>
+<h4 id="Cookie应用"><a href="#Cookie应用" class="headerlink" title="Cookie应用"></a>Cookie应用</h4><p>Cookies在爬虫方面最典型的应用是判定注册用户是否已经登录网站，用户可能会得到提示，是否在下一次进入此网站时保留用户信息以便简化登录手续。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取一个有登录信息的Cookie模拟登陆</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 构建一个已经登录过的用户的headers信息</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">"Host"</span>:<span class="string">"www.renren.com"</span>,</span><br><span class="line">    <span class="string">"Connection"</span>:<span class="string">"keep-alive"</span>,</span><br><span class="line">    <span class="string">"Upgrade-Insecure-Requests"</span>:<span class="string">"1"</span>,</span><br><span class="line">    <span class="string">"User-Agent"</span>:<span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"</span>,</span><br><span class="line">    <span class="string">"Accept"</span>:<span class="string">"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"</span>,</span><br><span class="line">    <span class="string">"Accept-Language"</span>:<span class="string">"zh-CN,zh;q=0.8,en;q=0.6"</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 便于终端阅读，表示不支持压缩文件</span></span><br><span class="line">    <span class="comment"># Accept-Encoding: gzip, deflate, sdch,</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 重点：这个Cookie是保存了密码无需重复登录的用户的Cookie，这个Cookie里记录了用户名，密码(通常经过RAS加密)</span></span><br><span class="line">    <span class="string">"Cookie"</span>: <span class="string">"anonymid=ixrna3fysufnwv; depovince=GW; _r01_=1; JSESSIONID=abcmaDhEdqIlM7riy5iMv; jebe_key=f6fb270b-d06d-42e6-8b53-e67c3156aa7e%7Cc13c37f53bca9e1e7132d4b58ce00fa3%7C1484060607478%7C1%7C1484060607173; jebecookies=26fb58d1-cbe7-4fc3-a4ad-592233d1b42e|||||; ick_login=1f2b895d-34c7-4a1d-afb7-d84666fad409; _de=BF09EE3A28DED52E6B65F6A4705D973F1383380866D39FF5; p=99e54330ba9f910b02e6b08058f780479; ap=327550029; first_login_flag=1; ln_uact=mr_mao_hacker@163.com; ln_hurl=http://hdn.xnimg.cn/photos/hdn521/20140529/1055/h_main_9A3Z_e0c300019f6a195a.jpg; t=214ca9a28f70ca6aa0801404dda4f6789; societyguester=214ca9a28f70ca6aa0801404dda4f6789; id=327550029; xnsid=745033c5; ver=7.0; loginfrom=syshome"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 通过headers里的报头信息（主要是Cookie信息），构建Request对象</span></span><br><span class="line">urllib2.Request(<span class="string">"http://www.renren.com/"</span>, headers = headers)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 直接访问renren主页，服务器会根据headers报头信息（主要是Cookie信息），判断这是一个已经登录的用户，并返回相应的页面</span></span><br><span class="line">response = urllib2.urlopen(request)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 打印响应内容</span></span><br><span class="line"><span class="keyword">print</span> response.read()</span><br></pre></td></tr></table></figure>
+<p><img src="/img/renrenmaozhaojun.jpg" alt="img"></p>
+<p>但是这样做太过复杂，我们先需要在浏览器登录账户，并且设置保存密码，并且通过抓包才能获取这个Cookie，那有么有更简单方便的方法呢？</p>
+<h3 id="cookielib库-和-HTTPCookieProcessor处理器"><a href="#cookielib库-和-HTTPCookieProcessor处理器" class="headerlink" title="cookielib库 和 HTTPCookieProcessor处理器"></a>cookielib库 和 HTTPCookieProcessor处理器</h3><p>在Python处理Cookie，一般是通过<code>cookielib</code>模块和 urllib2模块的<code>HTTPCookieProcessor</code>处理器类一起使用。</p>
+<blockquote>
+<p><code>cookielib</code>模块：主要作用是提供用于存储cookie的对象</p>
+<p><code>HTTPCookieProcessor</code>处理器：主要作用是处理这些cookie对象，并构建handler对象。</p>
+</blockquote>
+<h4 id="cookielib-库"><a href="#cookielib-库" class="headerlink" title="cookielib 库"></a>cookielib 库</h4><p>该模块主要的对象有CookieJar、FileCookieJar、MozillaCookieJar、LWPCookieJar。</p>
+<blockquote>
+<ul>
+<li>CookieJar：管理HTTP cookie值、存储HTTP请求生成的cookie、向传出的HTTP请求添加cookie的对象。整个cookie都存储在内存中，对CookieJar实例进行垃圾回收后cookie也将丢失。</li>
+<li>FileCookieJar (filename,delayload=None,policy=None)：从CookieJar派生而来，用来创建FileCookieJar实例，检索cookie信息并将cookie存储到文件中。filename是存储cookie的文件名。delayload为True时支持延迟访问访问文件，即只有在需要时才读取文件或在文件中存储数据。</li>
+<li>MozillaCookieJar (filename,delayload=None,policy=None)：从FileCookieJar派生而来，创建与<code>Mozilla浏览器 cookies.txt兼容</code>的FileCookieJar实例。</li>
+<li>LWPCookieJar (filename,delayload=None,policy=None)：从FileCookieJar派生而来，创建与<code>libwww-perl标准的 Set-Cookie3 文件格式</code>兼容的FileCookieJar实例。</li>
+</ul>
+</blockquote>
+<p><strong>其实大多数情况下，我们只用CookieJar()，如果需要和本地文件交互，就用 MozillaCookjar() 或 LWPCookieJar()</strong></p>
+<p>我们来做几个案例：</p>
+<h5 id="1）获取Cookie，并保存到CookieJar-对象中"><a href="#1）获取Cookie，并保存到CookieJar-对象中" class="headerlink" title="1）获取Cookie，并保存到CookieJar()对象中"></a>1）获取Cookie，并保存到CookieJar()对象中</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># urllib2_cookielibtest1.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"><span class="keyword">import</span> cookielib</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建一个CookieJar对象实例来保存cookie</span></span><br><span class="line">cookiejar = cookielib.CookieJar()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用HTTPCookieProcessor()来创建cookie处理器对象，参数为CookieJar()对象</span></span><br><span class="line">handler=urllib2.HTTPCookieProcessor(cookiejar)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过 build_opener() 来构建opener</span></span><br><span class="line">opener = urllib2.build_opener(handler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 以get方法访问页面，访问之后会自动保存cookie到cookiejar中</span></span><br><span class="line">opener.open(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 可以按标准格式将保存的Cookie打印出来</span></span><br><span class="line">cookieStr = <span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> cookiejar:</span><br><span class="line">    cookieStr = cookieStr + item.name + <span class="string">"="</span> + item.value + <span class="string">";"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 舍去最后一位的分号</span></span><br><span class="line"><span class="keyword">print</span> cookieStr[:<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+<p>我们使用以上方法将Cookie保存到cookiejar对象中，然后打印出了cookie中的值，也就是访问百度首页的Cookie值。</p>
+<p>运行结果如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BAIDUID=<span class="number">4327</span>A58E63A92B73FF7A297FB3B2B4D0:FG=<span class="number">1</span>;BIDUPSID=<span class="number">4327</span>A58E63A92B73FF7A297FB3B2B4D0;H_PS_PSSID=<span class="number">1429</span>_21115_17001_21454_21409_21554_21398;PSTM=<span class="number">1480815736</span>;BDSVRTM=<span class="number">0</span>;BD_HOME=<span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h5 id="2-访问网站获得cookie，并把获得的cookie保存在cookie文件中"><a href="#2-访问网站获得cookie，并把获得的cookie保存在cookie文件中" class="headerlink" title="2. 访问网站获得cookie，并把获得的cookie保存在cookie文件中"></a>2. 访问网站获得cookie，并把获得的cookie保存在cookie文件中</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># urllib2_cookielibtest2.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cookielib</span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存cookie的本地磁盘文件名</span></span><br><span class="line">filename = <span class="string">'cookie.txt'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 声明一个MozillaCookieJar(有save实现)对象实例来保存cookie，之后写入文件</span></span><br><span class="line">cookiejar = cookielib.MozillaCookieJar(filename)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用HTTPCookieProcessor()来创建cookie处理器对象，参数为CookieJar()对象</span></span><br><span class="line">handler = urllib2.HTTPCookieProcessor(cookiejar)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过 build_opener() 来构建opener</span></span><br><span class="line">opener = urllib2.build_opener(handler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个请求，原理同urllib2的urlopen</span></span><br><span class="line">response = opener.open(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存cookie到本地文件</span></span><br><span class="line">cookiejar.save()</span><br></pre></td></tr></table></figure>
+<h5 id="3-从文件中获取cookies，做为请求的一部分去访问"><a href="#3-从文件中获取cookies，做为请求的一部分去访问" class="headerlink" title="3. 从文件中获取cookies，做为请求的一部分去访问"></a>3. 从文件中获取cookies，做为请求的一部分去访问</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># urllib2_cookielibtest2.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cookielib</span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建MozillaCookieJar(有load实现)实例对象</span></span><br><span class="line">cookiejar = cookielib.MozillaCookieJar()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从文件中读取cookie内容到变量</span></span><br><span class="line">cookie.load(<span class="string">'cookie.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用HTTPCookieProcessor()来创建cookie处理器对象，参数为CookieJar()对象</span></span><br><span class="line">handler = urllib2.HTTPCookieProcessor(cookiejar)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过 build_opener() 来构建opener</span></span><br><span class="line">opener = urllib2.build_opener(handler)</span><br><span class="line"></span><br><span class="line">response = opener.open(<span class="string">"http://www.baidu.com"</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="利用cookielib和post登录人人网"><a href="#利用cookielib和post登录人人网" class="headerlink" title="利用cookielib和post登录人人网"></a>利用cookielib和post登录人人网</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"><span class="keyword">import</span> cookielib</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 构建一个CookieJar对象实例来保存cookie</span></span><br><span class="line">cookie = cookielib.CookieJar()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 使用HTTPCookieProcessor()来创建cookie处理器对象，参数为CookieJar()对象</span></span><br><span class="line">cookie_handler = urllib2.HTTPCookieProcessor(cookie)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 通过 build_opener() 来构建opener</span></span><br><span class="line">opener = urllib2.build_opener(cookie_handler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. addheaders 接受一个列表，里面每个元素都是一个headers信息的元祖, opener将附带headers信息</span></span><br><span class="line">opener.addheaders = [(<span class="string">"User-Agent"</span>, <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"</span>)]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 需要登录的账户和密码</span></span><br><span class="line">data = &#123;<span class="string">"email"</span>:<span class="string">"mr_mao_hacker@163.com"</span>, <span class="string">"password"</span>:<span class="string">"alaxxxxxime"</span>&#125;  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 6. 通过urlencode()转码</span></span><br><span class="line">postdata = urllib.urlencode(data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 7. 构建Request请求对象，包含需要发送的用户名和密码</span></span><br><span class="line">request = urllib2.Request(<span class="string">"http://www.renren.com/PLogin.do"</span>, data = postdata)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 8. 通过opener发送这个请求，并获取登录后的Cookie值，</span></span><br><span class="line">opener.open(request)                                              </span><br><span class="line"></span><br><span class="line"><span class="comment"># 9. opener包含用户登录后的Cookie值，可以直接访问那些登录后才可以访问的页面</span></span><br><span class="line">response = opener.open(<span class="string">"http://www.renren.com/410043129/profile"</span>)  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 10. 打印响应内容</span></span><br><span class="line"><span class="keyword">print</span> response.read()</span><br></pre></td></tr></table></figure>
+<p>模拟登录要注意几点：</p>
+<blockquote>
+<ol>
+<li>登录一般都会先有一个HTTP GET，用于拉取一些信息及获得Cookie，然后再HTTP POST登录。</li>
+<li>HTTP POST登录的链接有可能是动态的，从GET返回的信息中获取。</li>
+<li>password 有些是明文发送，有些是加密后发送。有些网站甚至采用动态加密的，同时包括了很多其他数据的加密信息，只能通过查看JS源码获得加密算法，再去破解加密，非常困难。</li>
+<li>大多数网站的登录整体流程是类似的，可能有些细节不一样，所以不能保证其他网站登录成功。</li>
+</ol>
+</blockquote>
+<h6 id="这个测试案例中，为了想让大家快速理解知识点，我们使用的人人网登录接口是人人网改版前的隐藏接口-嘘…-，登录比较方便。"><a href="#这个测试案例中，为了想让大家快速理解知识点，我们使用的人人网登录接口是人人网改版前的隐藏接口-嘘…-，登录比较方便。" class="headerlink" title="这个测试案例中，为了想让大家快速理解知识点，我们使用的人人网登录接口是人人网改版前的隐藏接口(嘘….)，登录比较方便。"></a>这个测试案例中，为了想让大家快速理解知识点，我们使用的人人网登录接口是人人网改版前的隐藏接口(嘘….)，登录比较方便。</h6><h6 id="当然，我们也可以直接发送账号密码到登录界面模拟登录，但是当网页采用JavaScript动态技术以后，想封锁基于-HttpClient-的模拟登录就太容易了，甚至可以根据你的鼠标活动的特征准确地判断出是不是真人在操作。"><a href="#当然，我们也可以直接发送账号密码到登录界面模拟登录，但是当网页采用JavaScript动态技术以后，想封锁基于-HttpClient-的模拟登录就太容易了，甚至可以根据你的鼠标活动的特征准确地判断出是不是真人在操作。" class="headerlink" title="当然，我们也可以直接发送账号密码到登录界面模拟登录，但是当网页采用JavaScript动态技术以后，想封锁基于 HttpClient 的模拟登录就太容易了，甚至可以根据你的鼠标活动的特征准确地判断出是不是真人在操作。"></a>当然，我们也可以直接发送账号密码到登录界面模拟登录，但是当网页采用JavaScript动态技术以后，想封锁基于 HttpClient 的模拟登录就太容易了，甚至可以根据你的鼠标活动的特征准确地判断出是不是真人在操作。</h6><h6 id="所以，想做通用的模拟登录还得选别的技术，比如用内置浏览器引擎的爬虫-关键词：Selenium-，PhantomJS-，这个我们将在以后会学习到。"><a href="#所以，想做通用的模拟登录还得选别的技术，比如用内置浏览器引擎的爬虫-关键词：Selenium-，PhantomJS-，这个我们将在以后会学习到。" class="headerlink" title="所以，想做通用的模拟登录还得选别的技术，比如用内置浏览器引擎的爬虫(关键词：Selenium ，PhantomJS)，这个我们将在以后会学习到。"></a>所以，想做通用的模拟登录还得选别的技术，比如用内置浏览器引擎的爬虫(关键词：Selenium ，PhantomJS)，这个我们将在以后会学习到。</h6>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/WechatIMG.png" alt="victor WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/07/CSS-选择器：BeautifulSoup4/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/07/HTML文档处理-----LXML/" rel="prev" title="HTML文档处理 --- LXML">
+                HTML文档处理 --- LXML <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">victor</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/victoyer" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:3126735774@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/Suvvictor/" title="我的CSNDBlog" target="_blank">我的CSNDBlog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.python.org" title="python" target="_blank">python</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://redisdoc.com/" title="redis" target="_blank">redis</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Handler处理器-和-自定义Opener"><span class="nav-number">1.</span> <span class="nav-text">Handler处理器 和 自定义Opener</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的自定义opener"><span class="nav-number">1.1.</span> <span class="nav-text">简单的自定义opener()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ProxyHandler处理器（代理设置）"><span class="nav-number">1.1.1.</span> <span class="nav-text">ProxyHandler处理器（代理设置）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTPPasswordMgrWithDefaultRealm"><span class="nav-number">1.1.2.</span> <span class="nav-text">HTTPPasswordMgrWithDefaultRealm()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ProxyBasicAuthHandler-代理授权验证"><span class="nav-number">1.1.3.</span> <span class="nav-text">ProxyBasicAuthHandler(代理授权验证)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPBasicAuthHandler处理器（Web客户端授权验证）"><span class="nav-number">1.2.</span> <span class="nav-text">HTTPBasicAuthHandler处理器（Web客户端授权验证）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie"><span class="nav-number">1.3.</span> <span class="nav-text">Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookie原理"><span class="nav-number">1.3.1.</span> <span class="nav-text">Cookie原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookie应用"><span class="nav-number">1.3.2.</span> <span class="nav-text">Cookie应用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookielib库-和-HTTPCookieProcessor处理器"><span class="nav-number">1.4.</span> <span class="nav-text">cookielib库 和 HTTPCookieProcessor处理器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cookielib-库"><span class="nav-number">1.4.1.</span> <span class="nav-text">cookielib 库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1）获取Cookie，并保存到CookieJar-对象中"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">1）获取Cookie，并保存到CookieJar()对象中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-访问网站获得cookie，并把获得的cookie保存在cookie文件中"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">2. 访问网站获得cookie，并把获得的cookie保存在cookie文件中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-从文件中获取cookies，做为请求的一部分去访问"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">3. 从文件中获取cookies，做为请求的一部分去访问</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用cookielib和post登录人人网"><span class="nav-number">1.4.2.</span> <span class="nav-text">利用cookielib和post登录人人网</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#这个测试案例中，为了想让大家快速理解知识点，我们使用的人人网登录接口是人人网改版前的隐藏接口-嘘…-，登录比较方便。"><span class="nav-number">1.4.2.0.1.</span> <span class="nav-text">这个测试案例中，为了想让大家快速理解知识点，我们使用的人人网登录接口是人人网改版前的隐藏接口(嘘….)，登录比较方便。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#当然，我们也可以直接发送账号密码到登录界面模拟登录，但是当网页采用JavaScript动态技术以后，想封锁基于-HttpClient-的模拟登录就太容易了，甚至可以根据你的鼠标活动的特征准确地判断出是不是真人在操作。"><span class="nav-number">1.4.2.0.2.</span> <span class="nav-text">当然，我们也可以直接发送账号密码到登录界面模拟登录，但是当网页采用JavaScript动态技术以后，想封锁基于 HttpClient 的模拟登录就太容易了，甚至可以根据你的鼠标活动的特征准确地判断出是不是真人在操作。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#所以，想做通用的模拟登录还得选别的技术，比如用内置浏览器引擎的爬虫-关键词：Selenium-，PhantomJS-，这个我们将在以后会学习到。"><span class="nav-number">1.4.2.0.3.</span> <span class="nav-text">所以，想做通用的模拟登录还得选别的技术，比如用内置浏览器引擎的爬虫(关键词：Selenium ，PhantomJS)，这个我们将在以后会学习到。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">victor</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

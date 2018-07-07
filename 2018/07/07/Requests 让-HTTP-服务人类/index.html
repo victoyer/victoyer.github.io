@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="人生苦短我用python;python,lee,python之禅" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Requests: 让 HTTP 服务人类虽然Python的标准库中 urllib2 模块已经包含了平常我们使用的大多数功能，但是它的 API 使用起来让人感觉不太好，而 Requests 自称 “HTTP for Humans”，说明使用更简洁方便。  Requests 唯一的一个非转基因的 Python HTTP 库，人类可以安全享用：）  Requests 继承了urllib2的所有特性。R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Blog">
+<meta property="og:url" content="http://yoursite.com/2018/07/07/Requests 让-HTTP-服务人类/index.html">
+<meta property="og:site_name" content="Python Blog">
+<meta property="og:description" content="Requests: 让 HTTP 服务人类虽然Python的标准库中 urllib2 模块已经包含了平常我们使用的大多数功能，但是它的 API 使用起来让人感觉不太好，而 Requests 自称 “HTTP for Humans”，说明使用更简洁方便。  Requests 唯一的一个非转基因的 Python HTTP 库，人类可以安全享用：）  Requests 继承了urllib2的所有特性。R">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/requestrenren.jpg">
+<meta property="og:image" content="http://yoursite.com/img/12306zhengshu.jpg">
+<meta property="og:updated_time" content="2018-06-30T04:53:14.727Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Blog">
+<meta name="twitter:description" content="Requests: 让 HTTP 服务人类虽然Python的标准库中 urllib2 模块已经包含了平常我们使用的大多数功能，但是它的 API 使用起来让人感觉不太好，而 Requests 自称 “HTTP for Humans”，说明使用更简洁方便。  Requests 唯一的一个非转基因的 Python HTTP 库，人类可以安全享用：）  Requests 继承了urllib2的所有特性。R">
+<meta name="twitter:image" content="http://yoursite.com/img/requestrenren.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/07/Requests 让-HTTP-服务人类/"/>
+
+
+
+
+
+  <title> | Python Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Python Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">victor的个人博客</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/07/Requests 让-HTTP-服务人类/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="victor">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Python Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline"></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-07T10:37:35+08:00">
+                2018-07-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Requests-让-HTTP-服务人类"><a href="#Requests-让-HTTP-服务人类" class="headerlink" title="Requests: 让 HTTP 服务人类"></a>Requests: 让 HTTP 服务人类</h2><p>虽然Python的标准库中 urllib2 模块已经包含了平常我们使用的大多数功能，但是它的 API 使用起来让人感觉不太好，而 Requests 自称 “HTTP for Humans”，说明使用更简洁方便。</p>
+<blockquote>
+<p>Requests 唯一的一个非转基因的 Python HTTP 库，人类可以安全享用：）</p>
+</blockquote>
+<p>Requests 继承了urllib2的所有特性。Requests支持HTTP连接保持和连接池，支持使用cookie保持会话，支持文件上传，支持自动确定响应内容的编码，支持国际化的 URL 和 POST 数据自动编码。</p>
+<h4 id="requests-的底层实现其实就是-urllib3"><a href="#requests-的底层实现其实就是-urllib3" class="headerlink" title="requests 的底层实现其实就是 urllib3"></a>requests 的底层实现其实就是 urllib3</h4><p>Requests的文档非常完备，中文文档也相当不错。Requests能完全满足当前网络的需求，支持Python 2.6—3.5，而且能在PyPy下完美运行。</p>
+<p>开源地址：<a href="https://github.com/kennethreitz/requests" target="_blank" rel="noopener">https://github.com/kennethreitz/requests</a></p>
+<p>中文文档 API： <a href="http://docs.python-requests.org/zh_CN/latest/index.html" target="_blank" rel="noopener">http://docs.python-requests.org/zh_CN/latest/index.html</a></p>
+<h3 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h3><p>利用 pip 安装 或者利用 easy_install 都可以完成安装：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ pip install requests</span><br><span class="line"></span><br><span class="line">$ easy_install requests</span><br></pre></td></tr></table></figure>
+<h3 id="基本GET请求（headers参数-和-parmas参数）"><a href="#基本GET请求（headers参数-和-parmas参数）" class="headerlink" title="基本GET请求（headers参数 和 parmas参数）"></a>基本GET请求（headers参数 和 parmas参数）</h3><h5 id="1-最基本的GET请求可以直接用get方法"><a href="#1-最基本的GET请求可以直接用get方法" class="headerlink" title="1. 最基本的GET请求可以直接用get方法"></a>1. 最基本的GET请求可以直接用get方法</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">response = requests.get(<span class="string">"http://www.baidu.com/"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以这么写</span></span><br><span class="line"><span class="comment"># response = requests.request("get", "http://www.baidu.com/")</span></span><br></pre></td></tr></table></figure>
+<h5 id="2-添加-headers-和-查询参数"><a href="#2-添加-headers-和-查询参数" class="headerlink" title="2. 添加 headers 和 查询参数"></a>2. 添加 headers 和 查询参数</h5><p>如果想添加 headers，可以传入<code>headers</code>参数来增加请求头中的headers信息。如果要将参数放在url中传递，可以利用 <code>params</code> 参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">kw = &#123;<span class="string">'wd'</span>:<span class="string">'长城'</span>&#125;</span><br><span class="line"></span><br><span class="line">headers = &#123;<span class="string">"User-Agent"</span>: <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># params 接收一个字典或者字符串的查询参数，字典类型自动转换为url编码，不需要urlencode()</span></span><br><span class="line">response = requests.get(<span class="string">"http://www.baidu.com/s?"</span>, params = kw, headers = headers)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看响应内容，response.text 返回的是Unicode格式的数据</span></span><br><span class="line"><span class="keyword">print</span> response.text</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看响应内容，response.content返回的字节流数据</span></span><br><span class="line"><span class="keyword">print</span> respones.content</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看完整url地址</span></span><br><span class="line"><span class="keyword">print</span> response.url</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看响应头部字符编码</span></span><br><span class="line"><span class="keyword">print</span> response.encoding</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看响应码</span></span><br><span class="line"><span class="keyword">print</span> response.status_code</span><br></pre></td></tr></table></figure>
+<p>运行结果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">......</span><br><span class="line"></span><br><span class="line">......</span><br><span class="line"></span><br><span class="line"><span class="string">'http://www.baidu.com/s?wd=%E9%95%BF%E5%9F%8E'</span></span><br><span class="line"></span><br><span class="line"><span class="string">'utf-8'</span></span><br><span class="line"></span><br><span class="line"><span class="number">200</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>使用response.text 时，Requests 会基于 HTTP 响应的文本编码自动解码响应内容，大多数 Unicode 字符集都能被无缝地解码。</li>
+<li>使用response.content 时，返回的是服务器响应数据的原始二进制字节流，可以用来保存图片等二进制文件。</li>
+</ul>
+</blockquote>
+<h3 id="基本POST请求（data参数）"><a href="#基本POST请求（data参数）" class="headerlink" title="基本POST请求（data参数）"></a>基本POST请求（data参数）</h3><h5 id="1-最基本的GET请求可以直接用post方法"><a href="#1-最基本的GET请求可以直接用post方法" class="headerlink" title="1. 最基本的GET请求可以直接用post方法"></a>1. 最基本的GET请求可以直接用post方法</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response = requests.post(<span class="string">"http://www.baidu.com/"</span>, data = data)</span><br></pre></td></tr></table></figure>
+<h5 id="2-传入data数据"><a href="#2-传入data数据" class="headerlink" title="2. 传入data数据"></a>2. 传入data数据</h5><p>对于 POST 请求来说，我们一般需要为它增加一些参数。那么最基本的传参方法可以利用 <code>data</code> 这个参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">formdata = &#123;</span><br><span class="line">    <span class="string">"type"</span>:<span class="string">"AUTO"</span>,</span><br><span class="line">    <span class="string">"i"</span>:<span class="string">"i love python"</span>,</span><br><span class="line">    <span class="string">"doctype"</span>:<span class="string">"json"</span>,</span><br><span class="line">    <span class="string">"xmlVersion"</span>:<span class="string">"1.8"</span>,</span><br><span class="line">    <span class="string">"keyfrom"</span>:<span class="string">"fanyi.web"</span>,</span><br><span class="line">    <span class="string">"ue"</span>:<span class="string">"UTF-8"</span>,</span><br><span class="line">    <span class="string">"action"</span>:<span class="string">"FY_BY_ENTER"</span>,</span><br><span class="line">    <span class="string">"typoResult"</span>:<span class="string">"true"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">url = <span class="string">"http://fanyi.youdao.com/translate?smartresult=dict&amp;smartresult=rule&amp;smartresult=ugc&amp;sessionFrom=null"</span></span><br><span class="line"></span><br><span class="line">headers=&#123; <span class="string">"User-Agent"</span>: <span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"</span>&#125;</span><br><span class="line"></span><br><span class="line">response = requests.post(url, data = formdata, headers = headers)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> response.text</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果是json文件可以直接显示</span></span><br><span class="line"><span class="keyword">print</span> response.json()</span><br></pre></td></tr></table></figure>
+<p>运行结果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"type"</span>:<span class="string">"EN2ZH_CN"</span>,<span class="string">"errorCode"</span>:<span class="number">0</span>,<span class="string">"elapsedTime"</span>:<span class="number">2</span>,<span class="string">"translateResult"</span>:[[&#123;<span class="string">"src"</span>:<span class="string">"i love python"</span>,<span class="string">"tgt"</span>:<span class="string">"我喜欢python"</span>&#125;]],<span class="string">"smartResult"</span>:&#123;<span class="string">"type"</span>:<span class="number">1</span>,<span class="string">"entries"</span>:[<span class="string">""</span>,<span class="string">"肆文"</span>,<span class="string">"高德纳"</span>]&#125;&#125;</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">u'errorCode'</span>: <span class="number">0</span>, <span class="string">u'elapsedTime'</span>: <span class="number">0</span>, <span class="string">u'translateResult'</span>: [[&#123;<span class="string">u'src'</span>: <span class="string">u'i love python'</span>, <span class="string">u'tgt'</span>: <span class="string">u'\u6211\u559c\u6b22python'</span>&#125;]], <span class="string">u'smartResult'</span>: &#123;<span class="string">u'type'</span>: <span class="number">1</span>, <span class="string">u'entries'</span>: [<span class="string">u''</span>, <span class="string">u'\u8086\u6587'</span>, <span class="string">u'\u9ad8\u5fb7\u7eb3'</span>]&#125;, <span class="string">u'type'</span>: <span class="string">u'EN2ZH_CN'</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代理（proxies参数）"><a href="#代理（proxies参数）" class="headerlink" title="代理（proxies参数）"></a>代理（proxies参数）</h3><p>如果需要使用代理，你可以通过为任意请求方法提供 <code>proxies</code> 参数来配置单个请求：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据协议类型，选择不同的代理</span></span><br><span class="line">proxies = &#123;</span><br><span class="line">  <span class="string">"http"</span>: <span class="string">"http://12.34.56.79:9527"</span>,</span><br><span class="line">  <span class="string">"https"</span>: <span class="string">"http://12.34.56.79:9527"</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">response = requests.get(<span class="string">"http://www.baidu.com"</span>, proxies = proxies)</span><br><span class="line"><span class="keyword">print</span> response.text</span><br></pre></td></tr></table></figure>
+<p>也可以通过本地环境变量 <code>HTTP_PROXY</code> 和 <code>HTTPS_PROXY</code> 来配置代理：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export HTTP_PROXY=<span class="string">"http://12.34.56.79:9527"</span></span><br><span class="line">export HTTPS_PROXY=<span class="string">"https://12.34.56.79:9527"</span></span><br></pre></td></tr></table></figure>
+<h3 id="私密代理验证（特定格式）-和-Web客户端验证（auth-参数）"><a href="#私密代理验证（特定格式）-和-Web客户端验证（auth-参数）" class="headerlink" title="私密代理验证（特定格式） 和 Web客户端验证（auth 参数）"></a>私密代理验证（特定格式） 和 Web客户端验证（auth 参数）</h3><p>urllib2 这里的做法比较复杂，requests只需要一步：</p>
+<h4 id="私密代理"><a href="#私密代理" class="headerlink" title="私密代理"></a>私密代理</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果代理需要使用HTTP Basic Auth，可以使用下面这种格式：</span></span><br><span class="line">proxy = &#123; <span class="string">"http"</span>: <span class="string">"mr_mao_hacker:sffqry9r@61.158.163.130:16816"</span> &#125;</span><br><span class="line"></span><br><span class="line">response = requests.get(<span class="string">"http://www.baidu.com"</span>, proxies = proxy)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> response.text</span><br></pre></td></tr></table></figure>
+<h4 id="web客户端验证"><a href="#web客户端验证" class="headerlink" title="web客户端验证"></a>web客户端验证</h4><p>如果是Web客户端验证，需要添加 auth = (账户名, 密码)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">auth=(<span class="string">'test'</span>, <span class="string">'123456'</span>)</span><br><span class="line"></span><br><span class="line">response = requests.get(<span class="string">'http://192.168.199.107'</span>, auth = auth)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> response.text</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>urllib2 泪奔…</p>
+</blockquote>
+<h3 id="Cookies-和-Sission"><a href="#Cookies-和-Sission" class="headerlink" title="Cookies 和 Sission"></a>Cookies 和 Sission</h3><h3 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h3><p>如果一个响应中包含了cookie，那么我们可以利用 cookies参数拿到：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">response = requests.get(<span class="string">"http://www.baidu.com/"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 7. 返回CookieJar对象:</span></span><br><span class="line">cookiejar = response.cookies</span><br><span class="line"></span><br><span class="line"><span class="comment"># 8. 将CookieJar转为字典：</span></span><br><span class="line">cookiedict = requests.utils.dict_from_cookiejar(cookiejar)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> cookiejar</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> cookiedict</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;RequestsCookieJar[&lt;Cookie BDORZ=<span class="number">27315</span> <span class="keyword">for</span> .baidu.com/&gt;]&gt;</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'BDORZ'</span>: <span class="string">'27315'</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Sission"><a href="#Sission" class="headerlink" title="Sission"></a>Sission</h3><p>在 requests 里，session对象是一个非常常用的对象，这个对象代表一次用户会话：从客户端浏览器连接服务器开始，到客户端浏览器与服务器断开。</p>
+<p>会话能让我们在跨请求时候保持某些参数，比如在同一个 Session 实例发出的所有请求之间保持 cookie 。</p>
+<h4 id="实现人人网登录"><a href="#实现人人网登录" class="headerlink" title="实现人人网登录"></a>实现人人网登录</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 创建session对象，可以保存Cookie值</span></span><br><span class="line">ssion = requests.session()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 处理 headers</span></span><br><span class="line">headers = &#123;<span class="string">"User-Agent"</span>: <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 需要登录的用户名和密码</span></span><br><span class="line">data = &#123;<span class="string">"email"</span>:<span class="string">"mr_mao_hacker@163.com"</span>, <span class="string">"password"</span>:<span class="string">"alarmchime"</span>&#125;  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 发送附带用户名和密码的请求，并获取登录后的Cookie值，保存在ssion里</span></span><br><span class="line">ssion.post(<span class="string">"http://www.renren.com/PLogin.do"</span>, data = data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. ssion包含用户登录后的Cookie值，可以直接访问那些登录后才可以访问的页面</span></span><br><span class="line">response = ssion.get(<span class="string">"http://www.renren.com/410043129/profile"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6. 打印响应内容</span></span><br><span class="line"><span class="keyword">print</span> response.text</span><br></pre></td></tr></table></figure>
+<p><img src="/img/requestrenren.jpg" alt="img"></p>
+<h2 id="处理HTTPS请求-SSL证书验证"><a href="#处理HTTPS请求-SSL证书验证" class="headerlink" title="处理HTTPS请求 SSL证书验证"></a>处理HTTPS请求 SSL证书验证</h2><p>Requests也可以为HTTPS请求验证SSL证书：</p>
+<ul>
+<li>要想检查某个主机的SSL证书，你可以使用 verify 参数（也可以不写）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">response = requests.get(<span class="string">"https://www.baidu.com/"</span>, verify=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以省略不写</span></span><br><span class="line"><span class="comment"># response = requests.get("https://www.baidu.com/")</span></span><br><span class="line"><span class="keyword">print</span> r.text</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt;&lt;meta http-equiv=content-type content=text/html;charset=utf-8&gt;&lt;meta http-equiv=X-UA-Compatible content=IE=Edge&gt;百度一下，你就知道 ....</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果SSL证书验证不通过，或者不信任服务器的安全证书，则会报出SSLError，据说 12306 证书是自己做的：</li>
+</ul>
+<p><img src="/img/12306zhengshu.jpg" alt="img"></p>
+<p>来测试一下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">response = requests.get(<span class="string">"https://www.12306.cn/mormhweb/"</span>)</span><br><span class="line"><span class="keyword">print</span> response.text</span><br></pre></td></tr></table></figure>
+<p>果然：</p>
+<p><code>SSLError: (&quot;bad handshake: Error([(&#39;SSL routines&#39;, &#39;ssl3_get_server_certificate&#39;, &#39;certificate verify failed&#39;)],)&quot;,)</code></p>
+<p><strong>如果我们想跳过 12306 的证书验证，把 verify 设置为 False 就可以正常请求了。</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r = requests.get(<span class="string">"https://www.12306.cn/mormhweb/"</span>, verify = <span class="keyword">False</span>)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/WechatIMG.png" alt="victor WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/07/JSON数据提取与JSONPATH/" rel="next" title="JSON数据提取与JSONPATH">
+                <i class="fa fa-chevron-left"></i> JSON数据提取与JSONPATH
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/07/scrapy入门/" rel="prev" title="scrapy入门">
+                scrapy入门 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">victor</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/victoyer" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:3126735774@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/Suvvictor/" title="我的CSNDBlog" target="_blank">我的CSNDBlog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.python.org" title="python" target="_blank">python</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://redisdoc.com/" title="redis" target="_blank">redis</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Requests-让-HTTP-服务人类"><span class="nav-number">1.</span> <span class="nav-text">Requests: 让 HTTP 服务人类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#requests-的底层实现其实就是-urllib3"><span class="nav-number">1.0.1.</span> <span class="nav-text">requests 的底层实现其实就是 urllib3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装方式"><span class="nav-number">1.1.</span> <span class="nav-text">安装方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本GET请求（headers参数-和-parmas参数）"><span class="nav-number">1.2.</span> <span class="nav-text">基本GET请求（headers参数 和 parmas参数）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-最基本的GET请求可以直接用get方法"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">1. 最基本的GET请求可以直接用get方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-添加-headers-和-查询参数"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">2. 添加 headers 和 查询参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本POST请求（data参数）"><span class="nav-number">1.3.</span> <span class="nav-text">基本POST请求（data参数）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-最基本的GET请求可以直接用post方法"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">1. 最基本的GET请求可以直接用post方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-传入data数据"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">2. 传入data数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代理（proxies参数）"><span class="nav-number">1.4.</span> <span class="nav-text">代理（proxies参数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#私密代理验证（特定格式）-和-Web客户端验证（auth-参数）"><span class="nav-number">1.5.</span> <span class="nav-text">私密代理验证（特定格式） 和 Web客户端验证（auth 参数）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#私密代理"><span class="nav-number">1.5.1.</span> <span class="nav-text">私密代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#web客户端验证"><span class="nav-number">1.5.2.</span> <span class="nav-text">web客户端验证</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookies-和-Sission"><span class="nav-number">1.6.</span> <span class="nav-text">Cookies 和 Sission</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookies"><span class="nav-number">1.7.</span> <span class="nav-text">Cookies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sission"><span class="nav-number">1.8.</span> <span class="nav-text">Sission</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实现人人网登录"><span class="nav-number">1.8.1.</span> <span class="nav-text">实现人人网登录</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理HTTPS请求-SSL证书验证"><span class="nav-number">2.</span> <span class="nav-text">处理HTTPS请求 SSL证书验证</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">victor</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

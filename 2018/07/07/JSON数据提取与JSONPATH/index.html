@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="人生苦短我用python;python,lee,python之禅" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="JSON数据提取与JSONPATHJSON(JavaScript Object Notation) 是一种轻量级的数据交换格式，它使得人们很容易的进行阅读和编写。同时也方便了机器进行解析和生成。适用于进行数据交互的场景，比如网站前台与后台之间的数据交互。 JSON和XML的比较可谓不相上下。 Python 2.7中自带了JSON模块，直接import json就可以使用了。 官方文档：http:/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSON数据提取与JSONPATH">
+<meta property="og:url" content="http://yoursite.com/2018/07/07/JSON数据提取与JSONPATH/index.html">
+<meta property="og:site_name" content="Python Blog">
+<meta property="og:description" content="JSON数据提取与JSONPATHJSON(JavaScript Object Notation) 是一种轻量级的数据交换格式，它使得人们很容易的进行阅读和编写。同时也方便了机器进行解析和生成。适用于进行数据交互的场景，比如网站前台与后台之间的数据交互。 JSON和XML的比较可谓不相上下。 Python 2.7中自带了JSON模块，直接import json就可以使用了。 官方文档：http:/">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/json2.png">
+<meta property="og:image" content="http://yoursite.com/img/json.png">
+<meta property="og:updated_time" content="2018-07-01T06:53:15.536Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSON数据提取与JSONPATH">
+<meta name="twitter:description" content="JSON数据提取与JSONPATHJSON(JavaScript Object Notation) 是一种轻量级的数据交换格式，它使得人们很容易的进行阅读和编写。同时也方便了机器进行解析和生成。适用于进行数据交互的场景，比如网站前台与后台之间的数据交互。 JSON和XML的比较可谓不相上下。 Python 2.7中自带了JSON模块，直接import json就可以使用了。 官方文档：http:/">
+<meta name="twitter:image" content="http://yoursite.com/img/json2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/07/JSON数据提取与JSONPATH/"/>
+
+
+
+
+
+  <title>JSON数据提取与JSONPATH | Python Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Python Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">victor的个人博客</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/07/JSON数据提取与JSONPATH/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="victor">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Python Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">JSON数据提取与JSONPATH</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-07T10:37:35+08:00">
+                2018-07-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="JSON数据提取与JSONPATH"><a href="#JSON数据提取与JSONPATH" class="headerlink" title="JSON数据提取与JSONPATH"></a>JSON数据提取与JSONPATH</h2><p>JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式，它使得人们很容易的进行阅读和编写。同时也方便了机器进行解析和生成。适用于进行数据交互的场景，比如网站前台与后台之间的数据交互。</p>
+<p>JSON和XML的比较可谓不相上下。</p>
+<p>Python 2.7中自带了JSON模块，直接<code>import json</code>就可以使用了。</p>
+<p>官方文档：<a href="http://docs.python.org/library/json.html" target="_blank" rel="noopener">http://docs.python.org/library/json.html</a></p>
+<p>Json在线解析网站：<a href="http://www.json.cn/#" target="_blank" rel="noopener">http://www.json.cn/#</a></p>
+<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p>json简单说就是javascript中的对象和数组，所以这两种结构就是对象和数组两种结构，通过这两种结构可以表示各种复杂的结构</p>
+<blockquote>
+<ol>
+<li>对象：对象在js中表示为<code>{ }</code>括起来的内容，数据结构为 <code>{ key：value, key：value, ... }</code>的键值对的结构，在面向对象的语言中，key为对象的属性，value为对应的属性值，所以很容易理解，取值方法为 对象.key 获取属性值，这个属性值的类型可以是数字、字符串、数组、对象这几种。</li>
+<li>数组：数组在js中是中括号<code>[ ]</code>括起来的内容，数据结构为 <code>[&quot;Python&quot;, &quot;javascript&quot;, &quot;C++&quot;, ...]</code>，取值方式和所有语言中一样，使用索引获取，字段值的类型可以是 数字、字符串、数组、对象几种。</li>
+</ol>
+</blockquote>
+<h3 id="import-json"><a href="#import-json" class="headerlink" title="import json"></a>import json</h3><p>json模块提供了四个功能：<code>dumps</code>、<code>dump</code>、<code>loads</code>、<code>load</code>，用于字符串 和 python数据类型间进行转换。</p>
+<h4 id="1-json-loads"><a href="#1-json-loads" class="headerlink" title="1. json.loads()"></a>1. json.loads()</h4><p>把Json格式字符串解码转换成Python对象 从json到python的类型转化对照如下：</p>
+<p><img src="/img/json2.png" alt="img"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># json_loads.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">strList = <span class="string">'[1, 2, 3, 4]'</span></span><br><span class="line"></span><br><span class="line">strDict = <span class="string">'&#123;"city": "北京", "name": "大猫"&#125;'</span></span><br><span class="line"></span><br><span class="line">json.loads(strList) </span><br><span class="line"><span class="comment"># [1, 2, 3, 4]</span></span><br><span class="line"></span><br><span class="line">json.loads(strDict) <span class="comment"># json数据自动按Unicode存储</span></span><br><span class="line"><span class="comment"># &#123;u'city': u'\u5317\u4eac', u'name': u'\u5927\u732b'&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-json-dumps"><a href="#2-json-dumps" class="headerlink" title="2. json.dumps()"></a>2. json.dumps()</h4><p>实现python类型转化为json字符串，返回一个str对象 把一个Python对象编码转换成Json字符串</p>
+<p>从python原始类型向json类型的转化对照如下：</p>
+<p><img src="/img/json.png" alt="img"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># json_dumps.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> chardet</span><br><span class="line"></span><br><span class="line">listStr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">tupleStr = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line">dictStr = &#123;<span class="string">"city"</span>: <span class="string">"北京"</span>, <span class="string">"name"</span>: <span class="string">"大猫"</span>&#125;</span><br><span class="line"></span><br><span class="line">json.dumps(listStr)</span><br><span class="line"><span class="comment"># '[1, 2, 3, 4]'</span></span><br><span class="line">json.dumps(tupleStr)</span><br><span class="line"><span class="comment"># '[1, 2, 3, 4]'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 注意：json.dumps() 序列化时默认使用的ascii编码</span></span><br><span class="line"><span class="comment"># 添加参数 ensure_ascii=False 禁用ascii编码，按utf-8编码</span></span><br><span class="line"><span class="comment"># chardet.detect()返回字典, 其中confidence是检测精确度</span></span><br><span class="line"></span><br><span class="line">json.dumps(dictStr) </span><br><span class="line"><span class="comment"># '&#123;"city": "\\u5317\\u4eac", "name": "\\u5927\\u5218"&#125;'</span></span><br><span class="line"></span><br><span class="line">chardet.detect(json.dumps(dictStr))</span><br><span class="line"><span class="comment"># &#123;'confidence': 1.0, 'encoding': 'ascii'&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> json.dumps(dictStr, ensure_ascii=<span class="keyword">False</span>) </span><br><span class="line"><span class="comment"># &#123;"city": "北京", "name": "大刘"&#125;</span></span><br><span class="line"></span><br><span class="line">chardet.detect(json.dumps(dictStr, ensure_ascii=<span class="keyword">False</span>))</span><br><span class="line"><span class="comment"># &#123;'confidence': 0.99, 'encoding': 'utf-8'&#125;</span></span><br></pre></td></tr></table></figure>
+<p><strong>chardet是一个非常优秀的编码识别模块，可通过pip安装</strong></p>
+<h4 id="3-json-dump"><a href="#3-json-dump" class="headerlink" title="3. json.dump()"></a>3. json.dump()</h4><p>将Python内置类型序列化为json对象后写入文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># json_dump.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">listStr = [&#123;<span class="string">"city"</span>: <span class="string">"北京"</span>&#125;, &#123;<span class="string">"name"</span>: <span class="string">"大刘"</span>&#125;]</span><br><span class="line">json.dump(listStr, open(<span class="string">"listStr.json"</span>,<span class="string">"w"</span>), ensure_ascii=<span class="keyword">False</span>)</span><br><span class="line"></span><br><span class="line">dictStr = &#123;<span class="string">"city"</span>: <span class="string">"北京"</span>, <span class="string">"name"</span>: <span class="string">"大刘"</span>&#125;</span><br><span class="line">json.dump(dictStr, open(<span class="string">"dictStr.json"</span>,<span class="string">"w"</span>), ensure_ascii=<span class="keyword">False</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="4-json-load"><a href="#4-json-load" class="headerlink" title="4. json.load()"></a>4. json.load()</h4><p>读取文件中json形式的字符串元素 转化成python类型</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># json_load.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">strList = json.load(open(<span class="string">"listStr.json"</span>))</span><br><span class="line"><span class="keyword">print</span> strList</span><br><span class="line"></span><br><span class="line"><span class="comment"># [&#123;u'city': u'\u5317\u4eac'&#125;, &#123;u'name': u'\u5927\u5218'&#125;]</span></span><br><span class="line"></span><br><span class="line">strDict = json.load(open(<span class="string">"dictStr.json"</span>))</span><br><span class="line"><span class="keyword">print</span> strDict</span><br><span class="line"><span class="comment"># &#123;u'city': u'\u5317\u4eac', u'name': u'\u5927\u5218'&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="JsonPath"><a href="#JsonPath" class="headerlink" title="JsonPath"></a>JsonPath</h3><p>JsonPath 是一种信息抽取类库，是从JSON文档中抽取指定信息的工具，提供多种语言实现版本，包括：Javascript, Python， PHP 和 Java。</p>
+<p>JsonPath 对于 JSON 来说，相当于 XPATH 对于 XML。</p>
+<blockquote>
+<p>下载地址：<a href="https://pypi.python.org/pypi/jsonpath/" target="_blank" rel="noopener">https://pypi.python.org/pypi/jsonpath</a></p>
+<p>安装方法：点击<code>Download URL</code>链接下载jsonpath，解压之后执行<code>python setup.py install</code></p>
+<p>官方文档：<a href="http://goessner.net/articles/JsonPath/" target="_blank" rel="noopener">http://goessner.net/articles/JsonPath</a></p>
+</blockquote>
+<h4 id="JsonPath与XPath语法对比："><a href="#JsonPath与XPath语法对比：" class="headerlink" title="JsonPath与XPath语法对比："></a>JsonPath与XPath语法对比：</h4><p>Json结构清晰，可读性高，复杂度低，非常容易匹配，下表中对应了XPath的用法。</p>
+<table>
+<thead>
+<tr>
+<th>XPath</th>
+<th>JSONPath</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code></td>
+<td><code>$</code></td>
+<td>根节点</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td><code>@</code></td>
+<td>现行节点</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td><code>.</code>or<code>[]</code></td>
+<td>取子节点</td>
+</tr>
+<tr>
+<td><code>..</code></td>
+<td>n/a</td>
+<td>取父节点，Jsonpath未支持</td>
+</tr>
+<tr>
+<td><code>//</code></td>
+<td><code>..</code></td>
+<td>就是不管位置，选择所有符合条件的条件</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td><code>*</code></td>
+<td>匹配所有元素节点</td>
+</tr>
+<tr>
+<td><code>@</code></td>
+<td>n/a</td>
+<td>根据属性访问，Json不支持，因为Json是个Key-value递归结构，不需要。</td>
+</tr>
+<tr>
+<td><code>[]</code></td>
+<td><code>[]</code></td>
+<td>迭代器标示（可以在里边做简单的迭代操作，如数组下标，根据内容选值等）</td>
+</tr>
+<tr>
+<td>\</td>
+<td></td>
+<td><code>[,]</code></td>
+<td>支持迭代器中做多选。</td>
+</tr>
+<tr>
+<td><code>[]</code></td>
+<td><code>?()</code></td>
+<td>支持过滤操作.</td>
+</tr>
+<tr>
+<td>n/a</td>
+<td><code>()</code></td>
+<td>支持表达式计算</td>
+</tr>
+<tr>
+<td><code>()</code></td>
+<td>n/a</td>
+<td>分组，JsonPath不支持</td>
+</tr>
+</tbody>
+</table>
+<h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><p>我们以拉勾网城市JSON文件 <a href="http://www.lagou.com/lbs/getAllCitySearchLabels.json" target="_blank" rel="noopener">http://www.lagou.com/lbs/getAllCitySearchLabels.json</a> 为例，获取所有城市。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># jsonpath_lagou.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"><span class="keyword">import</span> jsonpath</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> chardet</span><br><span class="line"></span><br><span class="line">url = <span class="string">'http://www.lagou.com/lbs/getAllCitySearchLabels.json'</span></span><br><span class="line">request =urllib2.Request(url)</span><br><span class="line">response = urllib2.urlopen(request)</span><br><span class="line">html = response.read()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 把json格式字符串转换成python对象</span></span><br><span class="line">jsonobj = json.loads(html)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从根节点开始，匹配name节点</span></span><br><span class="line">citylist = jsonpath.jsonpath(jsonobj,<span class="string">'$..name'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> citylist</span><br><span class="line"><span class="keyword">print</span> type(citylist)</span><br><span class="line">fp = open(<span class="string">'city.json'</span>,<span class="string">'w'</span>)</span><br><span class="line"></span><br><span class="line">content = json.dumps(citylist, ensure_ascii=<span class="keyword">False</span>)</span><br><span class="line"><span class="keyword">print</span> content</span><br><span class="line"></span><br><span class="line">fp.write(content.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">fp.close()</span><br></pre></td></tr></table></figure>
+<h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><p>json.loads() 是把 Json格式字符串解码转换成Python对象，如果在json.loads的时候出错，要注意被解码的Json字符的编码。</p>
+<p>如果传入的字符串的编码不是UTF-8的话，需要指定字符编码的参数 <code>encoding</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dataDict = json.loads(jsonStrGBK);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>dataJsonStr是JSON字符串，假设其编码本身是非UTF-8的话而是GBK 的，那么上述代码会导致出错，改为对应的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dataDict = json.loads(jsonStrGBK, encoding=<span class="string">"GBK"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果 dataJsonStr通过encoding指定了合适的编码，但是其中又包含了其他编码的字符，则需要先去将dataJsonStr转换为Unicode，然后再指定编码格式调用json.loads()</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dataJsonStrUni = dataJsonStr.decode(<span class="string">"GB2312"</span>); dataDict = json.loads(dataJsonStrUni, encoding=<span class="string">"GB2312"</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##字符串编码转换</span></span><br><span class="line"></span><br><span class="line">这是中国程序员最苦逼的地方，什么乱码之类的几乎都是由汉字引起的。</span><br><span class="line">其实编码问题很好搞定，只要记住一点：</span><br><span class="line"></span><br><span class="line"><span class="comment">####任何平台的任何编码 都能和 Unicode 互相转换</span></span><br><span class="line"></span><br><span class="line">UTF<span class="number">-8</span> 与 GBK 互相转换，那就先把UTF<span class="number">-8</span>转换成Unicode，再从Unicode转换成GBK，反之同理。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">​``` python </span><br><span class="line"><span class="comment"># 这是一个 UTF-8 编码的字符串</span></span><br><span class="line">utf8Str = <span class="string">"你好地球"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 将 UTF-8 编码的字符串 转换成 Unicode 编码</span></span><br><span class="line">unicodeStr = utf8Str.decode(<span class="string">"UTF-8"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 再将 Unicode 编码格式字符串 转换成 GBK 编码</span></span><br><span class="line">gbkData = unicodeStr.encode(<span class="string">"GBK"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 再将 GBK 编码格式字符串 转化成 Unicode</span></span><br><span class="line">unicodeStr = gbkData.decode(<span class="string">"gbk"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 再将 Unicode 编码格式字符串转换成 UTF-8</span></span><br><span class="line">utf8Str = unicodeStr.encode(<span class="string">"UTF-8"</span>)</span><br></pre></td></tr></table></figure>
+<p><code>decode</code>的作用是将其他编码的字符串转换成 Unicode 编码</p>
+<p><code>encode</code>的作用是将 Unicode 编码转换成其他编码的字符串</p>
+<p><code>一句话：UTF-8是对Unicode字符集进行编码的一种编码方式</code></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/WechatIMG.png" alt="victor WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/07/HTTP和HTTPS/" rel="next" title="HTTP和HTTPS">
+                <i class="fa fa-chevron-left"></i> HTTP和HTTPS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/07/Requests 让-HTTP-服务人类/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">victor</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/victoyer" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:3126735774@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/Suvvictor/" title="我的CSNDBlog" target="_blank">我的CSNDBlog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.python.org" title="python" target="_blank">python</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://redisdoc.com/" title="redis" target="_blank">redis</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON数据提取与JSONPATH"><span class="nav-number">1.</span> <span class="nav-text">JSON数据提取与JSONPATH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON"><span class="nav-number">1.1.</span> <span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#import-json"><span class="nav-number">1.2.</span> <span class="nav-text">import json</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-json-loads"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. json.loads()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-json-dumps"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. json.dumps()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-json-dump"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. json.dump()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-json-load"><span class="nav-number">1.2.4.</span> <span class="nav-text">4. json.load()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JsonPath"><span class="nav-number">1.3.</span> <span class="nav-text">JsonPath</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JsonPath与XPath语法对比："><span class="nav-number">1.3.1.</span> <span class="nav-text">JsonPath与XPath语法对比：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例："><span class="nav-number">1.4.</span> <span class="nav-text">示例：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项："><span class="nav-number">2.</span> <span class="nav-text">注意事项：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">victor</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
